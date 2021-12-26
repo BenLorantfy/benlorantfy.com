@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .markdown h1 {
+    @apply text-gray-800 text-xl;
+  }
+
+  .markdown p {
+    @apply mb-4;
+    @apply mt-4;
+  }
+
+  .markdown ul {
+    padding-left: 40px;
+    list-style-type: disc;
+  }
+
+  .markdown ul ul {
+    list-style-type: circle;
+  }
+}

@@ -1,8 +1,26 @@
-import { Link } from "remix";
+import { Link, LinksFunction, useLoaderData } from "remix";
+
+/**
+ * @see https://github.com/remix-run/remix/issues/1091
+ */
+export const loader = () => {
+    return [];
+};
+
+export const links: LinksFunction = () => {
+    return [
+      {
+        rel: "preload",
+        href: "/cover.jpg",
+        as: "image"
+      }
+    ];
+};
 
 export default function About() {
     const bannerWidth = 1268;
     const bannerHeight = 624;
+
   return (
     <>
       <div className="p-8 pl-1 pr-1 md:pl-16 md:pr-16 md:p-16 lg:p-32 lg:pl-32 lg:pr-32 h-full">
