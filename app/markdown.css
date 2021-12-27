@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  .sr-only {
+    user-select: none;
+  }
+
   .markdown h1 {
     @apply text-gray-800 text-xl;
   }
