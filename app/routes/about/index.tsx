@@ -1,6 +1,8 @@
-import { Link, LinksFunction, useLoaderData } from "remix";
+import { LinksFunction } from "remix";
 import { Footer } from "~/components/Footer";
 import { Nav } from "~/components/Nav";
+import tallerCover from "~/images/taller-cover.jpg";
+import cover from "~/images/cover.jpg";
 
 /**
  * @see https://github.com/remix-run/remix/issues/1091
@@ -13,24 +15,38 @@ export const links: LinksFunction = () => {
     return [
         {
             rel: "preload",
-            href: "/cover.jpg",
+            href: tallerCover,
+            as: "image"
+        },
+        {
+            rel: "preload",
+            href: cover,
             as: "image"
         }
     ];
 };
 
 export default function About() {
-    const bannerWidth = 1268;
-    const bannerHeight = 624;
-
     return (
         <>
             <Nav />
-            <div className="sm:pl-16 sm:pr-16 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44">
-                <div className="relative w-full" style={{ aspectRatio: `${bannerWidth} / ${bannerHeight}` }}>
-                    <img className="absolute w-full" src="/cover.jpg" />
-                    <div className="absolute bg-black/50 w-full h-full"></div>
-                    <div className="relative flex justify-end p-3 sm:p-6 lg:p-12 font-bold">
+            <div className="sm:hidden">
+                <div className="relative">
+                    <img className="w-full brightness-50" src={tallerCover} />
+                    <div className="absolute top-0 flex justify-end p-6 font-bold w-full">
+                        <div className="relative w-full">
+                            <h1 className="block text-white w-full text-right">
+                                <span className="block text-3xl">Hey, I'm Ben</span>
+                            </h1>
+                            <p className="text-sm mt-5 block text-white w-full text-right">I build <span className="bg-fuchsia-400/50">delightful user experiences</span><br /> that are fast, accessible,<br /> responsive, and <br /> maintainable.  <br /><br /> I also try to <span className="bg-indigo-400/50">enable others</span><br /> to do the same</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="hidden sm:block pl-8 pr-8 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44">
+                <div className="relative w-full">
+                    <img className="w-full brightness-50" src={cover} />
+                    <div className="absolute top-0 flex justify-end p-3 sm:p-6 lg:p-12 font-bold">
                         <div className="w-full sm:w-5/6 lg:w-2/3 xl:w-1/2">
                             <h1 className="block text-white w-full text-right">
                                 <span className="hidden sm:block text-5xl lg:text-5xl xl:text-6xl">Hey,</span>
@@ -47,20 +63,22 @@ export default function About() {
                 <div className="flex mt-16 text-xl">
                     <div className="flex-1 pr-4 text-gray-800">
                         <p>
-                            I grey up in Petrolia, ON, Canada where I fit perfectly into the nerdy high-school kid stereotype.  My passion for coding started in Grade 10 when Mrs. Ruypers helped me discover the thrill of problem solving with a computer.
+                            I grew up in Petrolia, ON, Canada where I fit perfectly into the nerdy high-school kid stereotype.  My passion for coding started in Grade 10 when Mrs. Ruypers helped me discover the thrill of problem solving with a computer.
                         </p>
+                        <img className="block sm:hidden mt-8" alt="Victoria Playhouse, Petrolia, Ontario" src="/petrolia.jpg" />
                         <p className="mt-16">
                             I moved to Kitchener, ON for school where I went to <a className="underline" target="_blank" rel="noopener noreferrer" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">Conestoga College</a> for Software Engineering Technology.  Since then I built a 6-year career specializing in frontend development.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Senior Software Developer at ApplyBoard Inc.
                         </p>
+                        <img className="block sm:hidden mt-8" alt="Victoria Park, Kitchener, Ontario" src="/kitchener.jpg" />
                     </div>
-                    <div className="flex-1 pl-4">
-                        <img src="/petrolia.jpg" />
-                        <img className="mt-16" src="/kitchener.jpg" />
+                    <div className="hidden sm:block flex-1 pl-4">
+                        <img alt="Victoria Playhouse, Petrolia, Ontario" src="/petrolia.jpg" />
+                        <img className="mt-16" alt="Victoria Park, Kitchener, Ontario" src="/kitchener.jpg" />
                     </div>
                 </div>
 
                 <h2 className="text-4xl text-center mt-24 text-gray-800">Values</h2>
-                <div className="flex gap-8">
+                <div className="flex gap-8 flex-col sm:flex-row">
                     <div className="flex-1">
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Kind</h3>
                         Kindness is a good enough value by itself, but kindness also helps get things done.  Building great relationships with people around you makes you more effective.
@@ -91,25 +109,10 @@ export default function About() {
                 </div>
 
                 <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Reading</h2>
-                <p>I love reading.  I think it's underrated.  When we read we see the world through other's eyes, not just our own.  It's the best way to refine your craft.  Below is my curation of books and articles I've read and some notes / comments.</p>
+                <p>I love reading.  I think it's underrated.  When we read we see the world through other's eyes, not just our own.  It's the best way to refine your craft.  Below is my curation of books I've read and some notes / comments.</p>
                 <div className="flex gap-8">
                     <div className="flex-1">
                         <h2 className="text-3xl text-center mt-16 text-gray-800">Book Notes</h2>
-                        <ul>
-                            <li>The Clean Coder</li>
-                            <li>The Manager's Path</li>
-                            <li>An Astronaut's Guide to Life on Earth</li>
-                            <li>Elon Musk</li>
-                            <li>The Ride of a Lifetime</li>
-                            <li>SCRUM</li>
-                            <li>Losing the Signal</li>
-                            <li>The Martian</li>
-                            <li>Steve Jobs</li>
-                            <li>The Hitchhiker's Guide to the Galaxy</li>
-                        </ul>
-                    </div>
-                    <div className="flex-1">
-                        <h2 className="text-3xl text-center mt-16 text-gray-800">Article Notes</h2>
                         <ul>
                             <li>The Clean Coder</li>
                             <li>The Manager's Path</li>
@@ -135,7 +138,7 @@ export default function About() {
                 <h2 className="text-4xl text-center mt-16 text-gray-800 mb-16">Consulting</h2>
                 <p className="mb-8 text-center">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here:</p>
                 <div className="flex justify-center">
-                    <div className="bg-slate-200 text-gray-800 p-8 font-bold text-xl text-center w-1/2">
+                    <div className="bg-slate-200 text-gray-800 p-8 font-bold text:lg sm:text-xl text-center w-full md:w-1/2">
                         consulting@lorantfy.com
                         <div>(please provide details in the first email)</div>
                     </div>
