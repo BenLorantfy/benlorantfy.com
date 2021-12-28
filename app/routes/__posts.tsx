@@ -1,11 +1,15 @@
 import { Outlet } from "remix";
+import { Footer } from "~/components/Footer";
+import { Nav } from "~/components/Nav";
 
 export default function PostsLayout() {
     return (
         <>
-            <div className="markdown p-8 pl-1 pr-1 md:pl-16 md:pr-16 md:p-16 lg:p-32 lg:pl-32 lg:pr-32 h-full">
+            <Nav />
+            <div className="markdown w-full m-auto min-h-full pl-8 pr-8" style={{ maxWidth: "845px" }}>
                 <Outlet />
             </div>
+            <Footer />
         </>
     );
 }

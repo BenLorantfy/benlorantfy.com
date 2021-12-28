@@ -1,0 +1,84 @@
+---
+image: /post-images/tools.jpg
+meta:
+  title: The Biggest News of 2021 Measured by Font Size
+  description: For the last year, I've been keeping track of CNN's headline's font size
+---
+
+# The Biggest News of 2021 Measured by Font Size
+
+For the last year, I've been keeping track of the font size of the headlines on cnn.com
+
+If you haven't noticied, cnn.com adjusts the font size of their headline based on how newsworthy the article is.  For example, here's a big headline from Jan 6th with a font size of 72px:
+
+<img alt="Screenshot of CNN" className="m-auto mt-16 mb-16" style={{ width: "500px", maxWidth: "100%", border: "1px solid black" }} src="/cnn-font-size-example.png" />
+
+As a research project, I setup a bot that checks the font size of the cnn.com headline every hour and it's been running for over a year.  Since it's near the end of the year, I thought it would be a good time to look at the results and see what they tell us, if anything
+
+Should be fun
+
+Without furthur ado, here is the chart of CNN font sizes for 2021:
+
+import { FullWidthContainer } from '~/components/FullWidthContainer';
+import { CnnFontSize2021 } from '~/components/CnnFontSize2021';
+
+<FullWidthContainer>
+  <CnnFontSize2021 />
+</FullWidthContainer>
+
+Hover over the bars above to see the largest headline for each day of 2021.  You can click the blue bars to go to the news story related to the headline.  Some of the bars are grey and not clickable because I didn't think to start tracking the news story link until April (oops).  
+
+import { CnnFontSize2021Histogram } from '~/components/CnnFontSize2021';
+
+<CnnFontSize2021Histogram />
+
+This chart shows the probability of a certian headline font size.  So you can see the most likely font size is between 36-40px (~36% chance).  But you can also see on any given day you're more likely to have a news story with a larger font size (~64% chance).
+
+Here's a few highlights
+
+## Headline with the biggest font size
+
+> 20 Years
+
+(September 11, 2021 - 136px)
+
+This headline marked the 20th aniversery of the 9/11 terrorist attacks and linked to CNN's coverage of the anniversery.  Some first responders are still struggling to get their healthcare paid for relating to injuries from 9/11. TODO: explain headline  
+
+## Other big headlines
+
+> MOB INVADES CAPITAL
+
+> IMPEACHED AGAIN
+
+> PRESIDENT BIDEN
+
+> ACQUITTED AGAIN
+
+> CHAUVIN GUILTY
+
+> GOP OUSTS CHENEY
+
+> Democracy at risk
+
+> BILES OUT OF TEAM FINALS
+
+> Big win for Biden
+
+## Couple observations
+
+It's interesting that you can really see the "24-hour news cycle" visulized here.  The largest headline on every day is ussually a completely different headline.  There are a couple times when the headline or a similar headline sticks around for 48 hours, but the vast majority of headlines only last a day.
+
+{/* TODO: group by relevant metric before rendering instead of grouping by font size */}
+{/*  ## More stats
+
+import { CnnFontSize2021InkAmount } from '~/components/CnnFontSize2021';
+
+<CnnFontSize2021InkAmount />
+
+This chart gives a sense of how much ink would be required to print each headline.  So a long headline with a medium font size might take more ink than a short headline with a large font size.
+
+import { CnnFontHeadlineLength } from '~/components/CnnFontSize2021';
+
+<CnnFontHeadlineLength />
+
+This chart shows the headline length over the year. */}

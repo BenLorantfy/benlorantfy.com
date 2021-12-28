@@ -7,8 +7,16 @@
     user-select: none;
   }
 
+  .markdown {
+    @apply text-lg
+  }
+
   .markdown h1 {
-    @apply text-gray-800 text-xl;
+    @apply text-gray-800 text-4xl text-center font-bold mt-8 mb-8 md:mt-16 md:mb-16;
+  }
+
+  .markdown h2 {
+    @apply text-gray-800 text-2xl font-bold mt-8 mb-4;
   }
 
   .markdown p {
