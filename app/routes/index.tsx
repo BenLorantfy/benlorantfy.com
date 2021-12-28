@@ -4,10 +4,11 @@ import * as amateursTalkImplementationProfessionalsTalkInterfaces from "./__post
 import { Nav } from "~/components/Nav";
 import { Footer } from "~/components/Footer";
 
-function postFromModule(mod: { filename: string, attributes: { meta: {} } }) {
+function postFromModule(mod: { filename: string, attributes: { image: string, meta: {} } }) {
   return {
     slug: mod.filename.replace(/\.mdx?$/, ""),
-    ...(mod.attributes.meta as { title: string, image: string, description: string })
+    image: mod.attributes.image,
+    ...(mod.attributes.meta as { title: string, description: string })
   };
 }
 

@@ -1,4 +1,4 @@
-import { LinksFunction } from "remix";
+import { LinksFunction, MetaFunction } from "remix";
 import { Footer } from "~/components/Footer";
 import { Nav } from "~/components/Nav";
 import tallerCover from "~/images/taller-cover.jpg";
@@ -24,6 +24,10 @@ export const links: LinksFunction = () => {
             as: "image"
         }
     ];
+};
+
+export const meta: MetaFunction = () => {
+    return { title: "Ben Lorantfy | About" };
 };
 
 export default function About() {
