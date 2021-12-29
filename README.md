@@ -54,3 +54,4 @@ cp -R ../my-old-remix-app/app app
 
 # Resources
 - https://cards-dev.twitter.com/validator
+- https://stackoverflow.com/questions/13789855/safari-not-sending-if-modified-since-and-if-none-match-headers

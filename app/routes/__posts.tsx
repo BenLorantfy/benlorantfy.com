@@ -4,7 +4,13 @@ import { Nav } from "~/components/Nav";
 import { NavBarLink } from "~/components/NavBarLink";
 import profile from "~/images/profile-picture.jpg";
 
-export default function PostsLayout(props: any) {
+export function headers() {
+    return {
+      "Cache-Control": "max-age=300"
+    };
+  }
+
+export default function PostsLayout() {
     return (
         <>
             <Nav />

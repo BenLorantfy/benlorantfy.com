@@ -52,6 +52,12 @@ export const meta: MetaFunction = () => {
     return { title: "Ben Lorantfy | About" };
 };
 
+export function headers() {
+    return {
+        "Cache-Control": "max-age=300"
+    };
+}
+
 export default function About() {
     return (
         <>

@@ -12,6 +12,12 @@ export function loader() {
   return getPosts();
 }
 
+export function headers() {
+  return {
+    "Cache-Control": "max-age=300"
+  };
+}
+
 export default function Index() {
   const posts = useAddImagesToPosts(useLoaderData<ReturnType<typeof loader>>());
 
