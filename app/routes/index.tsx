@@ -7,7 +7,6 @@ import { Footer } from "~/components/Footer";
 import profilePicture from '~/images/profile-picture.jpg';
 import fpAdvisor from '~/images/fpadvisor.png';
 import postmediahub from '~/images/postmediahub.png';
-import { ResponsiveImages } from "~/components/ResponsiveImages";
 
 import headlinesChartThumbnail from "~/images/post-thumbnails/headlines-chart.png";
 import headlinesChartThumbnail2x from "~/images/post-thumbnails/headlines-chart@x2.png";
@@ -23,6 +22,7 @@ import toolsThumbnail from "~/images/post-thumbnails/tools.jpg";
 import toolsThumbnail2x from "~/images/post-thumbnails/tools@x2.jpg";
 import toolsThumbnailWebp from "~/images/post-thumbnails/tools.webp";
 import toolsThumbnailWebp2x from "~/images/post-thumbnails/tools@x2.webp";
+import { BlogPostCard } from "~/components/BlogPostCard";
 
 function postFromModule(mod: { filename: string, attributes: { image: string, meta: {} } }, images?: { png?: string, png2x?: string, jpg?: string, jpg2x?: string, webp?: string, webp2x?: string }) {
   return {
@@ -121,21 +121,14 @@ export default function Index() {
         </div>
         <div className="flex flex-wrap gap-8 items-start">
           {postsWithImages.map((post) => (
-            <Link 
-              prefetch="intent" 
-              to={`/${post.slug}`}
-              className="inline-block w-full md:w-96 bg-neutral-100 rounded-xl align-top"
-              aria-labelledby={`post-title-${post.slug}`}
-            >
-              <div id={`post-title-${post.slug}`} className="mt-2 p-4 text-2xl">{post.title}</div>
-              {post.images && (
-                <ResponsiveImages 
-                  alt=""
-                  images={post.images}
-                />
-              )}
-              <div className="mt-2 p-4">{post.description}</div>
-            </Link>
+            post.images && (
+              <BlogPostCard
+                slug={post.slug}
+                title={post.title}
+                description={post.description}
+                images={post.images}
+              />
+            )
           ))}
         </div>
       </div>
@@ -160,6 +153,15 @@ export default function Index() {
             </h3>
             <p className="mb-4">Postmedia Hub is a marketing analytics platform included free of charge to any Postmedia Marketing customer.  I've consulted with various projects related to The Hub including helping make it mobile friendly and accessible.</p>
           </div>
+        </div>
+
+        <h2 className="text-4xl mt-16 text-gray-800 mb-16" id="consulting">Consulting</h2>
+        <p className="mb-8">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here (I'm especially interested in helping organizations become compliant with accessibility laws):</p>
+        <div className="flex justify-center">
+            <div className="bg-slate-200 text-gray-800 p-8 font-bold text:lg sm:text-xl text-center w-full md:w-3/4">
+                consulting@lorantfy.com
+                <div>(please provide details in the first email)</div>
+            </div>
         </div>
       </div>
       <Footer />

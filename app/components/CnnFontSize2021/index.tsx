@@ -7,7 +7,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Bar, getElementAtEvent, getElementsAtEvent } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -27,7 +27,7 @@ const rawData = [{ "date": "2021-01-01T16:28:16.856Z", "text": "More states are 
 
 export function CnnFontSize2021() {
     const chartRef = useRef(null);;
-
+    const { height, width } = useWindowSize();
 
     const data = useMemo(() => ({
         labels: rawData.map((item) => formatDate(item.date)),
@@ -39,11 +39,13 @@ export function CnnFontSize2021() {
         }]
     }), []);
 
+    const aspectRatio = (!width || !height) ? 2 : width > height ? 2 : 1;
     return (
         <div>
             <Bar
                 ref={chartRef}
                 options={{
+                    aspectRatio,
                     plugins: {
                         legend: {
                             display: false
@@ -467,3 +469,25 @@ function createBuckets(params: { startingBar: number, endingBar: number, distanc
         frequencies
     }
 }
+
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState<{ width: number|undefined, height: number|undefined }>({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return windowSize;
+  }
+  

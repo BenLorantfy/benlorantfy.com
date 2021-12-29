@@ -1,6 +1,5 @@
 import { LinksFunction, MetaFunction } from "remix";
-import { HtmlLinkDescriptor } from "@remix-run/react";
-
+import { BlogPostCard } from '~/components/BlogPostCard';
 import { Footer } from "~/components/Footer";
 import { Nav } from "~/components/Nav";
 import tallerCover from "~/images/taller-cover.jpg";
@@ -15,6 +14,11 @@ import coverWebp2x from "~/images/cover@x2.webp";
 
 import kitchener from "~/images/kitchener.jpg";
 import petrolia from "~/images/petrolia.jpg";
+
+import headlinesChartThumbnail from "~/images/post-thumbnails/headlines-chart.png";
+import headlinesChartThumbnail2x from "~/images/post-thumbnails/headlines-chart@x2.png";
+import headlinesChartThumbnailWebp from "~/images/post-thumbnails/headlines-chart.webp";
+import headlinesChartThumbnailWebp2x from "~/images/post-thumbnails/headlines-chart@x2.webp";
 
 /**
  * @see https://github.com/remix-run/remix/issues/1091
@@ -96,16 +100,19 @@ export default function About() {
                 <div className="flex mt-16 text-xl">
                     <div className="flex-1 pr-4 text-gray-800">
                         <p>
-                            I grew up in Petrolia, ON, Canada where I fit perfectly into the nerdy high-school kid stereotype.  My passion for coding started in Grade 10 when Mrs. Ruypers helped me discover the thrill of problem solving with a computer.
+                            I grew up in Petrolia, ON, Canada.  My passion for coding started with the help of my Grade 10 computer science teacher Mrs. Ruypers.  My first programming language was Visual Basic - something about being able to build cool things by typing a few buttons on the keyboard was fascinating
                         </p>
                         <img className="block sm:hidden mt-8" alt="Victoria Playhouse, Petrolia, Ontario" src={petrolia} />
                         <p className="mt-16">
-                            I moved to Kitchener, ON for school where I went to <a className="underline" target="_blank" rel="noopener noreferrer" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">Conestoga College</a> for Software Engineering Technology.  Since then I built a 6-year career specializing in frontend development.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Senior Software Developer at ApplyBoard Inc.
+                            I moved to Kitchener, ON for school where I went to Conestoga College for Software Engineering Technology.  Since then I've built a 6+ year career specializing in frontend development and <a className="underline" href="http://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php">won</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/05/ontario_skills_2015.php">some</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">awards</a>.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Senior Software Developer at ApplyBoard Inc.
+                        </p>
+                        <p className="mt-16">
+                            You can checkout my <a className="underline" href="https://www.linkedin.com/in/ben-lorantfy">linkedin here</a> for more info
                         </p>
                         <img className="block sm:hidden mt-8" alt="Victoria Park, Kitchener, Ontario" src={kitchener} />
                     </div>
                     <div className="hidden sm:block flex-1 pl-4">
-                        <img alt="Victoria Playhouse, Petrolia, Ontario" src="/petrolia.jpg" />
+                        <img alt="Victoria Playhouse, Petrolia, Ontario" src={petrolia} />
                         <img className="mt-16" alt="Victoria Park, Kitchener, Ontario" src={kitchener} />
                     </div>
                 </div>
@@ -123,60 +130,79 @@ export default function About() {
                     </div>
                     <div className="flex-1">
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Professional</h3>
-                        Kindness is a good enough value by itself, but kindness also helps get things done.  Building great relationships with people around you makes you more effective.
+                        Software engineers should act the same way doctors or lawyers work.  They don't betray their ethics, values, or quality standards because of tight schedules.  Imagine if a doctor took a riskier move during a surgery because their manager said it was taking too long.
                         <ul className="mt-8">
-                            <li><span className="font-bold">Take pride in your work.</span>  It's better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychological safe and enables them to do their best work</li>
-                            <li className="mt-4"><span className="font-bold">Push back.</span>  People almost always have good intentions behind their actions.  If something someone does seems surprising, assume good intent and hold your judgement until you see their perspective and constraints.</li>
-                            <li className="mt-4"><span className="font-bold">Refine your craft and never stop learning.</span>  It's more effective to blame and improve faulty processes (or tooling) than to blame individuals.</li>
+                            <li><span className="font-bold">Take pride in your work.</span>  Professionals are able to send a link of their own code if needed to their peers and be proud of it.</li>
+                            <li className="mt-4"><span className="font-bold">Push back.</span>  Professionals push back when a manager asks them to skip accessibility, automated tests, code review, etc.</li>
+                            <li className="mt-4"><span className="font-bold">Refine your craft and never stop learning.</span>  Professionals try their best to keep on top of the latest best practices.</li>
                         </ul>
                     </div>
                     <div className="flex-1">
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Impactful</h3>
-                        Kindness is a good enough value by itself, but kindness also helps get things done.  Building great relationships with people around you makes you more effective.
+                        You can choose to work somewhere you're proud of and where you feel like you're making people's lives better.
                         <ul className="mt-8">
-                            <li><span className="font-bold">Default to trust.</span>  It's better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychological safe and enables them to do their best work</li>
-                            <li className="mt-4"><span className="font-bold">Assume good intent.</span>  People almost always have good intentions behind their actions.  If something someone does seems surprising, assume good intent and hold your judgement until you see their perspective and constraints.</li>
-                            <li className="mt-4"><span className="font-bold">Blame processes instead of people.</span>  It's more effective to blame and improve faulty processes (or tooling) than to blame individuals.</li>
+                            <li><span className="font-bold">Do big things.</span>  Do work that improves the lives of many other people</li>
+                            <li className="mt-4"><span className="font-bold">Multiply your output.</span>  Try to find a way so every unit of work you do is multiplied by other people.  This allows you to have a bigger impact than you could working alone.  Be multiplicative instead of additive.</li>
                         </ul>
                     </div>
                 </div>
 
-                <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Reading</h2>
-                <p>I love reading.  I think it's underrated.  When we read we see the world through other's eyes, not just our own.  It's the best way to refine your craft.  Below is my curation of books I've read and some notes / comments.</p>
-                <div className="flex gap-8">
-                    <div className="flex-1">
-                        <h2 className="text-3xl text-center mt-16 text-gray-800">Book Notes</h2>
-                        <ul>
-                            <li>The Clean Coder</li>
-                            <li>The Manager's Path</li>
-                            <li>An Astronaut's Guide to Life on Earth</li>
-                            <li>Elon Musk</li>
-                            <li>The Ride of a Lifetime</li>
-                            <li>SCRUM</li>
-                            <li>Losing the Signal</li>
-                            <li>The Martian</li>
-                            <li>Steve Jobs</li>
-                            <li>The Hitchhiker's Guide to the Galaxy</li>
-                        </ul>
+                <div style={{ width: "100%", maxWidth: "845px", margin: "auto" }}>
+                    <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Reading</h2>
+                    <p>When we read we see the world through other's eyes, not just our own.  It's the best way to refine your craft.  Below is my curation of books I've read and some notes / comments (still need to add my notes here 😅).</p>
+                    <div className="flex gap-8" style={{ width: "100%", maxWidth: "845px", margin: "auto" }}>
+                        <div className="flex-1">
+                            <h2 className="text-3xl text-center mt-16 text-gray-800">Book Notes</h2>
+                            <ul>
+                                <li>Peopleware</li>
+                                <li>The Clean Coder</li>
+                                <li>The Manager's Path</li>
+                                <li>An Astronaut's Guide to Life on Earth</li>
+                                <li>Elon Musk</li>
+                                <li>The Ride of a Lifetime</li>
+                                <li>SCRUM</li>
+                                <li>Losing the Signal</li>
+                                <li>The Martian</li>
+                                <li>Steve Jobs</li>
+                                <li>The Hitchhiker's Guide to the Galaxy</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Writing</h2>
-                <p>
-                    I also write.  Writing, like teaching, is the best way to figure out if you've truly internalized your understanding of a topic.
-                </p>
-                <p>
-                    I also subscribe to the idea of a <a href="https://joelhooks.com/on-writing-more">digital garden</a>.  The continuously tend to and prune articles I write to prevent them from becoming stale.
-                </p>
-                <h2 className="text-4xl text-center mt-16 text-gray-800 mb-16">Consulting</h2>
-                <p className="mb-8 text-center">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here:</p>
-                <div className="flex justify-center">
-                    <div className="bg-slate-200 text-gray-800 p-8 font-bold text:lg sm:text-xl text-center w-full md:w-1/2">
-                        consulting@lorantfy.com
-                        <div>(please provide details in the first email)</div>
+
+                    <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Writing</h2>
+                    <p>
+                        I also write.  Writing, like teaching, is the best way to figure out if you've truly internalized your understanding of a topic.
+                    </p>
+                    <p className="mt-8">
+                        I also subscribe to the idea of a digital garden.  I try to continuously tend to and prune articles I write to prevent them from becoming stale.
+                    </p>
+                    <p className="mt-8">
+                        Here's a couple featured articles:
+                    </p>
+                    <div className="mt-8">
+                        <BlogPostCard
+                            slug={"biggest-news-of-2021-by-font-size"}
+                            title={"The Biggest News of 2021 Measured by Font Size"}
+                            description={"For the last year, I've been keeping track of the font size of the headlines on cnn.com"}
+                            images={{
+                                png: headlinesChartThumbnail,
+                                png2x: headlinesChartThumbnail2x,
+                                webp: headlinesChartThumbnailWebp,
+                                webp2x: headlinesChartThumbnailWebp2x
+                            }}
+                        />
                     </div>
-                </div>
-                <div className="pt-20"></div>
+
+                    <h2 className="text-4xl text-center mt-16 text-gray-800 mb-16">Consulting</h2>
+                    <p className="mb-8">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here (I'm especially interested in helping organizations become compliant with accessibility laws):</p>
+                    <div className="flex justify-center">
+                        <div className="bg-slate-200 text-gray-800 p-8 font-bold text:lg sm:text-xl text-center w-full md:w-3/4">
+                            consulting@lorantfy.com
+                            <div>(please provide details in the first email)</div>
+                        </div>
+                    </div>
+            </div>
 
                 {/* <h3 className="text-3xl text-center mt-16 text-gray-800">Be Kind</h3>
         <ul>

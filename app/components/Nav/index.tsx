@@ -22,6 +22,9 @@ export function Nav() {
                 <li className="ml-2">
                     <NavBarLink pl={4} pr={4} pt={7} pb={7} to="/#portfolio">Portfolio</NavBarLink>
                 </li>
+                {/* <li className="ml-2">
+                    <NavBarLink pl={4} pr={4} pt={7} pb={7} to="/#consulting">Consulting</NavBarLink>
+                </li> */}
             </ul>
         </nav>
     )
