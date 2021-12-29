@@ -3,6 +3,9 @@ import * as blameToolingNotPeople from "./__posts/blame-tooling-not-people.mdx";
 import * as amateursTalkImplementationProfessionalsTalkInterfaces from "./__posts/amateurs-talk-implementation-professionals-talk-interfaces.mdx";
 import { Nav } from "~/components/Nav";
 import { Footer } from "~/components/Footer";
+import profilePicture from '~/images/profile-picture.jpg';
+import fpAdvisor from '~/images/fpadvisor.png';
+import postmediahub from '~/images/postmediahub.png';
 
 function postFromModule(mod: { filename: string, attributes: { image: string, meta: {} } }) {
   return {
@@ -28,7 +31,7 @@ export default function Index() {
         <Nav />
         <div className="pl-8 pr-8 sm:pl-16 sm:pr-16 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44 flex flex-col md:flex-row-reverse flex-1 md:justify-between items-center">
           <div className="rounded-full overflow-hidden flex-shrink-0 w-1/2 md:w-4/12 xl:w-1/4 mb-16 md:mb-0 ">
-            <img className="w-full" alt="" src="/profile-picture.jpg"></img>
+            <img className="w-full" alt="" src={profilePicture}></img>
           </div>
           <div className="md:pr-20 xl:pr-44">
             <h1 className="text-4xl text-gray-800">Hey, I'm Ben <span aria-hidden>👋</span></h1>
@@ -69,7 +72,7 @@ export default function Index() {
           <h2 className="text-4xl text-gray-800" id="portfolio">Portfolio</h2>
         </div>
         <div className="flex flex-col md:flex-row items-start">
-          <img className="block mb-10 md:mb-0 w-full md:w-1/2" alt="" src="/fpadvisor.png"></img>
+          <img className="block mb-10 md:mb-0 w-full md:w-1/2" alt="" src={fpAdvisor}></img>
           <div>
             <h3 className="text-3xl font-bold mb-8"><span role="text">FP Advisor <span className="text-gray-700 font-normal">Case Study</span></span></h3>
             <p className="mb-4">FP Advisor is Canada’s largest database of corporate information.  It's a product of the same team behind the Financial Post. It’s a useful resource, but because of the age of the website it had various accessibility concerns and was beginning to look outdated.</p>
@@ -78,7 +81,7 @@ export default function Index() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row-reverse items-start mt-16 md:mt-32">
-          <img className="block mb-10 md:mb-0 w-full md:w-1/2" alt="" src="/postmediahub.png"></img>
+          <img className="block mb-10 md:mb-0 w-full md:w-1/2" alt="" src={postmediahub}></img>
           <div>
             <h3 className="text-3xl font-bold mb-8 ">
               <span role="text">Postmedia Hub <span className="text-gray-700 font-normal">Case Study</span></span>

@@ -11,7 +11,18 @@ For the last year, I've been keeping track of the font size of the headlines on 
 
 If you haven't noticied, cnn.com adjusts the font size of their headline based on how newsworthy the article is.  For example, here's a big headline from Jan 6th with a font size of 72px:
 
-<img alt="Screenshot of CNN" className="m-auto mt-16 mb-16" style={{ width: "500px", maxWidth: "100%", border: "1px solid black" }} src="/cnn-font-size-example.png" />
+import cnnFontSizeExamplePng from '~/images/cnn-font-size-example.png';
+import cnnFontSizeExamplePng2x from '~/images/cnn-font-size-example@x2.png';
+import cnnFontSizeExampleWebp from '~/images/cnn-font-size-example.webp';
+import cnnFontSizeExampleWebp2x from '~/images/cnn-font-size-example@x2.webp';
+
+<picture>
+  <source srcSet={`${cnnFontSizeExampleWebp} 1x, ${cnnFontSizeExampleWebp2x} 2x`} type="image/webp" />
+  <source srcSet={`${cnnFontSizeExamplePng} 1x, ${cnnFontSizeExamplePng2x} 2x`} type="image/png" />
+  <img alt="Screenshot of CNN" className="m-auto mt-16 mb-16" style={{ width: "500px", maxWidth: "100%", border: "1px solid black" }} src={cnnFontSizeExamplePng} />
+</picture>
+
+
 
 As a research project, I setup a bot that checks the font size of the cnn.com headline every hour and it's been running for over a year.  Since it's near the end of the year, I thought it would be a good time to look at the results and see what they tell us, if anything
 
@@ -38,31 +49,29 @@ Here's a few highlights
 
 ## Headline with the biggest font size
 
-> 20 Years
-
-(September 11, 2021 - 136px)
+**20 Years** (Sept 11th - 136px)
 
 This headline marked the 20th aniversery of the 9/11 terrorist attacks and linked to CNN's coverage of the anniversery.  Some first responders are still struggling to get their healthcare paid for relating to injuries from 9/11. TODO: explain headline  
 
 ## Other big headlines
 
-> MOB INVADES CAPITAL
+**MOB INVADES CAPITAL** (Jan 6th - 95px)
 
-> IMPEACHED AGAIN
+**IMPEACHED AGAIN** (Jan 13th - 102px)
 
-> PRESIDENT BIDEN
+**PRESIDENT BIDEN** (Jan 20th - 102px)
 
-> ACQUITTED AGAIN
+**ACQUITTED AGAIN** (Feb 13th - 102px)
 
-> CHAUVIN GUILTY
+**CHAUVIN GUILTY** (Apr 20th - 102px)
 
-> GOP OUSTS CHENEY
+**GOP OUSTS CHENEY** (May 12th - 102px)
 
-> Democracy at risk
+**Democracy at risk** (May 28th - 102px)
 
-> BILES OUT OF TEAM FINALS
+**BILES OUT OF TEAM FINALS** (Jul 27th - 82px)
 
-> Big win for Biden
+**Big win for Biden** (Nov 6th - 100px)
 
 ## Couple observations
 

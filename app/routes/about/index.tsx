@@ -1,8 +1,20 @@
 import { LinksFunction, MetaFunction } from "remix";
+import { HtmlLinkDescriptor } from "@remix-run/react";
+
 import { Footer } from "~/components/Footer";
 import { Nav } from "~/components/Nav";
 import tallerCover from "~/images/taller-cover.jpg";
+import tallerCover2x from "~/images/taller-cover@x2.jpg";
+import tallerCoverWebp from "~/images/taller-cover.webp";
+import tallerCoverWebp2x from "~/images/taller-cover@x2.webp";
+
 import cover from "~/images/cover.jpg";
+import cover2x from "~/images/cover@x2.jpg";
+import coverWebp from "~/images/cover.webp";
+import coverWebp2x from "~/images/cover@x2.webp";
+
+import kitchener from "~/images/kitchener.jpg";
+import petrolia from "~/images/petrolia.jpg";
 
 /**
  * @see https://github.com/remix-run/remix/issues/1091
@@ -12,18 +24,24 @@ export const loader = () => {
 };
 
 export const links: LinksFunction = () => {
-    return [
-        {
-            rel: "preload",
-            href: tallerCover,
-            as: "image"
-        },
-        {
-            rel: "preload",
-            href: cover,
-            as: "image"
-        }
-    ];
+    // return [
+    //     {
+    //         rel: "preload",
+    //         as: "image",
+    //         imagesrcset: `${tallerCoverWebp} 1x, ${tallerCoverWebp2x} 2x`,
+    //         type: 'image/webp'
+    //     } as HtmlLinkDescriptor, // See: https://github.com/remix-run/remix/issues/1269
+    //     {
+    //         rel: "preload",
+    //         as: "image",
+    //         imagesrcset: `${coverWebp} 1x, ${coverWebp2x} 2x`,
+    //         type: 'image/webp'
+    //     } as HtmlLinkDescriptor // See: https://github.com/remix-run/remix/issues/1269
+    // ];
+
+    // Not preloading images for now due to various issues
+    // See: https://github.com/remix-run/remix/issues/1269
+    return [];
 };
 
 export const meta: MetaFunction = () => {
@@ -36,7 +54,13 @@ export default function About() {
             <Nav />
             <div className="sm:hidden">
                 <div className="relative">
-                    <img className="w-full brightness-50" src={tallerCover} />
+                    <picture>
+                        <source media="(min-width: 641px)" srcSet={`${coverWebp} 1x, ${coverWebp2x} 2x`} type="image/webp   " />
+                        <source media="(min-width: 641px)" srcSet={`${cover} 1x, ${cover2x} 2x`} type="image/jpeg" />
+                        <source media="(max-width: 640px)" srcSet={`${tallerCoverWebp} 1x, ${tallerCoverWebp2x} 2x`} type="image/webp" />
+                        <source media="(max-width: 640px)" srcSet={`${tallerCover} 1x, ${tallerCover2x} 2x`} type="image/jpeg" />
+                        <img alt="" className="w-full brightness-50" src={tallerCover} />
+                    </picture>
                     <div className="absolute top-0 flex justify-end p-6 font-bold w-full">
                         <div className="relative w-full">
                             <h1 className="block text-white w-full text-right">
@@ -49,7 +73,12 @@ export default function About() {
             </div>
             <div className="hidden sm:block pl-8 pr-8 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44">
                 <div className="relative w-full">
-                    <img className="w-full brightness-50" src={cover} />
+                    <picture>
+                        <source srcSet={`${coverWebp} 1x, ${coverWebp2x} 2x`} type="image/webp" />
+                        <source srcSet={`${cover} 1x, ${cover2x} 2x`} type="image/jpeg" />
+                        <img alt="" className="w-full brightness-50" src={cover} />
+                    </picture>
+
                     <div className="absolute top-0 flex justify-end p-3 sm:p-6 lg:p-12 font-bold">
                         <div className="w-full sm:w-5/6 lg:w-2/3 xl:w-1/2">
                             <h1 className="block text-white w-full text-right">
@@ -69,15 +98,15 @@ export default function About() {
                         <p>
                             I grew up in Petrolia, ON, Canada where I fit perfectly into the nerdy high-school kid stereotype.  My passion for coding started in Grade 10 when Mrs. Ruypers helped me discover the thrill of problem solving with a computer.
                         </p>
-                        <img className="block sm:hidden mt-8" alt="Victoria Playhouse, Petrolia, Ontario" src="/petrolia.jpg" />
+                        <img className="block sm:hidden mt-8" alt="Victoria Playhouse, Petrolia, Ontario" src={petrolia} />
                         <p className="mt-16">
                             I moved to Kitchener, ON for school where I went to <a className="underline" target="_blank" rel="noopener noreferrer" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">Conestoga College</a> for Software Engineering Technology.  Since then I built a 6-year career specializing in frontend development.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Senior Software Developer at ApplyBoard Inc.
                         </p>
-                        <img className="block sm:hidden mt-8" alt="Victoria Park, Kitchener, Ontario" src="/kitchener.jpg" />
+                        <img className="block sm:hidden mt-8" alt="Victoria Park, Kitchener, Ontario" src={kitchener} />
                     </div>
                     <div className="hidden sm:block flex-1 pl-4">
                         <img alt="Victoria Playhouse, Petrolia, Ontario" src="/petrolia.jpg" />
-                        <img className="mt-16" alt="Victoria Park, Kitchener, Ontario" src="/kitchener.jpg" />
+                        <img className="mt-16" alt="Victoria Park, Kitchener, Ontario" src={kitchener} />
                     </div>
                 </div>
 

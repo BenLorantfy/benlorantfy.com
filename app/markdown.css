@@ -32,4 +32,8 @@
   .markdown ul ul {
     list-style-type: circle;
   }
+
+  .markdown blockquote {
+    @apply text-gray-500 pl-4 border-l-4
+  }
 }
