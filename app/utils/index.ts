@@ -52,3 +52,16 @@ export function getPaddingClassesFromCodes(paddingCodes: { pl?: PaddingCode, pr?
 
     return [plClass,prClass,ptClass,pbClass].filter(Boolean).join(" ");
 }
+
+export const getArticleMeta = (params: { title: string, description: string, image: string }) => {
+    return {
+        title: params.title,
+        description: params.description,
+        'twitter:card': 'summary',
+        'twitter:title': params.title,
+        'twitter:description': params.description,
+        'twitter:image': params.image,
+        'og:title': params.title,
+        'og:image': params.image
+    }
+}

@@ -2,10 +2,9 @@ import { Outlet } from "remix";
 import { Footer } from "~/components/Footer";
 import { Nav } from "~/components/Nav";
 import { NavBarLink } from "~/components/NavBarLink";
-
 import profile from "~/images/profile-picture.jpg";
 
-export default function PostsLayout() {
+export default function PostsLayout(props: any) {
     return (
         <>
             <Nav />

@@ -1,96 +1,19 @@
 import { Link, useLoaderData } from "remix";
-import * as blameToolingNotPeople from "./__posts/blame-tooling-not-people.mdx";
-import * as amateursTalkImplementationProfessionalsTalkInterfaces from "./__posts/amateurs-talk-implementation-professionals-talk-interfaces.mdx";
-import * as biggestNewsOf2021ByFontSize from "./__posts/biggest-news-of-2021-by-font-size.mdx";
 import { Nav } from "~/components/Nav";
 import { Footer } from "~/components/Footer";
 import profilePicture from '~/images/profile-picture.jpg';
 import fpAdvisor from '~/images/fpadvisor.png';
 import postmediahub from '~/images/postmediahub.png';
 
-import headlinesChartThumbnail from "~/images/post-thumbnails/headlines-chart.png";
-import headlinesChartThumbnail2x from "~/images/post-thumbnails/headlines-chart@x2.png";
-import headlinesChartThumbnailWebp from "~/images/post-thumbnails/headlines-chart.webp";
-import headlinesChartThumbnailWebp2x from "~/images/post-thumbnails/headlines-chart@x2.webp";
-
-import logisticsThumbnail from "~/images/post-thumbnails/logistics.jpg";
-import logisticsThumbnail2x from "~/images/post-thumbnails/logistics@x2.jpg";
-import logisticsThumbnailWebp from "~/images/post-thumbnails/logistics.webp";
-import logisticsThumbnailWebp2x from "~/images/post-thumbnails/logistics@x2.webp";
-
-import toolsThumbnail from "~/images/post-thumbnails/tools.jpg";
-import toolsThumbnail2x from "~/images/post-thumbnails/tools@x2.jpg";
-import toolsThumbnailWebp from "~/images/post-thumbnails/tools.webp";
-import toolsThumbnailWebp2x from "~/images/post-thumbnails/tools@x2.webp";
 import { BlogPostCard } from "~/components/BlogPostCard";
-
-function postFromModule(mod: { filename: string, attributes: { image: string, meta: {} } }, images?: { png?: string, png2x?: string, jpg?: string, jpg2x?: string, webp?: string, webp2x?: string }) {
-  return {
-    slug: mod.filename.replace(/\.mdx?$/, ""),
-    images,
-    ...(mod.attributes.meta as { title: string, description: string })
-  };
-}
+import { getPosts, useAddImagesToPosts } from "~/data/posts";
 
 export function loader() {
-  return [
-    postFromModule(biggestNewsOf2021ByFontSize),
-    postFromModule(blameToolingNotPeople, { png: "/post-images/tools.jpg" }),
-    postFromModule(amateursTalkImplementationProfessionalsTalkInterfaces, { jpg: "/post-images/logistics.jpg" })
-  ];
-}
-
-/**
- * Adds images to the list of posts
- *
- * @note remix only includes images in the bundle if they are imported into
- * client-side code, so we can't move this code to `loader`
- */
-function usePostsWithImages(posts: Array<ReturnType<typeof postFromModule>>) {
-  return posts.map((post) => {
-    if (post.slug === 'biggest-news-of-2021-by-font-size') {
-      return {
-        ...post,
-        images: {
-          png: headlinesChartThumbnail,
-          png2x: headlinesChartThumbnail2x,
-          webp: headlinesChartThumbnailWebp,
-          webp2x: headlinesChartThumbnailWebp2x
-        }
-      }
-    }
-
-    if (post.slug === 'amateurs-talk-implementation-professionals-talk-interfaces') {
-      return {
-        ...post,
-        images: {
-          jpg: logisticsThumbnail,
-          jpg2x: logisticsThumbnail2x,
-          webp: logisticsThumbnailWebp,
-          webp2x: logisticsThumbnailWebp2x
-        }
-      }
-    }
-
-    if (post.slug === 'blame-tooling-not-people') {
-      return {
-        ...post,
-        images: {
-          jpg: toolsThumbnail,
-          jpg2x: toolsThumbnail2x,
-          webp: toolsThumbnailWebp,
-          webp2x: toolsThumbnailWebp2x
-        }
-      }
-    }
-
-    return post;
-  });
+  return getPosts();
 }
 
 export default function Index() {
-  const posts = useLoaderData<ReturnType<typeof loader>>();
-  const postsWithImages = usePostsWithImages(posts);
+  const posts = useAddImagesToPosts(useLoaderData<ReturnType<typeof loader>>());
 
   return (
     <>
@@ -120,7 +43,7 @@ export default function Index() {
           <h2 className="text-4xl text-gray-800" id="blog">Blog</h2>
         </div>
         <div className="flex flex-wrap gap-8 items-start">
-          {postsWithImages.map((post) => (
+          {posts.map((post) => (
             post.images && (
               <BlogPostCard
                 slug={post.slug}
