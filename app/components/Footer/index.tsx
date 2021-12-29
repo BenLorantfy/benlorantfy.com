@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "remix";
 import { ExternalLink } from "../ExternalLink";
 import { Logo } from "../Logo";
 import { NavBarLink } from "../NavBarLink";
