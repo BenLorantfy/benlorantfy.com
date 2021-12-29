@@ -60,8 +60,8 @@ export const getArticleMeta = (params: { title: string, description: string, ima
         'twitter:card': 'summary',
         'twitter:title': params.title,
         'twitter:description': params.description,
-        'twitter:image': params.image,
+        'twitter:image': `https://benlorantfy.com${params.image}`,
         'og:title': params.title,
-        'og:image': params.image
+        'og:image': `https://benlorantfy.com${params.image}`
     }
 }
