@@ -1,0 +1,148 @@
+# The No-Nonsense Styling Method
+
+The “No-Nonsense Styling Method” is a set of guidelines that I've compiled that makes styling less surprising and more predictable.  Specifically, it increases the scalability, maintainability, readability, and ease of change of your CSS.
+
+import balloonsJpg from '~/images/balloons.jpg';
+import balloonsJpg2x from '~/images/balloons@x2.jpg';
+import balloonsWebp from '~/images/balloons.webp';
+import balloonsWebp2x from '~/images/balloons@x2.webp';
+
+<picture>
+  <source srcSet={`${balloonsWebp} 1x, ${balloonsWebp2x} 2x`} type="image/webp" />
+  <source srcSet={`${balloonsJpg} 1x, ${balloonsJpg2x} 2x`} type="image/jpeg" />
+  <img alt="" className="m-auto mt-16 mb-16" style={{ width: "845px", maxWidth: "100%" }} src={balloonsJpg} />
+</picture>
+
+These guidelines are based on my personal experience working with CSS in many different codebases of varying sizes and which used varying styling strategies.  
+
+However, the language here is normative for clarity only.  It's not meant to be dogmatic and should be taken in context with the reader's own experience. It's mostly useful for developing highly interactive web apps and not as applicable to other types of website development.
+
+The 5 guidelines are:
+
+1. Re-use components instead of classNames
+2. No components should support className
+3. No nesting, descendant selectors, or child selectors
+4. Use locally scoped styling only
+5. No CSS pre-processors (SASS, LESS) or naming philosophies (BEM)
+
+> The examples are in react but it's applicable to any type of web app development.
+
+# 1. Re-use components instead of classNames
+
+The number one rule of the “no-nonsense styling method” is to make your main “reusable unit of styling” be components instead of classNames.
+
+**Bad:**
+
+```jsx
+<button type="button" className="btn btn-primary"></button>
+```
+
+**Good:**
+
+```jsx
+<Button color="primary"></Button>
+```
+
+This approach embraces the power of component-based architecture.  The superior unit of composition is the component - not the className.
+
+Why?
+
+- Components can make behaviour reusable instead of just styling
+- Components can hide complex or inelegant implementation details (e.g. render multiple DOM nodes instead of just one, awkward platform apis such as `type="button"`, etc.)
+    - This makes the api more expressive and makes changes easier later
+- Components can be made type-safe using typescript
+- Components can expose powerful and expressive props as explained in the guideline below
+
+# 2. No components should support className
+
+Components should not support the `className` prop.  Instead, they should support a small number of specific props.
+
+**Bad:**
+
+```jsx
+<Button className="colorPrimary smallMarginLeft" />
+```
+
+**Good:**
+
+```jsx
+<Button color="primary" marginLeft="sm" />
+```
+
+Why?
+
+- **Harder to make changes.**  Supporting className makes it much harder to make changes to the component in the future without breaking something.  You have no idea what the consumer is doing with that className.  It could be using descendant selectors, using `!important`, etc.  It will be hard to change the DOM structure inside the component or make stylistic changes without risk of breaking a consumer.
+- **Visual consistency.**  Allowing the “all powerful” className means consumers can completely change the style of your component.  This makes it much harder to enforce visual consistency which is important for branding and user experience.
+- **Props are more powerful and more expressive.**  You can do very cool things with carefully designed props:
+    - You can use string enums to limit the possible values.  For example, a `marginLeft` prop could take codes such as `sm` , `md`, and `lg` .  This prevents magic numbers in the codebase and enforces visual consistency.  Another example is `color="primary"` to enforce use of allowed colors only.
+    - You can use what some people call “responsive array syntax” that looks like: `marginLeft={["none", "lg"]}`.  This means no margin on small screens and a large margin on medium screens.  This is a very concise syntax for implementing responsive design.  Don't focus too much on whether you think this is weird - it's just one example of the powerful things you can do with props instead of classNames.
+- **Platform agnostic.**  Maybe you want to build a mobile app with the same component APIs (using something like `react-native`).  This becomes possible if you don't expose className.  (Not everyone needs to be platform agnostic - I get it - but sometimes you do)
+
+# 3. No nesting, descendant selectors, or child selectors
+
+Nesting, descendent selectors, or child selectors can be surprising when they are encountered.   Developers often have to essentially debug where these extra styles are coming from.  In the worst case, this can become very complex and hard to follow.  
+
+It's much simpler and more consistent to just avoid this.
+
+ 
+
+**Bad:**
+
+```jsx
+<div className="authorSection">
+  <div>Arthur Conan Doyle</div>
+  <p>Arthur Conan Doyle is a British writer and physician. He created the character Sherlock Holmes in 1887 for A Study in Scarlet, the first of four novels and fifty-six short stories about Holmes and Dr. Watson.</p>
+</div>
+
+.authorSection div {
+  color: red;
+}
+
+.authorSection p {
+  color: blue;
+}
+```
+
+**Good:**
+
+```jsx
+<AuthorSection>
+  <AuthorName>Ben Lorantfy</AuthorName>
+  <AuthorBio>lorem ipsum</AuthorBio>
+</AuthorSection>
+```
+
+**Better:**
+
+```jsx
+<Box>
+  <Tyography color="primary">Ben Lorantfy</Tyography>
+  <Tyography color="secondary">lorem ipsum</Tyography>
+</Box>
+```
+
+
+> There's on exception here: if you're using `:hover` or `:focus-within` (to make a custom `TextField`, for example) it's fine to use descendent selectors.  But these selectors should be done in a non-brittle way and without using classNames.  `styled-components` offers a [specific syntax](https://styled-components.com/docs/advanced#referring-to-other-components) that works well for this use-case.
+
+# 4. Use locally scoped styling only
+
+Global styles is the largest anti-pattern in CSS.  Global classNames cause numerous maintenance nightmares; they break encapsulation and information hiding, cause poor readability and discoverability, and pollute the global namespace.
+
+Locally scoped CSS is an approach to CSS that fixes the problem of global styles.  Locally scoped CSS can be implemented with one of several available technologies that encapsulates CSS so that it is only usable within one component.  [css-modules](https://github.com/css-modules/css-modules), for example, prefixes classNames at build time so they are only usable within the components that import them.
+
+**Bad:**
+
+- globalStyles.css
+
+**Good:**
+
+- css-modules
+- styled-components
+- emotion
+
+> **One exception:** it's probably fine to use a framework like tailwindcss but only if you can enforce these utility classes are only used to build reusable components as mentioned in guideline #1.  This can be enforced via linting (preferably) or code review guidelines.
+> 
+
+# 5. No CSS pre-processors (SASS, LESS) or naming philosophies (BEM)
+
+With the above guidelines, you don't need SASS, LESS, BEM, etc.  Plain old CSS works just fine.  This way the learning curve is limited to just CSS and is not made steeper by any extra tools.  It also cuts down on the build time.

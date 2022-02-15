@@ -110,7 +110,7 @@ export default function About() {
                         </p>
                         <img className="block sm:hidden mt-8" alt="Victoria Playhouse, Petrolia, Ontario" src={petrolia} />
                         <p className="mt-16">
-                            I moved to Kitchener, ON for school where I went to Conestoga College for Software Engineering Technology.  Since then I've built a 6+ year career specializing in frontend development and <a className="underline" href="http://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php">won</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/05/ontario_skills_2015.php">some</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">awards</a>.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Senior Software Developer at ApplyBoard Inc.
+                            I moved to Kitchener, ON for school where I went to Conestoga College for Software Engineering Technology.  Since then I've built a 6+ year career specializing in frontend development and <a className="underline" href="http://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php">won</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/05/ontario_skills_2015.php">some</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">awards</a>.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Staff Software Developer at ApplyBoard Inc.
                         </p>
                         <p className="mt-16">
                             You can checkout my <a className="underline" href="https://www.linkedin.com/in/ben-lorantfy">linkedin here</a> for more info
@@ -129,7 +129,7 @@ export default function About() {
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Kind</h3>
                         Kindness is a good enough value by itself, but kindness also helps get things done.  Building great relationships with people around you makes you more effective.
                         <ul className="mt-8">
-                            <li><span className="font-bold">Default to trust.</span>  It's better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychological safe and enables them to do their best work</li>
+                            <li><span className="font-bold">Default to trust.</span>  It's better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychologically safe and enables them to do their best work</li>
                             <li className="mt-4"><span className="font-bold">Assume good intent.</span>  People almost always have good intentions behind their actions.  If something someone does seems surprising, assume good intent and hold your judgement until you see their perspective and constraints.</li>
                             <li className="mt-4"><span className="font-bold">Blame processes instead of people.</span>  It's more effective to blame and improve faulty processes (or tooling) than to blame individuals.</li>
                         </ul>

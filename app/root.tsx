@@ -10,13 +10,19 @@ import {
 import type { MetaFunction } from "remix";
 
 import styles from "./tailwind.css";
+import { getArticleMeta } from "./utils";
+import previewImage from "./images/card.png";
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "Ben Lorantfy" };
+  return getArticleMeta({
+    title: 'Ben Lorantfy',
+    description: "Hey, I'm Ben. I build delightful user experiences that are fast, accessible, responsive, and maintainable. I also try to enable others to do the same",
+    image: previewImage
+  });
 };
 
 export default function App() {
@@ -29,6 +35,8 @@ export default function App() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
+        <script src="https://cdn.usefathom.com/script.js" data-spa="auto" data-site="TUEPHKNB" defer></script>
+
         <Meta />
         <Links />
       </head>

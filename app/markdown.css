@@ -8,7 +8,8 @@
   }
 
   .markdown {
-    @apply text-lg
+    @apply text-lg;
+    line-height: 1.9em;
   }
 
   .markdown h1 {
@@ -20,8 +21,8 @@
   }
 
   .markdown p {
-    @apply mb-4;
-    @apply mt-4;
+    @apply mb-6;
+    @apply mt-6;
   }
 
   .markdown ul {
@@ -31,6 +32,24 @@
 
   .markdown ul ul {
     list-style-type: circle;
+  }
+
+  .markdown ol {
+    list-style-type: decimal;
+    /* padding-inline-start: 40px; */
+    padding-left: 40px;
+  }
+
+  pre {
+    background-color: rgb(247, 246, 243);
+    padding: 30px;
+    overflow: scroll;
+  }
+
+  code {
+    background-color: rgb(247, 246, 243);
+    padding: 2px;
+    margin: -2px;
   }
 
   .markdown blockquote {
