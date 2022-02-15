@@ -10,7 +10,7 @@ import balloonsWebp2x from '~/images/balloons@x2.webp';
 <picture>
   <source srcSet={`${balloonsWebp} 1x, ${balloonsWebp2x} 2x`} type="image/webp" />
   <source srcSet={`${balloonsJpg} 1x, ${balloonsJpg2x} 2x`} type="image/jpeg" />
-  <img alt="" className="m-auto mt-16 mb-16" style={{ width: "845px", maxWidth: "100%" }} src={balloonsJpg} />
+  <img alt="" className="m-auto mt-16 mb-16" width={845} height={469} style={{ width: "845px", height: "auto", maxWidth: "100%" }} src={balloonsJpg} />
 </picture>
 
 These guidelines are based on my personal experience working with CSS in many different codebases of varying sizes and which used varying styling strategies.  
