@@ -116,13 +116,13 @@ It's much simpler and more consistent to just avoid this.
 
 ```jsx
 <Box>
-  <Tyography color="primary">Ben Lorantfy</Tyography>
-  <Tyography color="secondary">lorem ipsum</Tyography>
+  <Typography color="primary">Ben Lorantfy</Typography>
+  <Typography color="secondary">lorem ipsum</Typography>
 </Box>
 ```
 
 
-> There's on exception here: if you're using `:hover` or `:focus-within` (to make a custom `TextField`, for example) it's fine to use descendent selectors.  But these selectors should be done in a non-brittle way and without using classNames.  `styled-components` offers a [specific syntax](https://styled-components.com/docs/advanced#referring-to-other-components) that works well for this use-case.
+> There's one exception here: if you're using `:hover` or `:focus-within` (to make a custom `TextField`, for example) it's fine to use descendent selectors.  But these selectors should be done in a non-brittle way and without using classNames.  `styled-components` offers a [specific syntax](https://styled-components.com/docs/advanced#referring-to-other-components) that works well for this use-case.
 
 # 4. Use locally scoped styling only
 
