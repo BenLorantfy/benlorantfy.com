@@ -1,40 +1,23 @@
 {
+  "name": "blog",
+  "version": "0.1.0",
   "private": true,
-  "name": "portfolio-site",
-  "description": "",
-  "license": "",
   "scripts": {
-    "build": "npm run build:css && remix build",
-    "build:css": "tailwindcss -i ./app/markdown.css -o ./app/tailwind.css --minify",
-    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -i ./app/markdown.css -o ./app/tailwind.css --watch",
-    "postinstall": "remix setup node",
-    "start": "remix-serve build",
-    "deploy": "fly deploy"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@remix-run/react": "^1.1.1",
-    "@remix-run/serve": "^1.1.1",
-    "chart.js": "^3.7.0",
-    "md5": "^2.3.0",
-    "react": "^17.0.2",
-    "react-chartjs-2": "^4.0.0",
-    "react-dom": "^17.0.2",
-    "remix": "^1.1.1"
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.1.1",
-    "@types/md5": "^2.3.1",
-    "@types/react": "^17.0.24",
-    "@types/react-dom": "^17.0.9",
-    "@types/tailwindcss": "^2.2.4",
-    "concurrently": "^6.5.1",
-    "tailwindcss": "^3.0.7",
-    "typescript": "^4.1.2",
-    "web-image-optimizer": "^1.1.0"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "sideEffects": false
+    "@types/node": "17.0.21",
+    "@types/react": "17.0.40",
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0",
+    "typescript": "4.6.2"
+  }
 }
