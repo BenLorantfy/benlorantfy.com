@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                     <div className="absolute top-0 flex justify-end p-6 font-bold w-full">
                         <div className="relative w-full">
                             <h1 className="block text-white w-full text-right">
-                                <span className="block text-3xl">Hey, I'm Ben</span>
+                                <span className="block text-3xl">{"Hey, I'm Ben"}</span>
                             </h1>
                             <p className="text-sm mt-5 block text-white w-full text-right">I build <span className="bg-fuchsia-400/50">delightful user experiences</span><br /> that are fast, accessible,<br /> responsive, and <br /> maintainable.  <br /><br /> I also try to <span className="bg-indigo-400/50">enable others</span><br /> to do the same</p>
                         </div>
@@ -28,16 +28,16 @@ const Home: NextPage = () => {
             <div className="hidden sm:block pl-8 pr-8 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44">
                 <div className="relative w-full">
                     <div className='w-full brightness-50'>
-                        <Image layout="responsive" src={cover} />
+                        <Image layout="responsive" alt="" src={cover} />
                     </div>
 
                     <div className="absolute top-0 flex justify-end p-3 sm:p-6 lg:p-12 font-bold">
                         <div className="w-full sm:w-5/6 lg:w-2/3 xl:w-1/2">
                             <h1 className="block text-white w-full text-right">
                                 <span className="hidden sm:block text-5xl lg:text-5xl xl:text-6xl">Hey,</span>
-                                <span className="hidden sm:block text-4xl lg:text-4xl xl:text-5xl mt-6 lg:mt-8">I'm Ben</span>
+                                <span className="hidden sm:block text-4xl lg:text-4xl xl:text-5xl mt-6 lg:mt-8">{"I'm Ben"}</span>
 
-                                <span className="block sm:hidden text-3xl">Hey, I'm Ben</span>
+                                <span className="block sm:hidden text-3xl">{"Hey, I'm Ben"}</span>
                             </h1>
                             <p className="text-md sm:text-lg md:text-xl lg:text-xl xl:text-2xl mt-5 sm:mt-8 lg:mt-10 xl:mt-16  block text-white w-full text-right">I build <span className="bg-fuchsia-400/50">delightful user experiences</span> that are fast, accessible, responsive, and maintainable.  I also try to <span className="bg-indigo-400/50">enable others</span> to do the same</p>
                         </div>
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
                             <Image layout='responsive' alt="Victoria Playhouse, Petrolia, Ontario" src={petrolia} />
                         </div>
                         <p className="mt-16">
-                            I moved to Kitchener, ON for school where I went to Conestoga College for Software Engineering Technology.  Since then I've built a 6+ year career specializing in frontend development and <a className="underline" href="http://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php">won</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/05/ontario_skills_2015.php">some</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">awards</a>.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Staff Software Developer at ApplyBoard Inc.
+                            I moved to Kitchener, ON for school where I went to Conestoga College for Software Engineering Technology.  Since then I&apos;ve built a 6+ year career specializing in frontend development and <a className="underline" href="http://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php">won</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/05/ontario_skills_2015.php">some</a> <a className="underline" href="http://blogs1.conestogac.on.ca/news/2015/06/conestoga_students_win_at_nati.php">awards</a>.  My recent experience includes leading frontend development at Postmedia I/O, starting my own consulting company, and most recently working as a Staff Software Developer at ApplyBoard Inc.
                         </p>
                         <p className="mt-16">
                             You can checkout my <a className="underline" href="https://www.linkedin.com/in/ben-lorantfy">linkedin here</a> for more info
@@ -77,14 +77,14 @@ const Home: NextPage = () => {
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Kind</h3>
                         Kindness is a good enough value by itself, but kindness also helps get things done.  Building great relationships with people around you makes you more effective.
                         <ul className="mt-8">
-                            <li><span className="font-bold">Default to trust.</span>  It's better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychologically safe and enables them to do their best work</li>
+                            <li><span className="font-bold">Default to trust.</span>  It&apos;s better to give people trust upfront instead of making them prove themselves.  This helps make people feel psychologically safe and enables them to do their best work</li>
                             <li className="mt-4"><span className="font-bold">Assume good intent.</span>  People almost always have good intentions behind their actions.  If something someone does seems surprising, assume good intent and hold your judgement until you see their perspective and constraints.</li>
-                            <li className="mt-4"><span className="font-bold">Blame processes instead of people.</span>  It's more effective to blame and improve faulty processes (or tooling) than to blame individuals.</li>
+                            <li className="mt-4"><span className="font-bold">Blame processes instead of people.</span>  It&apos;s more effective to blame and improve faulty processes (or tooling) than to blame individuals.</li>
                         </ul>
                     </div>
                     <div className="flex-1">
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Professional</h3>
-                        Software engineers should act the same way doctors or lawyers work.  They don't betray their ethics, values, or quality standards because of tight schedules.  Imagine if a doctor took a riskier move during a surgery because their manager said it was taking too long.
+                        Software engineers should act the same way doctors or lawyers work.  They don&apos;t betray their ethics, values, or quality standards because of tight schedules.  Imagine if a doctor took a riskier move during a surgery because their manager said it was taking too long.
                         <ul className="mt-8">
                             <li><span className="font-bold">Take pride in your work.</span>  Professionals are able to send a link of their own code if needed to their peers and be proud of it.</li>
                             <li className="mt-4"><span className="font-bold">Push back.</span>  Professionals push back when a manager asks them to skip accessibility, automated tests, code review, etc.</li>
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
                     </div>
                     <div className="flex-1">
                         <h3 className="text-3xl text-center mt-16 text-gray-800 font-bold mb-8">Be Impactful</h3>
-                        You can choose to work somewhere you're proud of and where you feel like you're making people's lives better.
+                        You can choose to work somewhere you&apos;re proud of and where you feel like you&apos;re making people&apos;s lives better.
                         <ul className="mt-8">
                             <li><span className="font-bold">Do big things.</span>  Do work that improves the lives of many other people</li>
                             <li className="mt-4"><span className="font-bold">Multiply your output.</span>  Try to find a way so every unit of work you do is multiplied by other people.  This allows you to have a bigger impact than you could working alone.  Be multiplicative instead of additive.</li>
@@ -103,22 +103,22 @@ const Home: NextPage = () => {
 
                 <div style={{ width: "100%", maxWidth: "845px", margin: "auto" }}>
                     <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Reading</h2>
-                    <p>When we read we see the world through other's eyes, not just our own.  It's the best way to refine your craft.  Below is my curation of books I've read and some notes / comments (still need to add my notes here 😅).</p>
+                    <p>When we read we see the world through other&apos;s eyes, not just our own.  It&apos;s the best way to refine your craft.  Below is my curation of books I&apos;ve read and some notes / comments (still need to add my notes here 😅).</p>
                     <div className="flex gap-8" style={{ width: "100%", maxWidth: "845px", margin: "auto" }}>
                         <div className="flex-1">
                             <h2 className="text-3xl text-center mt-16 text-gray-800">Book Notes</h2>
                             <ul>
                                 <li>Peopleware</li>
                                 <li>The Clean Coder</li>
-                                <li>The Manager's Path</li>
-                                <li>An Astronaut's Guide to Life on Earth</li>
+                                <li>The Manager&apos;s Path</li>
+                                <li>An Astronaut&apos;s Guide to Life on Earth</li>
                                 <li>Elon Musk</li>
                                 <li>The Ride of a Lifetime</li>
                                 <li>SCRUM</li>
                                 <li>Losing the Signal</li>
                                 <li>The Martian</li>
                                 <li>Steve Jobs</li>
-                                <li>The Hitchhiker's Guide to the Galaxy</li>
+                                <li>The Hitchhiker&apos;s Guide to the Galaxy</li>
                             </ul>
                         </div>
                     </div>
@@ -126,13 +126,13 @@ const Home: NextPage = () => {
 
                     <h2 className="text-4xl text-center mb-16 mt-24 text-gray-800">Writing</h2>
                     <p>
-                        I also write.  Writing, like teaching, is the best way to figure out if you've truly internalized your understanding of a topic.
+                        I also write.  Writing, like teaching, is the best way to figure out if you&apos;ve truly internalized your understanding of a topic.
                     </p>
                     <p className="mt-8">
                         I also subscribe to the idea of a digital garden.  I try to continuously tend to and prune articles I write to prevent them from becoming stale.
                     </p>
                     <p className="mt-8">
-                        Here's a couple featured articles:
+                        Here&apos;s a couple featured articles:
                     </p>
                     <div className="mt-8">
                         {/* <BlogPostCard
@@ -149,7 +149,7 @@ const Home: NextPage = () => {
                     </div>
 
                     <h2 className="text-4xl text-center mt-16 text-gray-800 mb-16">Consulting</h2>
-                    <p className="mb-8">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here (I'm especially interested in helping organizations become compliant with accessibility laws):</p>
+                    <p className="mb-8">I currently only take projects that are both well-paid and interesting.  If your project fits that criteria, you can pitch it to me here (I&apos;m especially interested in helping organizations become compliant with accessibility laws):</p>
                     <div className="flex justify-center">
                         <div className="bg-slate-200 text-gray-800 p-8 font-bold text:lg sm:text-xl text-center w-full md:w-3/4">
                             consulting@lorantfy.com
