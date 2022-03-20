@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@benlorantfy/notion-blocks-markdown-parser": "5.1.3",
+    "@benlorantfy/notion-types": "5.1.1",
+    "@notionhq/client": "^1.0.4",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"

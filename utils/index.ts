@@ -53,6 +53,9 @@ export function getPaddingClassesFromCodes(paddingCodes: { pl?: PaddingCode, pr?
     return [plClass,prClass,ptClass,pbClass].filter(Boolean).join(" ");
 }
 
+export type PropsFromGetStaticProps<T extends () => Promise<({ props: any })> | ({ props: any })> = Awaited<ReturnType<T>>["props"];
+
+
 // export const getArticleMeta = (params: { title: string, description: string, image: string }) => {
 //     return {
 //         title: params.title,
