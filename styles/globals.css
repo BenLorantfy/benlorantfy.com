@@ -5,3 +5,59 @@
 body,html,#__next {
     height: 100%;
 }
+
+@layer base {
+    .sr-only {
+      user-select: none;
+    }
+  
+    .markdown {
+      @apply text-lg;
+      line-height: 1.9em;
+    }
+  
+    .markdown h1 {
+      @apply text-gray-800 text-4xl text-center font-bold mt-8 mb-8 md:mt-16 md:mb-16;
+    }
+  
+    .markdown h2 {
+      @apply text-gray-800 text-2xl font-bold mt-8 mb-4;
+    }
+  
+    .markdown p {
+      @apply mb-6;
+      @apply mt-6;
+    }
+  
+    .markdown ul {
+      padding-left: 40px;
+      list-style-type: disc;
+    }
+  
+    .markdown ul ul {
+      list-style-type: circle;
+    }
+  
+    .markdown ol {
+      list-style-type: decimal;
+      /* padding-inline-start: 40px; */
+      padding-left: 40px;
+    }
+  
+    pre {
+      background-color: rgb(247, 246, 243);
+      padding: 30px;
+      overflow: scroll;
+    }
+  
+    code {
+      background-color: rgb(247, 246, 243);
+      padding: 2px;
+      margin: -2px;
+    }
+  
+    .markdown blockquote {
+      @apply text-gray-500 pl-4 border-l-4
+    }
+  }
+  
