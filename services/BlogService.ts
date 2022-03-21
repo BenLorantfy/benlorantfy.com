@@ -19,8 +19,15 @@ export class BlogService {
             throw new Error("Could not find page with this slug");
         }
 
+        const blocks = await this.getBlocks(pageId);
+
+        const markdown = this.parser.parse(blocks);
+        return markdown;
+    }
+
+    async getBlocks(blockId: string): Promise<Array<Block>> {
         const response = await this.notion.blocks.children.list({
-            block_id: pageId,
+            block_id: blockId,
             page_size: 200,
         });
 
@@ -28,8 +35,13 @@ export class BlogService {
             throw new Error("Response from notion was not expected");
         }
 
-        const markdown = this.parser.parse(response.results);
-        return markdown;
+        for (let result of response.results) {
+            if (result.has_children) {
+                (result as any)[result.type].children = await this.getBlocks(result.id);
+            }
+        }
+
+        return response.results;
     }
 
     areBlocks(blocks: ListBlockChildrenResponse["results"]): blocks is Array<Block>  {
