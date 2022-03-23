@@ -5,6 +5,8 @@ import cover from "../assets/cover.jpg";
 import Image from 'next/image';
 import kitchener from "../assets/kitchener.jpg";
 import petrolia from "../assets/petrolia.jpg";
+import { BlogPostCard } from '../components/BlogPostCard';
+import { config } from '../config';
 
 const Home: NextPage = () => {
   return (
@@ -135,17 +137,12 @@ const Home: NextPage = () => {
                         Here&apos;s a couple featured articles:
                     </p>
                     <div className="mt-8">
-                        {/* <BlogPostCard
-                            slug={"biggest-news-of-2021-by-font-size"}
-                            title={"The Biggest News of 2021 Measured by Font Size"}
-                            description={"For the last year, I've been keeping track of the font size of the headlines on cnn.com"}
-                            images={{
-                                png: headlinesChartThumbnail,
-                                png2x: headlinesChartThumbnail2x,
-                                webp: headlinesChartThumbnailWebp,
-                                webp2x: headlinesChartThumbnailWebp2x
-                            }}
-                        /> */}
+                        <BlogPostCard 
+                            slug={"the-no-nonsense-styling-method"}
+                            title={config.articles['the-no-nonsense-styling-method'].title}
+                            description={config.articles['the-no-nonsense-styling-method'].description}
+                            image={config.articles['the-no-nonsense-styling-method'].image}
+                        />
                     </div>
 
                     <h2 className="text-4xl text-center mt-16 text-gray-800 mb-16">Consulting</h2>
