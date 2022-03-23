@@ -23,7 +23,7 @@ export function AboutTheAuthor() {
                 </p>
                 <div className="flex-shrink-0 w-5/12 sm:w-1/4 mt-8 sm:mt-0">
                     <div className="w-full rounded-full overflow-hidden">
-                        <Image layout="responsive" src={profilePicture} />
+                        <Image alt="" layout="responsive" src={profilePicture} />
                     </div>
                 </div>
             </div>

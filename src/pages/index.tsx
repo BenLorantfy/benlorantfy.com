@@ -40,6 +40,7 @@ const Home: NextPage = () => {
         <div className="flex flex-wrap gap-8 items-start">
           {Object.entries(config.articles).map(([slug, article]) => (
             <BlogPostCard 
+              key={slug}
               slug={slug}
               title={article.title}
               description={article.description}

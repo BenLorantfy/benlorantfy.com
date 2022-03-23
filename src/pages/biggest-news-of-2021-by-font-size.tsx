@@ -50,7 +50,7 @@ function Page(props: PropsFromGetStaticProps<typeof getStaticProps>) {
                 ),
                 '[[cnn-screenshot]]': (
                     <div style={{ border: "2px solid black" }}>
-                        <Image src={cnnScreenshot} />
+                        <Image alt="Screenshot of cnn.com with a large headline" src={cnnScreenshot} />
                     </div>
                 )
             }}
