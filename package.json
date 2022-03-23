@@ -12,8 +12,10 @@
     "@benlorantfy/notion-blocks-markdown-parser": "5.1.4",
     "@benlorantfy/notion-types": "5.1.1",
     "@notionhq/client": "^1.0.4",
+    "chart.js": "^3.7.1",
     "next": "12.1.0",
     "react": "17.0.2",
+    "react-chartjs-2": "^4.0.1",
     "react-dom": "17.0.2",
     "react-markdown": "^8.0.1"
   },

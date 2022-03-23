@@ -6,6 +6,8 @@ import fpAdvisor from '../assets/fpadvisor.png';
 import postmediahub from '../assets/postmediahub.png';
 import { Footer } from '../components/Footer';
 import { Nav } from '../components/Nav';
+import { BlogPostCard } from '../components/BlogPostCard';
+import { config } from '../config';
 
 const Home: NextPage = () => {
   return (
@@ -36,16 +38,14 @@ const Home: NextPage = () => {
           <h2 className="text-4xl text-gray-800" id="blog">Blog</h2>
         </div>
         <div className="flex flex-wrap gap-8 items-start">
-          {/* {posts.map((post) => (
-            post.images && (
-              <BlogPostCard
-                slug={post.slug}
-                title={post.title}
-                description={post.description}
-                images={post.images}
-              />
-            )
-          ))} */}
+          {Object.entries(config.articles).map(([slug, article]) => (
+            <BlogPostCard 
+              slug={slug}
+              title={article.title}
+              description={article.description}
+              image={article.image}
+            />
+          ))}
         </div>
       </div>
       <div className="pl-8 pr-8 sm:pl-16 sm:pr-16 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44 min-h-full mt-16 md:mt-32">

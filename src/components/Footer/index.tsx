@@ -42,7 +42,7 @@ export function Footer() {
                     </ul>
                 </div>
                 <div className="flex-1 mt-16 md:mt-0">
-                    <div role="text">Made with <span className="sr-only">love</span><span aria-hidden>❤️</span> in Kitchener, <span aria-hidden>ON</span><span className="sr-only">Ontario</span></div>
+                    <div role="text">Made with<span className="sr-only">love</span><span aria-hidden className="mono"> ❤️&nbsp;&nbsp;</span>in Kitchener, <span aria-hidden>ON</span><span className="sr-only">Ontario</span></div>
                     <div role="text" className="mt-4">All rights reserved <span className="sr-only">. Copyright</span><span aria-hidden>©</span> Ben Lorantfy {new Date().getFullYear()}</div>
                 </div>
      
