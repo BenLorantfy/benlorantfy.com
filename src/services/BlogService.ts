@@ -2,6 +2,7 @@ import { Client } from "@notionhq/client";
 import { NotionBlocksMarkdownParser } from "@benlorantfy/notion-blocks-markdown-parser";
 import { Block } from "@benlorantfy/notion-types";
 import { ListBlockChildrenResponse } from "@notionhq/client/build/src/api-endpoints";
+import { config } from "../config";
 
 export class BlogService {
     notion = new Client({
@@ -9,12 +10,8 @@ export class BlogService {
     })
     parser = NotionBlocksMarkdownParser.getInstance();
 
-    mapPageIdsToSlugs: { [key: string]: string|undefined } = {
-        "the-no-nonsense-styling-method": "cc50b4aa8c9b4fd8bd6253820bccf454"
-    }
-
-    async getPageMarkdown(pageSlug: string): Promise<string> {
-        const pageId = this.mapPageIdsToSlugs[pageSlug];
+    async getPageMarkdown(pageSlug: keyof typeof config.articles): Promise<string> {
+        const pageId = config.articles[pageSlug].cmsID;
         if (!pageId) {
             throw new Error("Could not find page with this slug");
         }
