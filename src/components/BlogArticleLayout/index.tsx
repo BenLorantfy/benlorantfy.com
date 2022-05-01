@@ -6,11 +6,27 @@ import { Footer } from "../Footer";
 import { HeroImage } from "../HeroImage";
 import { Nav } from "../Nav";
 import Image from 'next/image'
+import Head from 'next/head'
 
 export function BlogArticleLayout(props: { slug: keyof typeof config.articles, markdown: string, widgets?: { [key: string]: ReactNode } }) {
     const articleParts = props.markdown.split(/(\[\[.+?\]\])/g);
     return (
         <>
+            <Head>
+                <title>{config.articles[props.slug].title}</title>
+                <meta name="description" content={config.articles[props.slug].description} />
+                <meta name="author" content="Ben Lorantfy" />
+                
+                {/* LinkedIn */}
+                <meta property="og:title" content={config.articles[props.slug].title} />
+                <meta name="image" property="og:image" content={convertToAbsoluteUrl(config.articles[props.slug].image.src)} />
+                
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content={config.articles[props.slug].title} />
+                <meta name="twitter:description" content={config.articles[props.slug].description} />
+                <meta name="twitter:image" content={convertToAbsoluteUrl(config.articles[props.slug].image.src)} />
+            </Head>
             <Nav />
             <div className="markdown w-full m-auto min-h-full pl-8 pr-8" style={{ maxWidth: "845px" }}>
                 {articleParts.map((articlePart, idx) => {
@@ -53,4 +69,12 @@ export function BlogArticleLayout(props: { slug: keyof typeof config.articles, m
             <Footer />
         </>
     );
+}
+
+const convertToAbsoluteUrl = (url: string) => {
+    if (url.startsWith('/')) {
+        return `https://www.benlorantfy.com${url}`;
+    }
+
+    return url;
 }
