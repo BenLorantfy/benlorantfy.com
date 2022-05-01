@@ -6,6 +6,7 @@ export function HeroImage(props: { slug: keyof typeof config.articles }) {
         <Image
             alt=""
             src={config.articles[props.slug].image}
+            layout='responsive'
         />
     )
 }

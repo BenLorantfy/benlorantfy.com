@@ -2,6 +2,7 @@ import balloons from './assets/post-thumbnails/balloons@x2.jpg';
 import logistics from './assets/post-thumbnails/logistics@x2.jpg';
 import tools from './assets/post-thumbnails/tools@x2.jpg';
 import headlinesChart from './assets/post-thumbnails/headlines-chart@x2.png';
+import homer from './assets/post-thumbnails/homer.jpg';
 
 export const config = {
     articles: {
@@ -28,6 +29,12 @@ export const config = {
             image: headlinesChart,
             cmsID: '951af48e111341058bf7124e837a8a93',
             description: "For the last year, I've been keeping track of the font size of the headlines on cnn.com"
+        },
+        'how-to-mangle-your-git-history': {
+            title: 'How to Mangle your git History',
+            image: homer,
+            cmsID: '054c7e77441d4aa9a9f7b4f85031a081',
+            description: 'Wondering how you can increase your job security?  Here are a few handy ways that you can make it difficult for your co-workers to read through your git history.'
         }
     }
 }

@@ -3,12 +3,22 @@ import { NotionBlocksMarkdownParser } from "@benlorantfy/notion-blocks-markdown-
 import { Block } from "@benlorantfy/notion-types";
 import { ListBlockChildrenResponse } from "@notionhq/client/build/src/api-endpoints";
 import { config } from "../config";
+import probe from 'probe-image-size';
 
 export class BlogService {
     notion = new Client({
         auth: process.env.NOTION_KEY,
     })
-    parser = NotionBlocksMarkdownParser.getInstance();
+    parser = NotionBlocksMarkdownParser.getInstance({
+        // https://www.reddit.com/r/Notion/comments/axaqij/uploaded_files_seem_accessible_to_anyone_without/
+        imageAsFigure: false,
+
+        // Adds the image size to the end of the markdown output
+        addImageSizeToAltText: true,
+
+        // Gets the image size based on the url using probe-image-size
+        getImageSize: (url) => probe(url)
+    });
 
     async getPageMarkdown(pageSlug: keyof typeof config.articles): Promise<string> {
         const pageId = config.articles[pageSlug].cmsID;
@@ -17,8 +27,7 @@ export class BlogService {
         }
 
         const blocks = await this.getBlocks(pageId);
-
-        const markdown = this.parser.parse(blocks);
+        const markdown = await this.parser.parse(blocks);
         return markdown;
     }
 
