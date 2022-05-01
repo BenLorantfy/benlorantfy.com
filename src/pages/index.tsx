@@ -8,10 +8,14 @@ import { Footer } from '../components/Footer';
 import { Nav } from '../components/Nav';
 import { BlogPostCard } from '../components/BlogPostCard';
 import { config } from '../config';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Ben Lorantfy</title>
+      </Head>
       <div className="min-h-full flex flex-col">
         <Nav />
         <div className="pl-8 pr-8 sm:pl-16 sm:pr-16 lg:pl-32 lg:pr-32 xl:pl-44 xl:pr-44 flex flex-col md:flex-row-reverse flex-1 md:justify-between items-center">

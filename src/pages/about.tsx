@@ -7,10 +7,14 @@ import kitchener from "../assets/kitchener.jpg";
 import petrolia from "../assets/petrolia.jpg";
 import { BlogPostCard } from '../components/BlogPostCard';
 import { config } from '../config';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
-  return (
-    <>
+    return (
+        <>
+            <Head>
+                <title>Ben Lorantfy | About</title>
+            </Head>
             <Nav />
             <div className="sm:hidden">
                 <div className="relative">
@@ -137,7 +141,7 @@ const Home: NextPage = () => {
                         Here&apos;s a couple featured articles:
                     </p>
                     <div className="mt-8">
-                        <BlogPostCard 
+                        <BlogPostCard
                             slug={"the-no-nonsense-styling-method"}
                             title={config.articles['the-no-nonsense-styling-method'].title}
                             description={config.articles['the-no-nonsense-styling-method'].description}
@@ -153,7 +157,7 @@ const Home: NextPage = () => {
                             <div>(please provide details in the first email)</div>
                         </div>
                     </div>
-            </div>
+                </div>
 
                 {/* <h3 className="text-3xl text-center mt-16 text-gray-800">Be Kind</h3>
         <ul>
@@ -210,7 +214,7 @@ const Home: NextPage = () => {
             </div>
             <Footer />
         </>
-  )
+    )
 }
 
 export default Home
