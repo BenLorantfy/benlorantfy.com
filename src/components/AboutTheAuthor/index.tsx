@@ -5,7 +5,7 @@ import profilePicture from '../../assets/profile-picture.jpg';
 
 export function AboutTheAuthor() {
     return (
-        <div className="bg-neutral-100 rounded-xl p-8 lg:-ml-8 lg:-mr-8 mt-16 md:mt-32">
+        <div className="bg-neutral-100 rounded-xl p-8 lg:-ml-8 lg:-mr-8 mt-16 md:mt-32 leading-10 text-lg">
             <div className="font-bold">Written By Ben Lorantfy</div>
             <div className="flex flex-col-reverse sm:flex-row gap-8 items-center sm:items-start">
                 <p>

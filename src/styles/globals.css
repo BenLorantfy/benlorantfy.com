@@ -23,6 +23,14 @@ body,html,#__next {
     .markdown h2 {
       @apply text-gray-800 text-2xl font-bold mt-8 mb-4;
     }
+
+    .markdown h3 {
+      @apply text-gray-800 text-xl font-bold mt-8 mb-4;
+    }
+
+    .markdown a {
+      @apply underline hover:decoration-2;
+    }
   
     .markdown p {
       @apply mb-6;

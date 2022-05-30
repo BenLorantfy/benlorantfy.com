@@ -28,42 +28,44 @@ export function BlogArticleLayout(props: { slug: keyof typeof config.articles, m
                 <meta name="twitter:image" content={convertToAbsoluteUrl(config.articles[props.slug].image.src)} />
             </Head>
             <Nav />
-            <div className="markdown w-full m-auto min-h-full pl-8 pr-8" style={{ maxWidth: "845px" }}>
-                {articleParts.map((articlePart, idx) => {
-                    if (idx % 2 === 0) {
-                        return (
-                            <ReactMarkdown
-                                components={{
-                                    img: (props) => {
-                                        const unprocessedAlt = props.alt || '';
-                                        const parts = unprocessedAlt.split('|');
-                                        const otherParts = parts.slice(0, parts.length - 1);
-                                        const alt = otherParts.join('|');
-                                        const size = parts[parts.length - 1];
-                                        const [width, height] = size.split('x');
+            <div className="w-full m-auto min-h-full pl-8 pr-8" style={{ maxWidth: "845px" }}>
+                <div className="markdown">
+                    {articleParts.map((articlePart, idx) => {
+                        if (idx % 2 === 0) {
+                            return (
+                                <ReactMarkdown
+                                    components={{
+                                        img: (props) => {
+                                            const unprocessedAlt = props.alt || '';
+                                            const parts = unprocessedAlt.split('|');
+                                            const otherParts = parts.slice(0, parts.length - 1);
+                                            const alt = otherParts.join('|');
+                                            const size = parts[parts.length - 1];
+                                            const [width, height] = size.split('x');
 
-                                        return (
-                                            <Image
-                                                src={props.src!}
-                                                alt={alt}
-                                                width={Number(width)}
-                                                height={Number(height)}
-                                            />
-                                        )
-                                    }
-                                }}
-                            >
-                                {articlePart}
-                            </ReactMarkdown>
-                        )
-                    }
+                                            return (
+                                                <Image
+                                                    src={props.src!}
+                                                    alt={alt}
+                                                    width={Number(width)}
+                                                    height={Number(height)}
+                                                />
+                                            )
+                                        }
+                                    }}
+                                >
+                                    {articlePart}
+                                </ReactMarkdown>
+                            )
+                        }
 
-                    if (articlePart === "[[hero-image]]") {
-                        return <HeroImage slug={props.slug} />
-                    }
+                        if (articlePart === "[[hero-image]]") {
+                            return <HeroImage slug={props.slug} />
+                        }
 
-                    return props.widgets?.[articlePart] || null;
-                })}
+                        return props.widgets?.[articlePart] || null;
+                    })}
+                </div>
                 <AboutTheAuthor />
             </div>
             <Footer />

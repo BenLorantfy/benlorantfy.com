@@ -3,6 +3,7 @@ import logistics from './assets/post-thumbnails/logistics@x2.jpg';
 import tools from './assets/post-thumbnails/tools@x2.jpg';
 import headlinesChart from './assets/post-thumbnails/headlines-chart@x2.png';
 import homer from './assets/post-thumbnails/homer.jpg';
+import reduxInjectors from './assets/post-thumbnails/redux-injectors.png';
 
 export const config = {
     articles: {
@@ -35,6 +36,12 @@ export const config = {
             image: homer,
             cmsID: '054c7e77441d4aa9a9f7b4f85031a081',
             description: 'Wondering how you can increase your job security?  Here are a few handy ways that you can make it difficult for your co-workers to read through your git history.'
+        },
+        'announcing-redux-injectors-2': {
+            title: 'Announcing redux-injectors 2.0',
+            image: reduxInjectors,
+            cmsID: '58aa76303c5241e089dca3cab7ab38d5',
+            description: 'It\'s been a long time coming, but redux-injectors 2.0 is here'
         }
     }
 }
