@@ -4,9 +4,16 @@ import tools from './assets/post-thumbnails/tools@x2.jpg';
 import headlinesChart from './assets/post-thumbnails/headlines-chart@x2.png';
 import homer from './assets/post-thumbnails/homer.jpg';
 import reduxInjectors from './assets/post-thumbnails/redux-injectors.png';
+import guessAndPrayDebugging from './assets/post-thumbnails/guess-and-pray-debugging.png';
 
 export const config = {
     articles: {
+        'guess-and-pray-debugging': {
+            title: 'Guess and Pray Debugging',
+            image: guessAndPrayDebugging,
+            cmsID: 'c48ea007e221433e9991223ff0272900',
+            description: 'How to be painfully slow at debugging'
+        },
         'the-no-nonsense-styling-method': {
             title: 'The No-Nonsense Styling Method',
             cmsID: 'cc50b4aa8c9b4fd8bd6253820bccf454',
