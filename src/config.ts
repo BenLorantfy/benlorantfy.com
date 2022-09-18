@@ -5,9 +5,16 @@ import headlinesChart from './assets/post-thumbnails/headlines-chart@x2.png';
 import homer from './assets/post-thumbnails/homer.jpg';
 import reduxInjectors from './assets/post-thumbnails/redux-injectors.png';
 import guessAndPrayDebugging from './assets/post-thumbnails/guess-and-pray-debugging.png';
+import sharedLibs from './assets/post-thumbnails/shared-libs.png';
 
 export const config = {
     articles: {
+        'the-problem-with-shared-libraries-and-monorepos': {
+            title: 'The Problem with Monorepos and Shared Libraries',
+            image: sharedLibs,
+            cmsID: 'd6bc5bf2947543c2b2eeaf8a201837be',
+            description: 'There’s a unique problem with monorepos and shared libraries that often gets overlooked'
+        },
         'guess-and-pray-debugging': {
             title: 'Guess and Pray Debugging',
             image: guessAndPrayDebugging,

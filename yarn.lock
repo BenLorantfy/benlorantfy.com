@@ -38,10 +38,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@benlorantfy/notion-blocks-markdown-parser@5.1.5":
-  version "5.1.5"
-  resolved "https://registry.yarnpkg.com/@benlorantfy/notion-blocks-markdown-parser/-/notion-blocks-markdown-parser-5.1.5.tgz#bd0dbad1ace06d1dbc4ad944080ccc6cebbdf784"
-  integrity sha512-0PyFm+NCH6IFq/od/yzSVDED1VjSsnlxrGSeim+5bb4ApmTYdTm4TY6GCVuKMZzC2JTMNDzJ29vjMM9RnqIFrw==
+"@benlorantfy/notion-blocks-markdown-parser@5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@benlorantfy/notion-blocks-markdown-parser/-/notion-blocks-markdown-parser-5.1.9.tgz#9b8b8bc6b7a1dc7e122e5c23b57fdc44a47d79f0"
+  integrity sha512-mN4L3zobTAPYVr8C1/d0TXxA/+t9+qi60SJTVpP4aO5EFFcj9wVePR5/aDGE3Ak4JcdJo4L+JK9DVIl7B8LOIA==
   dependencies:
     "@benlorantfy/notion-types" "5.1.1"
     "@notionhq/client" "^1.0.4"
@@ -2188,6 +2188,13 @@ react-markdown@^8.0.1:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
+react-twitter-embed@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/react-twitter-embed/-/react-twitter-embed-4.0.4.tgz#4a6b8354acc266876ff1110b9f648518ea20db6d"
+  integrity sha512-2JIL7qF+U62zRzpsh6SZDXNI3hRNVYf5vOZ1WRcMvwKouw+xC00PuFaD0aEp2wlyGaZ+f4x2VvX+uDadFQ3HVA==
+  dependencies:
+    scriptjs "^2.5.9"
+
 react@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
@@ -2305,6 +2312,11 @@ scheduler@^0.20.2:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+
+scriptjs@^2.5.9:
+  version "2.5.9"
+  resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.9.tgz#343915cd2ec2ed9bfdde2b9875cd28f59394b35f"
+  integrity sha512-qGVDoreyYiP1pkQnbnFAUIS5AjenNwwQBdl7zeos9etl+hYKWahjRTfzAZZYBv5xNHx7vNKCmaLDQZ6Fr2AEXg==
 
 semver@^6.3.0:
   version "6.3.0"

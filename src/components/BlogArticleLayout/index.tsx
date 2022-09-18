@@ -5,6 +5,7 @@ import { AboutTheAuthor } from "../AboutTheAuthor";
 import { Footer } from "../Footer";
 import { HeroImage } from "../HeroImage";
 import { Nav } from "../Nav";
+import { TweetEmbed } from '../TweetEmbed';
 import Image from 'next/image'
 import Head from 'next/head'
 
@@ -61,6 +62,10 @@ export function BlogArticleLayout(props: { slug: keyof typeof config.articles, m
 
                         if (articlePart === "[[hero-image]]") {
                             return <HeroImage slug={props.slug} />
+                        }
+
+                        if (articlePart === "[[monorepo-tweet]]") {
+                            return <TweetEmbed tweetId={'1569702522016653314'} />
                         }
 
                         return props.widgets?.[articlePart] || null;
