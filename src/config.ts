@@ -6,6 +6,7 @@ import homer from './assets/post-thumbnails/homer.jpg';
 import reduxInjectors from './assets/post-thumbnails/redux-injectors.png';
 import guessAndPrayDebugging from './assets/post-thumbnails/guess-and-pray-debugging.png';
 import sharedLibs from './assets/post-thumbnails/shared-libs.png';
+import overComplication from './assets/post-thumbnails/over-complication.jpg';
 
 export const config = {
     articles: {
@@ -56,6 +57,12 @@ export const config = {
             image: reduxInjectors,
             cmsID: '58aa76303c5241e089dca3cab7ab38d5',
             description: 'It\'s been a long time coming, but redux-injectors 2.0 is here'
+        },
+        'no-this-isnt-over-complicated-its-just-complicated': {
+            title: 'No, this isn\'t over-complicated, it\'s just complicated',
+            image: overComplication,
+            cmsID: '06c0be14c4834fc8ab57db915bf8fa7b',
+            description: '“Why are we over-complicating this?” is a very easy thing to say after being introduced to a project.  What\'s hard is to reserve judgement until you\'ve educated yourself on the entire problem domain, and noted all the considerations that were made by previous developers.'
         }
     }
 }
