@@ -21,9 +21,9 @@ const Resume: NextPage = () => {
                             </span>
                         </h2>
                         <ul>
-                            <li className='text-sm mb-2'>6+ years of software engineering experience</li>
-                            <li className='text-sm mb-2'>~2 years of technical leadership experience</li>
-                            <li className='text-sm mb-2'>6+ years of javascript/typescript experience</li>
+                            <li className='text-sm mb-2'>7+ years of software engineering experience</li>
+                            <li className='text-sm mb-2'>~3 years of technical leadership experience</li>
+                            <li className='text-sm mb-2'>7+ years of javascript/typescript experience</li>
                             <li className='text-sm mb-2'>5+ years of react experience</li>
                             <li className='text-sm'>9+ years of GitHub contributions (enterprise, open source, hobby, etc.)</li>
                         </ul>
@@ -71,12 +71,13 @@ const Resume: NextPage = () => {
                         ]}
                         points={[
                             'Leading frontend development for application processing, a domain related to the primary business operations',
-                            'Member of the UI Engineering community, contributing to the organization\'s frontend platform'
+                            'Part-time member of the UI Engineering team, contributing to the organization\'s frontend platform and standards'
                         ]}
                         keyAccomplishments={[
                             'Wrote our domain\'s tech debt strategy and increased tech debt observability',
-                            'Founded our organization\'s accessibility community of practice and wrote our accessibility standards',
-                            'Decreased bundle size by 60%, decreased build time by 66%'
+                            'Founded our organization\'s accessibility community of practice and helped write our accessibility standards',
+                            'Decreased bundle size by 60%, decreased build time by 66%',
+                            'Co-created the organization\'s design system'
                         ]}
                         chips={[
                             'react',
