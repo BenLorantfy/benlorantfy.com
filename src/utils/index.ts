@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 export type PaddingCode = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 const plMapping = {
@@ -55,6 +57,31 @@ export function getPaddingClassesFromCodes(paddingCodes: { pl?: PaddingCode, pr?
 
 export type PropsFromGetStaticProps<T extends () => Promise<({ props: any })> | ({ props: any })> = Awaited<ReturnType<T>>["props"];
 
+export function formatDate(date: string) {
+    return new Intl.DateTimeFormat("en", { day: "2-digit", year: "numeric", month: "short" }).format(new Date(date));
+}
+
+export function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState<{ width: number|undefined, height: number|undefined }>({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return windowSize;
+  }
+  
 
 // export const getArticleMeta = (params: { title: string, description: string, image: string }) => {
 //     return {

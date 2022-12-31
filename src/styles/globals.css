@@ -67,5 +67,9 @@ body,html,#__next {
     .markdown blockquote {
       @apply text-gray-500 pl-4 border-l-4
     }
+
+    .markdown td,th {
+      @apply border p-3
+    }
   }
   
