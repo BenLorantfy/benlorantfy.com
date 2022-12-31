@@ -203,13 +203,13 @@ function ExperienceEntry(props: {
                 <div><ProgressCircle /> Senior Software Developer <span className='text-sm text-slate-500'>(December 2020 - December 2021)</span></div> */}
                 <div className="mt-1">
                     {props.chips.map((chip) => (
-                        <Chip label={chip} />
+                        <Chip key={chip} label={chip} />
                     ))}
                 </div>
                 <div className="text-sm mt-3">
                     <ul className="list-disc ml-3">
                         {props.points.map((point) => (
-                            <li>{point}</li>
+                            <li key={point}>{point}</li>
                         ))}
                     </ul>
                     {props.keyAccomplishments && (
@@ -219,7 +219,7 @@ function ExperienceEntry(props: {
                             </h4>
                             <ul className="list-disc ml-3 mt-3">
                                 {props.keyAccomplishments.map((keyAccomplishment) => (
-                                    <li>{keyAccomplishment}</li>
+                                    <li key={keyAccomplishment}>{keyAccomplishment}</li>
                                 ))}
                             </ul>
                         </div>
@@ -251,3 +251,4 @@ function Chip(props: { label: string }) {
 }
 
 export default Resume
+
