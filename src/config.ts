@@ -10,6 +10,18 @@ import overComplication from './assets/post-thumbnails/over-complication.jpg';
 
 export const config = {
     articles: {
+        'biggest-news-of-2022-by-font-size': {
+            title: 'The Biggest News of 2022 Measured by Font Size',
+            image: headlinesChart,
+            cmsID: '88a4607c43d542ec905fe4687e1440e9',
+            description: "For the last couple years, I've been keeping track of the font size of the headlines on cnn.com"
+        },
+        'no-this-isnt-over-complicated-its-just-complicated': {
+            title: 'No, this isn\'t over-complicated, it\'s just complicated',
+            image: overComplication,
+            cmsID: '06c0be14c4834fc8ab57db915bf8fa7b',
+            description: '“Why are we over-complicating this?” is a very easy thing to say after being introduced to a project.  What\'s hard is to reserve judgement until you\'ve educated yourself on the entire problem domain, and noted all the considerations that were made by previous developers.'
+        },
         'the-problem-with-shared-libraries-and-monorepos': {
             title: 'The Problem with Monorepos and Shared Libraries',
             image: sharedLibs,
@@ -57,12 +69,6 @@ export const config = {
             image: reduxInjectors,
             cmsID: '58aa76303c5241e089dca3cab7ab38d5',
             description: 'It\'s been a long time coming, but redux-injectors 2.0 is here'
-        },
-        'no-this-isnt-over-complicated-its-just-complicated': {
-            title: 'No, this isn\'t over-complicated, it\'s just complicated',
-            image: overComplication,
-            cmsID: '06c0be14c4834fc8ab57db915bf8fa7b',
-            description: '“Why are we over-complicating this?” is a very easy thing to say after being introduced to a project.  What\'s hard is to reserve judgement until you\'ve educated yourself on the entire problem domain, and noted all the considerations that were made by previous developers.'
         }
     }
 }
