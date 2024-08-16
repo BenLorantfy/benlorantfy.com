@@ -14,6 +14,7 @@ export const config = {
     "you-own-your-career": {
       title: "You Own Your Career",
       image: youOwnYourCareer,
+      cmsID: "",
       description:
         "You're the one who chooses to be a generalist, specialist, or some combination",
     },
