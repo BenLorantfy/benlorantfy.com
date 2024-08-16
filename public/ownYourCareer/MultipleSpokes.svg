@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.57 67.55">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(116, 207, 236, .36);
+        stroke: #75cfec;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+        stroke: #a8a9ac;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        fill: #a7a9ac;
+      }
+
+      .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        fill: #a8a9ac;
+        font-family: MyriadPro-Regular, 'Myriad Pro', sans-serif;
+        font-size: 6px;
+        font-weight: 100;
+      }
+
+      .cls-6 {
+        fill: #f1f2f2;
+      }
+    </style>
+  </defs>
+  <rect class="cls-6" x="3.08" y="2.55" width="108.79" height="52.34"/>
+  <text class="cls-8" transform="translate(48.12 64.31)">Breadth</text>
+  <text class="cls-8" transform="translate(114.78 30.12)">Depth</text>
+  <line class="cls-2" x1="3.67" y1="56.34" x2="3.67" y2="65.49"/>
+  <line class="cls-2" x1="111.38" y1="56.34" x2="111.38" y2="65.49"/>
+  <line class="cls-2" x1="3.8" y1="62.65" x2="44.38" y2="62.65"/>
+  <line class="cls-2" x1="71.2" y1="62.65" x2="111.38" y2="62.65"/>
+  <line class="cls-2" x1="5.78" y1="60.68" x2="3.67" y2="62.79"/>
+  <line class="cls-2" x1="6.05" y1="64.61" x2="3.8" y2="62.65"/>
+  <line class="cls-2" x1="109.27" y1="64.62" x2="111.38" y2="62.51"/>
+  <line class="cls-2" x1="109" y1="60.69" x2="111.26" y2="62.65"/>
+  <line class="cls-2" x1="114.78" y1="54.73" x2="123.93" y2="54.73"/>
+  <line class="cls-2" x1="121.09" y1="54.6" x2="121.09" y2="37.81"/>
+  <line class="cls-2" x1="119.12" y1="52.62" x2="121.23" y2="54.73"/>
+  <line class="cls-2" x1="123.04" y1="52.35" x2="121.09" y2="54.6"/>
+  <line class="cls-2" x1="115.55" y1="3.25" x2="124.7" y2="3.25"/>
+  <line class="cls-2" x1="121.86" y1="3.37" x2="121.86" y2="20.17"/>
+  <line class="cls-2" x1="119.89" y1="5.36" x2="122" y2="3.25"/>
+  <line class="cls-2" x1="123.81" y1="5.63" x2="121.86" y2="3.37"/>
+  <rect class="cls-5" x="3.08" y="2.55" width="108.79" height="1.39"/>
+  <path class="cls-1" d="M3.08,2.55s1.42,7.5,8.17,7.35l6.15.15s2.57,11.8,1.66,14.38c.76,1.66,3.33,0,3.33,0,0,0,2.19-11.96,1.7-14.07s15.86.15,15.86.15c0,0,.45,24.97-1.51,30.11,2.88,1.51,8.32,0,8.32,0,0,0,2.12-27.39,1.06-31.02,3.03-1.21,9.66-.3,9.66-.3,0,0,1.23,7.42.93,8.02s4.69.3,5.45,0c.91-2.42.61-8.92.61-8.92,0,0,6.05-1.05,8.17,0-.61,23.29,0,21.71,0,21.71,0,0,2.88,2.51,4.39,0,.91-4.32.91-21.71.91-21.71,0,0,8.63-.59,14.98,0,.61,4.98.45,27.83-.61,36.46,3.18,3.18,7.11,0,7.11,0,0,0,1.97-33.27,1.06-36.46,4.54-.16,11.44-.03,11.39-5.85"/>
+</svg>

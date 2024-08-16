@@ -11,7 +11,11 @@
   "dependencies": {
     "@benlorantfy/notion-blocks-markdown-parser": "5.1.9",
     "@benlorantfy/notion-types": "5.1.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.3",
     "@notionhq/client": "^1.0.4",
+    "@types/mdx": "^2.0.13",
     "@types/probe-image-size": "^7.0.1",
     "chart.js": "^3.7.1",
     "clsx": "^1.1.1",
