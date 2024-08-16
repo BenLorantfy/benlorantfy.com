@@ -60,6 +60,7 @@ export function BlogArticleLayout(props: {
               if (idx % 2 === 0) {
                 return (
                   <ReactMarkdown
+                    key={idx}
                     components={{
                       img: (props) => {
                         const unprocessedAlt = props.alt || "";
@@ -86,11 +87,11 @@ export function BlogArticleLayout(props: {
               }
 
               if (articlePart === "[[hero-image]]") {
-                return <HeroImage slug={props.slug} />;
+                return <HeroImage key={idx} slug={props.slug} />;
               }
 
               if (articlePart === "[[monorepo-tweet]]") {
-                return <TweetEmbed tweetId={"1569702522016653314"} />;
+                return <TweetEmbed key={idx} tweetId={"1569702522016653314"} />;
               }
 
               return props.widgets?.[articlePart] || null;
