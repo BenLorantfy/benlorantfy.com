@@ -105,7 +105,7 @@ const Resume: NextPage = () => {
               },
             ]}
             points={[
-              "Leading frontend development for application processing, a domain related to the primary business operations",
+              "Lead frontend development on the Core team, responsible for our primary business activity of application processing",
               "Part-time member of the UI Engineering team, contributing to the organization's frontend platform and standards",
             ]}
             keyAccomplishments={[
