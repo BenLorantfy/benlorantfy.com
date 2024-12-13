@@ -52,7 +52,21 @@ const Resume: NextPage = () => {
           </section>
           <section>
             <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Open Source</h2>
-            <p className="">cra-template-redux</p>
+            <p className="">nestjs-zod</p>
+            <a
+              className="break-all text-xs text-[rgb(66,134,222)] underline"
+              href="https://github.com/reduxjs/nestjs-zod"
+            >
+              https://github.com/reduxjs/nestjs-zod
+            </a>
+            <p className="mt-4">@knapsack-pro/vitest</p>
+            <a
+              className="break-all text-xs text-[rgb(66,134,222)] underline"
+              href="https://github.com/KnapsackPro/knapsack-pro-js/tree/main/packages/vitest"
+            >
+              https://github.com/KnapsackPro/knapsack-pro-js/tree/main/packages/vitest
+            </a>
+            <p className="mt-4">cra-template-redux</p>
             <a
               className="break-all text-xs text-[rgb(66,134,222)] underline"
               href="https://github.com/reduxjs/cra-template-redux"
