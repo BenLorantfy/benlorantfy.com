@@ -31,6 +31,7 @@ import crystal from "./crystal.png"
 import qpt from "./qpt.png"
 import brose from "./brose.png"
 import nestjsZod from "./nestjs-zod.svg"
+import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
 
 
 export default function Home() {
@@ -119,21 +120,30 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div style={{ width: "100%", height: "1000px", margin: "auto", maxWidth: 1400, padding: "60px" }}>
+      <div style={createResponsiveStyles({ 
+        width: "100%", height: "1000px", margin: "auto", maxWidth: 1400 }, {
+          padding: {
+            xs: "32px",
+            sm: "60px"
+          }
+        })}>
         <div
-          style={{
+          style={createResponsiveStyles({
             backgroundColor: "#d9d9d985",
             backdropFilter: 'blur(10px)',
             padding: 24,
-            marginLeft: 24,
-            marginRight: 24,
             marginTop: 60,
             marginBottom: 120,
             borderRadius: 4,
-          }}
+          }, {
+            marginInline: {
+              xs: -16,
+              sm: 24,
+            }
+          })}
         >
           <Flex
-            direction="row"
+            direction={{ xs: "column", md: "row" }}
             gap={6}
           >
             <Flex direction="column" gap={3}>
@@ -202,7 +212,7 @@ export default function Home() {
                     Application Page <span style={{ color: theme.colors.secondary }}>Modernization</span>
                   </Heading>
                   <Stack>
-                    <Flex direction="row" gap={1}>
+                    <Flex direction="row" gap={1} wrap>
                       <Tag tone="magic">Tech Lead</Tag>
                       <Tag>React.js</Tag>
                       <Tag>TypeScript</Tag>
@@ -271,7 +281,7 @@ export default function Home() {
           <Card bleed>
             <PortfolioItem
               image={
-                <div style={{ width: '50%', flexShrink: 0 }}>
+                <div style={{ width: '100%', flexShrink: 0, aspectRatio: "16/9" }}>
                   <TabletFrame>
                     <iframe
                       src="https://app.storylane.io/demo/2xefgijmup6t?embed=inline"
@@ -292,7 +302,7 @@ export default function Home() {
                 Automated Application Processing
               </>}
               tags={
-                <Flex direction="row" gap={1}>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Tech Lead</Tag>
                   <Tag>React.js</Tag>
                   <Tag>ReactFlow</Tag>
@@ -333,7 +343,7 @@ export default function Home() {
                 Crystal <span style={{ color: theme.colors.secondary }}>Design System</span>
               </>}
               tags={
-                <Flex direction="row" gap={1}>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Co-creator</Tag>
                   <Tag tone="magic">Maintainer</Tag>
                   <Tag>React.js</Tag>
@@ -375,7 +385,7 @@ export default function Home() {
                 FP Advisor <span style={{ color: theme.colors.secondary }}>Modernization</span>
               </>}
               tags={
-                <Flex direction="row" gap={1}>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Consultant</Tag>
                   <Tag>React.js</Tag>
                   <Tag>TypeScript</Tag>
@@ -489,8 +499,11 @@ export default function Home() {
               image={(
                 <Image
                   src={nestjsZod}
-                  width={2823 / 10}
-                  height={1057 / 10}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    aspectRatio: "16 / 9",
+                  }}
                   alt="nestjs-zod"
                 />
               )}
@@ -540,17 +553,31 @@ function PortfolioItem({
   tags?: React.ReactNode;
 }) {
   return (
-    <Flex direction="row" gap={10}>
-      {isValidElement(image) ? image :
-        <Image
-          src={image as StaticImageData}
-          alt=""
-          style={{
-            width: "50%",
-            height: "auto",
-          }}
-        />
-      }
+    <Flex direction={{ xs: "column", md: "row" }} gap={10}>
+      <div
+        style={createResponsiveStyles({
+          alignSelf: "center",
+          height: "auto",
+          flexShrink: 0,
+          flexGrow: 0,
+        },{
+          width: {
+            xs: "70%",
+            md: "50%"
+          },
+        })}
+      >
+        {isValidElement(image) ? image :
+          <Image
+            src={image as StaticImageData}
+            alt=""
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
+        }
+      </div>
       <div>
         {headerImage}
         <Heading level={3}>{title}</Heading>
@@ -567,13 +594,15 @@ function KeyAchievements({ achievements, awards }: { achievements: string[], awa
   return (
     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
       {achievements.map((achievement, index) => (
-        <li key={index} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-          <SparklesIcon />
+        <li key={index} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
+          <div style={{ flexGrow: 0, flexShrink: 0, marginTop: 6 }}>
+            <SparklesIcon />
+          </div>
           <Text size="lg" color="primary">{achievement}</Text>
         </li>
       ))}
       {awards && awards.map((award, index) => (
-        <li key={index} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+        <li key={index} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
           <AwardIcon />
           <Text size="lg" color="gold">{award}</Text>
         </li>

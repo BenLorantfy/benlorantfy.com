@@ -10,7 +10,8 @@ export function Tag({ tone = "primary", children }: { tone?: "primary" | "magic"
                 padding: "4px 8px",
                 borderRadius: "12px",
                 width: "fit-content",
-                fontSize: "14px"
+                fontSize: "14px",
+                whiteSpace: "nowrap",
             }}
         >
             {children}

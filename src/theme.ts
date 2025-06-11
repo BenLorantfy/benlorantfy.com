@@ -37,7 +37,17 @@ export const theme = {
         [-13]: `-52px`,
         [-14]: `-56px`,
         [-15]: `-60px`,
+    },
+    breakpoints: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1920,
     }
 }
 
 export type SpacingToken = keyof typeof theme.spacing;
+
+export type Breakpoint = keyof typeof theme.breakpoints;
+export type Responsive<T> = T | Partial<Record<Breakpoint, T>>;
