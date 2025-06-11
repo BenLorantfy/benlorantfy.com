@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- The alias for importing from the root is `~/`, not `@/`
+- Never use default exports inside the src/components folder

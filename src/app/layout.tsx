@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Albert_Sans, Baloo_2 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { styleSheet } from "~/css";
+
+const albertSans = Albert_Sans({
+  variable: "--font-albert-sans",
   subsets: ["latin"],
+  weight: ["400", "500"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const baloo2 = Baloo_2({
+  variable: "--font-baloo-2",
   subsets: ["latin"],
+  weight: ["400"]
 });
 
 export const metadata: Metadata = {
@@ -24,8 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: styleSheet() }} />
+      </head>
+      <body className={`${albertSans.variable} ${baloo2.variable}`}>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
