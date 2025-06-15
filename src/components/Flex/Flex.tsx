@@ -12,21 +12,27 @@ export function Flex({
 }: { 
     children: React.ReactNode;
     direction?: Responsive<"row" | "column">;
-    gap?: SpacingToken;
-    align?: "start" | "end" | "center";
-    justify?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
+    gap?: Responsive<SpacingToken>;
+    align?: Responsive<"start" | "end" | "center">;
+    justify?: Responsive<"flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly">;
     wrap?: boolean;
 }) {
     const baseStyles: CSSProperties = {
         display: "flex",
-        gap: gap ? theme.spacing[gap] : undefined,
-        alignItems: align,
-        justifyContent: justify,
         flexWrap: wrap ? "wrap" : "nowrap",
     };
 
     const styles = createResponsiveStyles(baseStyles, {
         flexDirection: direction,
+        alignItems: align,
+        justifyContent: justify,
+        gap: {
+            xs: typeof gap === "object" ? gap.xs || 0 : gap,
+            sm: typeof gap === "object" ? gap.sm || 0 : gap,
+            md: typeof gap === "object" ? gap.md || 0 : gap,
+            lg: typeof gap === "object" ? gap.lg || 0 : gap,
+            xl: typeof gap === "object" ? gap.xl || 0 : gap,
+        }
     });
 
     return (

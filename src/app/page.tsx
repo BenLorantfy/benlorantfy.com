@@ -17,6 +17,7 @@ import fpAdvisor from "./fpadvisor.png"
 import postmediaHub from "./postmediahub.png"
 import oldAppPage from "./oldapppage.png"
 import arrow from "./arrow.svg"
+import upArrow from "./up-arrow.svg"
 import { TabletFrame } from "~/components/TabletFrame";
 import { Box } from "~/components/Box/Box";
 import { Card } from "~/components/Card";
@@ -237,43 +238,96 @@ export default function Home() {
                 </Box>
               </Stack>
               <div style={{ position: "relative" }}>
-                <Image
-                  src={oldAppPage}
-                  alt=""
-                  width={1843}
-                  height={1079}
-                  style={{
-                    width: "40%",
-                    height: "auto",
+                <Flex
+                  direction="column"
+                  gap={{
+                    xs: 4,
+                    sm: 0
                   }}
-                />
-                <Flex direction="row" gap={3} align="start">
-                  <div style={{ width: "15%" }}>
-                    <Box pl={4}>
-                      <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600 }}>
-                        Before
+                  align={{
+                    xs: "center",
+                    sm: "start"
+                  }}
+                >
+                  <Image
+                    src={oldAppPage}
+                    alt=""
+                    width={1843}
+                    height={1079}
+                    style={createResponsiveStyles({
+                      width: "40%",
+                      height: "auto",
+                    }, {
+                      display: {
+                        xs: "none",
+                        sm: "block"
+                      }
+                    })}
+                  />
+                  <Flex direction="row" gap={3} align="start">
+                    <div style={createResponsiveStyles({ width: "15%" }, {
+                      display: {
+                        xs: "none",
+                        sm: "block"
+                      }
+                    })}>
+                      <Box pl={4}>
+                        <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600 }}>
+                          Before
+                        </div>
+                      </Box>
+                      <Box pl={12} pr={2}>
+                        <Image
+                          src={arrow}
+                          alt=""
+                          style={{
+                            width: "100%",
+                            height: "auto"
+                          }}
+                        />
+                      </Box>
+                      <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600, textAlign: "right" }}>
+                        After
                       </div>
-                    </Box>
-                    <Box pl={12} pr={2}>
-                      <Image
-                        src={arrow}
-                        alt=""
-                        style={{
-                          width: "100%",
-                          height: "auto"
-                        }}
-                      />
-                    </Box>
-                    <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600, textAlign: "right" }}>
-                      After
                     </div>
-                  </div>
-                  <TabletFrame mt={-15}>
-                    <iframe
-                      src="https://app.storylane.io/demo/namo1rpv8fpb?embed=inline"
-                      style={{ width: "100%", height: "100%", border: "none" }}
-                    ></iframe>
-                  </TabletFrame>
+                    <TabletFrame mt={{
+                      xs: 0,
+                      sm: -15
+                    }}>
+                      <iframe
+                        src="https://app.storylane.io/demo/namo1rpv8fpb?embed=inline"
+                        style={{ width: "100%", height: "100%", border: "none" }}
+                      ></iframe>
+                    </TabletFrame>
+                  </Flex>
+                  <Image
+                    src={upArrow}
+                    alt=""
+                    style={createResponsiveStyles({
+                      width: "10%",
+                      height: "auto"
+                    }, {
+                      display: {
+                        xs: "block",
+                        sm: "none"
+                      }
+                    })}
+                  />
+                  <Image
+                    src={oldAppPage}
+                    alt=""
+                    width={1843}
+                    height={1079}
+                    style={createResponsiveStyles({
+                      width: "80%",
+                      height: "auto",
+                    }, {
+                      display: {
+                        xs: "block",
+                        sm: "none"
+                      }
+                    })}
+                  />
                 </Flex>
               </div>
             </Stack>
