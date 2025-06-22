@@ -25,11 +25,11 @@ export function TabletFrame({
 
     const styles = createResponsiveStyles(baseStyles, {
         marginTop: {
-            xs: typeof mt === "object" ? mt.xs || 0 : mt,
-            sm: typeof mt === "object" ? mt.sm || 0 : mt,
-            md: typeof mt === "object" ? mt.md || 0 : mt,
-            lg: typeof mt === "object" ? mt.lg || 0 : mt,
-            xl: typeof mt === "object" ? mt.xl || 0 : mt,
+            xs: typeof mt === "object" ? mt.xs ? theme.spacing[mt.xs || 0] : undefined : theme.spacing[mt],
+            sm: typeof mt === "object" ? mt.sm ? theme.spacing[mt.sm || 0] : undefined : theme.spacing[mt],
+            md: typeof mt === "object" ? mt.md ? theme.spacing[mt.md || 0] : undefined : theme.spacing[mt],
+            lg: typeof mt === "object" ? mt.lg ? theme.spacing[mt.lg || 0] : undefined : theme.spacing[mt],
+            xl: typeof mt === "object" ? mt.xl ? theme.spacing[mt.xl || 0] : undefined : theme.spacing[mt],
         }
     });
 

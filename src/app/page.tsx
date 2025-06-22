@@ -162,6 +162,7 @@ export default function Home() {
                   fontFamily: "var(--font-albert-sans)",
                   fontSize: 24,
                   color: theme.colors.primary,
+                  marginBottom: '16px'
                 }}
               >
                 I've been building <strong><i>good</i> software</strong> and <strong>teaching others</strong> how to do the same for <strong>9+ years</strong>.
@@ -242,11 +243,11 @@ export default function Home() {
                   direction="column"
                   gap={{
                     xs: 4,
-                    sm: 0
+                    md: 0
                   }}
                   align={{
                     xs: "center",
-                    sm: "start"
+                    md: "start"
                   }}
                 >
                   <Image
@@ -260,15 +261,23 @@ export default function Home() {
                     }, {
                       display: {
                         xs: "none",
-                        sm: "block"
+                        md: "block"
                       }
                     })}
                   />
-                  <Flex direction="row" gap={3} align="start">
+                  <Flex 
+                    direction="row" 
+                    gap={3} 
+                    align="start" 
+                    width={{
+                      xs: "calc(100% + 54px)",
+                      md: "100%"
+                    }}
+                  >
                     <div style={createResponsiveStyles({ width: "15%" }, {
                       display: {
                         xs: "none",
-                        sm: "block"
+                        md: "block"
                       }
                     })}>
                       <Box pl={4}>
@@ -292,7 +301,7 @@ export default function Home() {
                     </div>
                     <TabletFrame mt={{
                       xs: 0,
-                      sm: -15
+                      md: -18
                     }}>
                       <iframe
                         src="https://app.storylane.io/demo/namo1rpv8fpb?embed=inline"
@@ -309,7 +318,7 @@ export default function Home() {
                     }, {
                       display: {
                         xs: "block",
-                        sm: "none"
+                        md: "none"
                       }
                     })}
                   />
@@ -324,7 +333,7 @@ export default function Home() {
                     }, {
                       display: {
                         xs: "block",
-                        sm: "none"
+                        md: "none"
                       }
                     })}
                   />
@@ -608,6 +617,14 @@ function PortfolioItem({
 }) {
   return (
     <Flex direction={{ xs: "column", md: "row" }} gap={10}>
+      <div>
+        {headerImage}
+        <Heading level={3}>{title}</Heading>
+        {tags}
+        <Box pt={4}>
+          {description}
+        </Box>
+      </div>
       <div
         style={createResponsiveStyles({
           alignSelf: "center",
@@ -616,7 +633,7 @@ function PortfolioItem({
           flexGrow: 0,
         },{
           width: {
-            xs: "70%",
+            xs: "calc(100% + 54px)",
             md: "50%"
           },
         })}
@@ -631,14 +648,6 @@ function PortfolioItem({
             }}
           />
         }
-      </div>
-      <div>
-        {headerImage}
-        <Heading level={3}>{title}</Heading>
-        {tags}
-        <Box pt={4}>
-          {description}
-        </Box>
       </div>
     </Flex>
   )

@@ -9,6 +9,7 @@ export function Flex({
     align,
     justify,
     wrap = false,
+    width,
 }: { 
     children: React.ReactNode;
     direction?: Responsive<"row" | "column">;
@@ -16,6 +17,7 @@ export function Flex({
     align?: Responsive<"start" | "end" | "center">;
     justify?: Responsive<"flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly">;
     wrap?: boolean;
+    width?: Responsive<string>;
 }) {
     const baseStyles: CSSProperties = {
         display: "flex",
@@ -26,6 +28,7 @@ export function Flex({
         flexDirection: direction,
         alignItems: align,
         justifyContent: justify,
+        width,
         gap: {
             xs: typeof gap === "object" ? gap.xs || 0 : gap,
             sm: typeof gap === "object" ? gap.sm || 0 : gap,
