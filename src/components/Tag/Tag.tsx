@@ -12,6 +12,7 @@ export function Tag({ tone = "primary", children }: { tone?: "primary" | "magic"
                 width: "fit-content",
                 fontSize: "14px",
                 whiteSpace: "nowrap",
+                marginBottom: theme.spacing[1]
             }}
         >
             {children}

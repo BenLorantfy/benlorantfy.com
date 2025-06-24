@@ -6,14 +6,16 @@ export function Box({
     pr = 0, 
     pt = 0, 
     pb = 0,
-    bleed = 0
+    bleed = 0,
+    alignSelf = "auto"
 }: { 
     children: React.ReactNode, 
     pl?: SpacingToken, 
     pr?: SpacingToken, 
     pt?: SpacingToken, 
     pb?: SpacingToken,
-    bleed?: SpacingToken
+    bleed?: SpacingToken,
+    alignSelf?: "auto" | "flex-start" | "flex-end" | "center"
 }) {
     return (
         <div style={{ 
@@ -23,6 +25,7 @@ export function Box({
             paddingBottom: theme.spacing[pb],
             marginLeft: `-${theme.spacing[bleed]}`,
             marginRight: `-${theme.spacing[bleed]}`,
+            alignSelf: alignSelf
         }}>
             {children}
         </div>

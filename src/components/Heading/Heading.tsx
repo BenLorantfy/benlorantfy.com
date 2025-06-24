@@ -26,8 +26,9 @@ export default function Heading({
             <HeadingTag
                 style={{
                     color: theme.colors.primary,
-                    fontSize: level === 2 ? 36 : 30,
+                    fontSize: level === 2 ? 42 : 36,
                     fontFamily: "var(--font-baloo-2)",
+                    lineHeight: 1.25
                 }}
             >
                 {children}

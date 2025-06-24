@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
-import heroImageBackground from "./hero-image-background.png"
-import heroImageForeground from "./hero-image-foreground.png"
+import heroImageBackground from "../assets/hero-image-background.png"
+import heroImageForeground from "../assets/hero-image-foreground.png"
 import styles from "./page.module.css"
 import Heading from "~/components/Heading/Heading";
 import { theme } from "~/theme";
@@ -13,26 +13,28 @@ import { Text } from "~/components/Text";
 import { Stack } from "~/components/Stack";
 import { isValidElement } from "react";
 
-import fpAdvisor from "./fpadvisor.png"
-import postmediaHub from "./postmediahub.png"
-import oldAppPage from "./oldapppage.png"
-import arrow from "./arrow.svg"
-import upArrow from "./up-arrow.svg"
+import legacyFpAdvisor from "../assets/legacy-fp-advisor.png"
+import fpAdvisor from "../assets/fp-advisor.png"
+import postmediaHub from "../assets/postmediahub.png"
+import oldAppPage from "../assets/oldapppage.png"
+import arrow from "../assets/arrow.svg"
+import upArrow from "../assets/up-arrow.svg"
 import { TabletFrame } from "~/components/TabletFrame";
 import { Box } from "~/components/Box/Box";
 import { Card } from "~/components/Card";
 import { Tag } from "~/components/Tag";
 import { AwardIcon } from "~/icons/AwardIcon";
 
-import mountainVector from "./mountain-vector.svg"
-import applyBoard from "./applyboard.svg"
-import financialPost from "./financial-post.png"
-import postmedia from "./postmedia.png"
-import crystal from "./crystal.png"
-import qpt from "./qpt.png"
-import brose from "./brose.png"
-import nestjsZod from "./nestjs-zod.svg"
+import mountainVector from "../assets/mountain-vector.svg"
+import applyBoard from "../assets/applyboard.svg"
+import financialPost from "../assets/financial-post.png"
+import postmedia from "../assets/postmedia.png"
+import crystal from "../assets/crystal.png"
+import qpt from "../assets/qpt.png"
+import brose from "../assets/brose.png"
+import nestjsZod from "../assets/nestjs-zod.svg"
 import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
+import { BeforeAndAfter } from "~/components/BeforeAndAfter";
 
 
 export default function Home() {
@@ -238,107 +240,28 @@ export default function Home() {
                   </Stack>
                 </Box>
               </Stack>
-              <div style={{ position: "relative" }}>
-                <Flex
-                  direction="column"
-                  gap={{
-                    xs: 4,
-                    md: 0
-                  }}
-                  align={{
-                    xs: "center",
-                    md: "start"
-                  }}
-                >
+              <BeforeAndAfter 
+                before={
                   <Image
                     src={oldAppPage}
                     alt=""
                     width={1843}
                     height={1079}
-                    style={createResponsiveStyles({
-                      width: "40%",
-                      height: "auto",
-                    }, {
-                      display: {
-                        xs: "none",
-                        md: "block"
-                      }
-                    })}
-                  />
-                  <Flex 
-                    direction="row" 
-                    gap={3} 
-                    align="start" 
-                    width={{
-                      xs: "calc(100% + 54px)",
-                      md: "100%"
-                    }}
-                  >
-                    <div style={createResponsiveStyles({ width: "15%" }, {
-                      display: {
-                        xs: "none",
-                        md: "block"
-                      }
-                    })}>
-                      <Box pl={4}>
-                        <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600 }}>
-                          Before
-                        </div>
-                      </Box>
-                      <Box pl={12} pr={2}>
-                        <Image
-                          src={arrow}
-                          alt=""
-                          style={{
-                            width: "100%",
-                            height: "auto"
-                          }}
-                        />
-                      </Box>
-                      <div style={{ fontFamily: "var(--font-baloo-2)", fontSize: 20, color: theme.colors.primary, fontWeight: 600, textAlign: "right" }}>
-                        After
-                      </div>
-                    </div>
-                    <TabletFrame mt={{
-                      xs: 0,
-                      md: -18
-                    }}>
-                      <iframe
-                        src="https://app.storylane.io/demo/namo1rpv8fpb?embed=inline"
-                        style={{ width: "100%", height: "100%", border: "none" }}
-                      ></iframe>
-                    </TabletFrame>
-                  </Flex>
-                  <Image
-                    src={upArrow}
-                    alt=""
-                    style={createResponsiveStyles({
-                      width: "10%",
+                    style={{
+                      width: "100%",
                       height: "auto"
-                    }, {
-                      display: {
-                        xs: "block",
-                        md: "none"
-                      }
-                    })}
+                    }}
                   />
-                  <Image
-                    src={oldAppPage}
-                    alt=""
-                    width={1843}
-                    height={1079}
-                    style={createResponsiveStyles({
-                      width: "80%",
-                      height: "auto",
-                    }, {
-                      display: {
-                        xs: "block",
-                        md: "none"
-                      }
-                    })}
-                  />
-                </Flex>
-              </div>
+                }
+                after={
+                  <TabletFrame>
+                    <iframe
+                      src="https://app.storylane.io/demo/namo1rpv8fpb?embed=inline"
+                      style={{ width: "100%", height: "100%", border: "none" }}
+                    ></iframe>
+                  </TabletFrame>
+                }
+              />
             </Stack>
           </Card>
           <Card bleed>
@@ -365,7 +288,7 @@ export default function Home() {
                 Automated Application Processing
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Tech Lead</Tag>
                   <Tag>React.js</Tag>
                   <Tag>ReactFlow</Tag>
@@ -406,7 +329,7 @@ export default function Home() {
                 Crystal <span style={{ color: theme.colors.secondary }}>Design System</span>
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Co-creator</Tag>
                   <Tag tone="magic">Maintainer</Tag>
                   <Tag>React.js</Tag>
@@ -435,7 +358,34 @@ export default function Home() {
           </Card>
           <Card bleed>
             <PortfolioItem
-              image={fpAdvisor}
+              image={
+                <BeforeAndAfter 
+                  before={
+                    <Image
+                      src={legacyFpAdvisor}
+                      alt=""
+                      width={7164}
+                      height={4044}
+                      style={{
+                        width: "100%",
+                        height: "auto"
+                      }}
+                    />
+                  }
+                  after={
+                    <Image
+                      src={fpAdvisor}
+                      alt=""
+                      width={7164}
+                      height={4044}
+                      style={{
+                        width: "100%",
+                        height: "auto"
+                      }}
+                    />
+                  }
+                />
+              }
               headerImage={
                 <Image
                   src={financialPost}
@@ -448,7 +398,7 @@ export default function Home() {
                 FP Advisor <span style={{ color: theme.colors.secondary }}>Modernization</span>
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Consultant</Tag>
                   <Tag>React.js</Tag>
                   <Tag>TypeScript</Tag>
@@ -486,7 +436,7 @@ export default function Home() {
                 Postmedia Hub
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Tech Lead</Tag>
                   <Tag>React.js</Tag>
                   <Tag>TypeScript</Tag>
@@ -529,7 +479,7 @@ export default function Home() {
                 Quality Process Tool
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Co-Op</Tag>
                   <Tag>TypeScript</Tag>
                   <Tag>jQuery</Tag>
@@ -574,7 +524,7 @@ export default function Home() {
                 nestjs-zod <span style={{ color: theme.colors.secondary }}>& other open source</span>
               </>}
               tags={
-                <Flex direction="row" gap={1} wrap>
+                <Flex direction="row" gap={2} wrap>
                   <Tag tone="magic">Maintainer</Tag>
                   <Tag>nestjs</Tag>
                   <Tag>zod</Tag>
@@ -616,24 +566,23 @@ function PortfolioItem({
   tags?: React.ReactNode;
 }) {
   return (
-    <Flex direction={{ xs: "column", md: "row" }} gap={10}>
+    <Flex direction={{ xs: "column", md: "row" }} gap={10} align="start">
       <div>
         {headerImage}
-        <Heading level={3}>{title}</Heading>
+        <Heading level={3} mb={1}>{title}</Heading>
         {tags}
-        <Box pt={4}>
+        <Box pt={1}>
           {description}
         </Box>
       </div>
       <div
         style={createResponsiveStyles({
-          alignSelf: "center",
           height: "auto",
           flexShrink: 0,
           flexGrow: 0,
         },{
           width: {
-            xs: "calc(100% + 54px)",
+            xs: "100%",
             md: "50%"
           },
         })}
