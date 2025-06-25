@@ -106,7 +106,7 @@ export default function Home() {
               }, {
                 paddingTop: {
                   xs: 50,
-                  sm: 150
+                  sm: 150,
                 },
                 fontSize: {
                   xs: "2.5rem",
