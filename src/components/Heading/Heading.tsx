@@ -6,7 +6,8 @@ export default function Heading({
     align,
     level,
     mt = 0,
-    mb = 0
+    mb = 0,
+    size = "2xl"
 }: { 
     children: React.ReactNode;
     decoration?: 'underline' | 'none';
@@ -14,6 +15,7 @@ export default function Heading({
     level: 2 | 3 | 4 | 5 | 6;
     mt?: SpacingToken;
     mb?: SpacingToken;
+    size?: keyof typeof theme.text;
 }) {
     const HeadingTag = `h${level}` as const;
     
@@ -26,9 +28,8 @@ export default function Heading({
             <HeadingTag
                 style={{
                     color: theme.colors.primary,
-                    fontSize: level === 2 ? 42 : 36,
                     fontFamily: "var(--font-baloo-2)",
-                    lineHeight: 1.25
+                    ...theme.text[size]
                 }}
             >
                 {children}

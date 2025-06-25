@@ -30,11 +30,11 @@ export function Flex({
         justifyContent: justify,
         width,
         gap: {
-            xs: typeof gap === "object" ? gap.xs || 0 : gap,
-            sm: typeof gap === "object" ? gap.sm || 0 : gap,
-            md: typeof gap === "object" ? gap.md || 0 : gap,
-            lg: typeof gap === "object" ? gap.lg || 0 : gap,
-            xl: typeof gap === "object" ? gap.xl || 0 : gap,
+            xs: typeof gap === "object" ? gap.xs ? theme.spacing[gap.xs || 0] : undefined : theme.spacing[gap],
+            sm: typeof gap === "object" ? gap.sm ? theme.spacing[gap.sm || 0] : undefined : theme.spacing[gap],
+            md: typeof gap === "object" ? gap.md ? theme.spacing[gap.md || 0] : undefined : theme.spacing[gap],
+            lg: typeof gap === "object" ? gap.lg ? theme.spacing[gap.lg || 0] : undefined : theme.spacing[gap],
+            xl: typeof gap === "object" ? gap.xl ? theme.spacing[gap.xl || 0] : undefined : theme.spacing[gap],
         }
     });
 

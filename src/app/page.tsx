@@ -147,9 +147,9 @@ export default function Home() {
         >
           <Flex
             direction={{ xs: "column", md: "row" }}
-            gap={6}
+            gap={1}
           >
-            <Flex direction="column" gap={3}>
+            <Flex direction="column" gap={1}>
               <h2
                 style={{
                   color: theme.colors.primary,
@@ -179,7 +179,7 @@ export default function Home() {
                 I've helped organizations with technology modernization, performance problems, accessibility, localization, and more.  <strong>Send me a note</strong> and let's talk how I can help
               </p>
             </Flex>
-            <Flex direction="column" gap={3}>
+            <Flex direction="column" gap={1}>
               <Button
                 width="md"
                 leadIcon={<MailIcon />}
@@ -200,10 +200,10 @@ export default function Home() {
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat pharetra lorem, eget rhoncus massa consectetur egestas. Proin vehicula semper ipsum, at lobortis quam efficitur sit amet. Etiam cursus malesuada nisi sagittis interdum. Cras fermentum turpis nibh, eu mollis nulla tincidunt rhoncus. Etiam sit amet suscipit ipsum, sit amet tempor justo. Sed tellus diam, lobortis sit amet orci in, maximus molestie magna. Vestibulum eget tristique ligula, porta imperdiet felis. Pellentesque eu dictum lorem, non aliquet sapien. Donec ultrices quam ex, eget tempus purus elementum eget. Nam ultricies sed odio eget aliquam.
         </p> */}
-        <Heading level={2} decoration="underline" mb={4} align="center">Portfolio</Heading>
-        <Stack gap={15}>
+        <Heading level={2} decoration="underline" mb={12} align="center" size="5xl">Portfolio</Heading>
+        <Stack gap={4}>
           <Card bleed>
-            <Stack gap={12}>
+            <Stack gap={3}>
               <Stack gap={1}>
                 <Image
                   src={applyBoard}
@@ -212,7 +212,7 @@ export default function Home() {
                   height={20}
                 />
                 <Box>
-                  <Heading level={3}>
+                  <Heading level={3} size="4xl" mb={1}>
                     Application Page <span style={{ color: theme.colors.secondary }}>Modernization</span>
                   </Heading>
                   <Stack>
@@ -223,10 +223,10 @@ export default function Home() {
                       <Tag>CSS</Tag>
                       <Tag>Accessibility</Tag>
                     </Flex>
-                    <Text size="lg">
+                    <Text size="2xl">
                       I led frontend development on a comprehensive UI/UX revamp of ApplyBoard's <strong>Application Page</strong>.  This is the core page in the ApplyBoard platform, and is used by tens of thousands of international students each year to facilitate the process to apply abroad.
                     </Text>
-                    <Text size="lg">
+                    <Text size="2xl">
                       We modernized the decade-old page, signficantly improving not only the user experience, but also accessibility, stability, performance, and maintainbility.
                     </Text>
                     <KeyAchievements 
@@ -288,7 +288,7 @@ export default function Home() {
                 Automated Application Processing
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Tech Lead</Tag>
                   <Tag>React.js</Tag>
                   <Tag>ReactFlow</Tag>
@@ -299,10 +299,10 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I led frontend development on ApplyBoard's <strong>AI-powered automatic application evaluation system</strong>.  
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     This included building a dynamic form rendering engine, a custom workflow builder, and AI feedback features.
                   </Text>
                   <KeyAchievements 
@@ -329,7 +329,7 @@ export default function Home() {
                 Crystal <span style={{ color: theme.colors.secondary }}>Design System</span>
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Co-creator</Tag>
                   <Tag tone="magic">Maintainer</Tag>
                   <Tag>React.js</Tag>
@@ -340,10 +340,10 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I co-created ApplyBoard's design system, named <strong>Crystal UI</strong>.  It includes <i>70+ high-quality react components</i> that are accessible, responsive, themeable, and easy to use.  
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     Crystal UI is one of ApplyBoard's most successful projects.  It has been heavily integrated into the company's products, and has made the platform significantly more consistent, accessible, and maintainable.
                   </Text>
                   <KeyAchievements 
@@ -398,7 +398,7 @@ export default function Home() {
                 FP Advisor <span style={{ color: theme.colors.secondary }}>Modernization</span>
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Consultant</Tag>
                   <Tag>React.js</Tag>
                   <Tag>TypeScript</Tag>
@@ -408,13 +408,13 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I helped the team behind the Financial Post modernize their public research tool called <strong>FP Advisor</strong>, Canada's leading corporate information database.
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     While a valuable resource, the aging website was not responsive and had accessibility concerns.  I established the technical foundation by implementing a robust frontend architecture including responsive layouts and accessible core components.
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     The redesigned site delivers a modern experience across all devices while following accessibility best practices
                   </Text>
                 </Stack>
@@ -436,7 +436,7 @@ export default function Home() {
                 Postmedia Hub
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Tech Lead</Tag>
                   <Tag>React.js</Tag>
                   <Tag>TypeScript</Tag>
@@ -449,10 +449,10 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I led frontend development on the <strong>Postmedia Hub</strong>, Postmedia's marketing analytics platform, included free of charge to any Postmedia Marketing customer.
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     This included leading major projects to add new marketing integrations and other product features.  I also oversaw efforts to improve our accessibility, mobile friendliness, and localization.
                   </Text>
                   <KeyAchievements 
@@ -479,7 +479,7 @@ export default function Home() {
                 Quality Process Tool
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Co-Op</Tag>
                   <Tag>TypeScript</Tag>
                   <Tag>jQuery</Tag>
@@ -489,10 +489,10 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I created Brose's <strong>Quality Process Tool (QPT)</strong>, a web application that allowed Brose London's quality lab to track and manage their quality tests for the company's automotive components.
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     As the only developer on the project, I was responsible for the entire product, including the requirement gathering, UX design, frontend, backend, database design, and infrastructure.
                   </Text>
                   <KeyAchievements 
@@ -524,7 +524,7 @@ export default function Home() {
                 nestjs-zod <span style={{ color: theme.colors.secondary }}>& other open source</span>
               </>}
               tags={
-                <Flex direction="row" gap={2} wrap>
+                <Flex direction="row" gap={1} wrap>
                   <Tag tone="magic">Maintainer</Tag>
                   <Tag>nestjs</Tag>
                   <Tag>zod</Tag>
@@ -532,10 +532,10 @@ export default function Home() {
               }
               description={
                 <Stack>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I maintain <a href="https://github.com/BenLorantfy/nestjs-zod">nestjs-zod</a>, a library with 500k+ downloads / month on npm that integrates zod with nestjs.  
                   </Text>
-                  <Text size="lg">
+                  <Text size="2xl">
                     I've also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/radix-ui/primitives/pull/3115">radix-ui/primitives</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.
                   </Text>
                 </Stack>
@@ -566,12 +566,12 @@ function PortfolioItem({
   tags?: React.ReactNode;
 }) {
   return (
-    <Flex direction={{ xs: "column", md: "row" }} gap={10} align="start">
+    <Flex direction={{ xs: "column", md: "row" }} gap={5} align="start">
       <div>
         {headerImage}
-        <Heading level={3} mb={1}>{title}</Heading>
+        <Heading size="4xl" level={3} mb={1}>{title}</Heading>
         {tags}
-        <Box pt={1}>
+        <Box pt={4}>
           {description}
         </Box>
       </div>
@@ -604,19 +604,19 @@ function PortfolioItem({
 
 function KeyAchievements({ achievements, awards }: { achievements: string[], awards?: string[] }) {
   return (
-    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+    <ul style={{ listStyle: "none", padding: 0, margin: 0, marginTop: theme.spacing[4] }}>
       {achievements.map((achievement, index) => (
         <li key={index} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
           <div style={{ flexGrow: 0, flexShrink: 0, marginTop: 6 }}>
             <SparklesIcon />
           </div>
-          <Text size="lg" color="primary">{achievement}</Text>
+          <Text size="2xl" color="primary">{achievement}</Text>
         </li>
       ))}
       {awards && awards.map((award, index) => (
         <li key={index} style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
           <AwardIcon />
-          <Text size="lg" color="gold">{award}</Text>
+          <Text size="2xl" color="gold">{award}</Text>
         </li>
       ))}
     </ul>
