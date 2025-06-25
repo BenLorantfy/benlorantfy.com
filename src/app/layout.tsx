@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Albert_Sans, Baloo_2 } from "next/font/google";
+import { Albert_Sans, Baloo_2, Montserrat } from "next/font/google";
 import "./globals.css";
 
 import { styleSheet } from "~/css";
@@ -14,6 +14,12 @@ const baloo2 = Baloo_2({
   variable: "--font-baloo-2",
   subsets: ["latin"],
   weight: ["400"]
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "700"]
 });
 
 export const metadata: Metadata = {
@@ -31,7 +37,7 @@ export default function RootLayout({
       <head>
         <style dangerouslySetInnerHTML={{ __html: styleSheet() }} />
       </head>
-      <body className={`${albertSans.variable} ${baloo2.variable}`}>
+      <body className={`${albertSans.variable} ${baloo2.variable} ${montserrat.variable}`}>
         <main>
           {children}
         </main>

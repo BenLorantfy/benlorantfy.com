@@ -1,3 +1,4 @@
+import "./page.css";
 import Image, { StaticImageData } from "next/image";
 import heroImageBackground from "../assets/hero-image-background.png"
 import heroImageForeground from "../assets/hero-image-foreground.png"

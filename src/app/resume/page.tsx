@@ -13,11 +13,12 @@ const Resume: NextPage = () => {
       </Head>
       {/* <Nav /> */}
       <div
-        className="m-auto min-h-full max-w-full print:w-full flex mt-16 print:mt-0"
+        className="m-auto min-h-full max-w-full print:w-full flex mt-16 print:mt-0 subpixel-antialiased"
         style={{
           width: "8.5in",
           boxShadow:
             "rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px",
+          fontFamily: 'var(--font-montserrat)'
         }}
       >
         <article className="p-[0.4in] w-1/3 bg-[#f0f5fc]">
@@ -310,7 +311,7 @@ function ProgressCircle() {
 
 function Chip(props: { label: string }) {
   return (
-    <div className="inline-block pl-1 pr-1 pt-[2px] pb-[2px] mr-1 rounded text-white text-xs bg-[rgb(66,134,222)]">
+    <div className="inline-block pl-1 pr-1 pt-[2px] pb-[2px] mr-1 rounded-sm text-white text-xs bg-[rgb(66,134,222)]">
       {props.label}
     </div>
   );
