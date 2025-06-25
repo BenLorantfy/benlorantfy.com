@@ -79,21 +79,40 @@ export default function Home() {
             />
           </div>
         </div>
-        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(20deg, rgba(30,81,141,0.9) 0%,  rgba(30,81,141,0.4) 35%, rgba(30,81,141,0.1) 40%, rgba(30,81,141,0.1) 100%)" }}></div>
+        <div style={createResponsiveStyles({ 
+          position: "absolute", 
+          bottom: 0, 
+          left: 0, 
+          width: "100%", 
+          height: "100%", 
+        },{
+          background: {
+            xs: "linear-gradient(20deg, rgba(30,81,141,0.9) 0%,  rgba(30,81,141,0.4) 40%, rgba(30,81,141,0.1) 100%)",
+            sm: "linear-gradient(20deg, rgba(30,81,141,0.9) 0%,  rgba(30,81,141,0.4) 35%, rgba(30,81,141,0.1) 40%, rgba(30,81,141,0.1) 100%)",
+          }
+        })} />
         <div className={styles.textWrapper}>
           <div className={styles.entrance} style={{ animationDelay: "100ms" }}>
             <h1
               className={styles.textParallax}
-              style={{
+              style={createResponsiveStyles({
                 position: "absolute",
                 top: 0,
                 left: 0,
                 padding: 50,
-                fontSize: 58,
                 fontFamily: "var(--font-baloo-2)",
                 color: "#1E518D",
                 paddingTop: 150
-              }}
+              }, {
+                paddingTop: {
+                  xs: 50,
+                  sm: 150
+                },
+                fontSize: {
+                  xs: "2.5rem",
+                  sm: "3.5rem"
+                }
+              })}
             >
               Hey, I'm Ben 👋
             </h1>
@@ -106,18 +125,19 @@ export default function Home() {
               left: 0,
               padding: 50,
               color: "white",
-              fontSize: 32,
+              fontSize: "2rem",
               fontFamily: "var(--font-albert-sans)",
-              fontWeight: 100
+              fontWeight: 100,
+              width: "100%"
             }}
           >
-            <p className={styles.entrance} style={{ opacity: 0, marginBottom: 52, width: "500px", animationDelay: "200ms" }}>
+            <p className={styles.entrance} style={{ opacity: 0, marginBottom: 52, width: "500px", maxWidth: "100%", animationDelay: "200ms" }}>
               I build <strong>good software</strong>,<br /> and <i>okay</i> wooden furniture
             </p>
-            <p className={styles.entrance} style={{ opacity: 0, marginBottom: 52, width: "500px", animationDelay: "300ms" }}>
+            <p className={styles.entrance} style={{ opacity: 0, marginBottom: 52, width: "500px", maxWidth: "100%", animationDelay: "300ms" }}>
               It's easy to use, accessible, maintainable, and reliable (The software, <i>not</i> the furniture)
             </p>
-            <p className={styles.entrance} style={{ opacity: 0, width: "600px", animationDelay: "400ms" }}>
+            <p className={styles.entrance} style={{ opacity: 0, width: "600px", maxWidth: "100%", animationDelay: "400ms" }}>
               I also teach others how to do the same
             </p>
           </div>
