@@ -22,7 +22,7 @@ const Resume: NextPage = () => {
           <title>Ben Lorantfy | Resume</title>
         </Head>
         <div
-          className="m-auto min-h-full print:w-full flex mt-16 mb-16 print:mt-0 subpixel-antialiased"
+          className="m-auto min-h-full print:w-full flex mt-16 mb-16 print:mt-0 print:mb-0 subpixel-antialiased"
           style={{
             width: "8.5in",
             boxShadow:
@@ -300,7 +300,7 @@ function ExperienceEntry(props: {
 }) {
   return (
     <div className="mb-8">
-      <h3 className="text-[rgb(66,134,222)] text-xl mb-1">
+      <h3 className="text-[rgb(66,134,222)] text-xl mb-1" style={{ breakAfter: "avoid-page" }}>
         {props.companyName}
         {props.domainName ? ` (${props.domainName})` : ""}
       </h3>
