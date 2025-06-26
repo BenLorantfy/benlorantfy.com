@@ -256,8 +256,8 @@ export default function Home() {
                     </Text>
                     <KeyAchievements 
                       achievements={[
-                        "Led a team of 4-5 frontend developers",
-                        "Increased enrollment rate (conversion rate) by up to 13%",
+                        "Led a team of 3-4 frontend developers",
+                        "Increased enrollment rate (conversion rate) by 13%",
                         "Increased developer productivity by ~3-4x",
                         "Achieved WCAG AA compliance"
                       ]} 
