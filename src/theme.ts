@@ -96,11 +96,11 @@ export const theme = {
         }
     },
     breakpoints: {
-        xs: 0,
-        sm: 600,
-        md: 960,
-        lg: 1280,
-        xl: 1920,
+        xs: 0 as const,
+        sm: 600 as const,
+        md: 960 as const,
+        lg: 1280 as const,
+        xl: 1920 as const,
     }
 }
 

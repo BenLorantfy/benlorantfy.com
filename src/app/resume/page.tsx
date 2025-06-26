@@ -2,23 +2,27 @@ import "./page.css";
 
 import clsx from "clsx";
 import Head from "next/head";
-import type { NextPage } from "next";
+import type { NextPage, Viewport } from "next";
 import { Fragment } from "react";
 
 const Resume: NextPage = () => {
   return (
-    <>
+    <div style={{
+      width: "100vw",
+      overflowX: "auto"
+    }}>
       <Head>
         <title>Ben Lorantfy | Resume</title>
       </Head>
       {/* <Nav /> */}
       <div
-        className="m-auto min-h-full max-w-full print:w-full flex mt-16 print:mt-0 subpixel-antialiased"
+        className="m-auto min-h-full print:w-full flex mt-16 print:mt-0 subpixel-antialiased"
         style={{
           width: "8.5in",
           boxShadow:
             "rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px",
-          fontFamily: 'var(--font-montserrat)'
+          fontFamily: 'var(--font-montserrat)',
+          position: "relative",
         }}
       >
         <article className="p-[0.4in] w-1/3 bg-[#f0f5fc]">
@@ -224,7 +228,7 @@ const Resume: NextPage = () => {
         </main>
       </div>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 };
 

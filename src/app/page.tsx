@@ -168,7 +168,7 @@ export default function Home() {
         >
           <Flex
             direction={{ xs: "column", md: "row" }}
-            gap={1}
+            gap={4}
           >
             <Flex direction="column" gap={1}>
               <h2
@@ -200,16 +200,20 @@ export default function Home() {
                 I've helped organizations with technology modernization, performance problems, accessibility, localization, and more.  <strong>Send me a note</strong> and let's talk how I can help
               </p>
             </Flex>
-            <Flex direction="column" gap={1}>
+            <Flex direction="column" gap={2}>
               <Button
                 width="md"
                 leadIcon={<MailIcon />}
+                as="a"
+                href="mailto:ben@lorantfy.com"
               >
                 ben@lorantfy.com
               </Button>
               <Button
                 width="md"
                 leadIcon={<OpenInNewIcon />}
+                as="a"
+                href="/resume"
               >
                 Resumé
               </Button>
