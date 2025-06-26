@@ -18,8 +18,6 @@ import legacyFpAdvisor from "../assets/legacy-fp-advisor.png"
 import fpAdvisor from "../assets/fp-advisor.png"
 import postmediaHub from "../assets/postmediahub.png"
 import oldAppPage from "../assets/oldapppage.png"
-import arrow from "../assets/arrow.svg"
-import upArrow from "../assets/up-arrow.svg"
 import { TabletFrame } from "~/components/TabletFrame";
 import { Box } from "~/components/Box/Box";
 import { Card } from "~/components/Card";
@@ -115,7 +113,7 @@ export default function Home() {
                 }
               })}
             >
-              Hey, I'm Ben 👋
+              Hey, I&apos;m Ben 👋
             </h1>
           </div>
           <div
@@ -136,7 +134,7 @@ export default function Home() {
               I build <strong>good software</strong>,<br /> and <i>okay</i> wooden furniture
             </p>
             <p className={styles.entrance} style={{ opacity: 0, marginBottom: 52, width: "500px", maxWidth: "100%", animationDelay: "300ms" }}>
-              It's easy to use, accessible, maintainable, and reliable (The software, <i>not</i> the furniture)
+              It&apos;s easy to use, accessible, maintainable, and reliable (The software, <i>not</i> the furniture)
             </p>
             <p className={styles.entrance} style={{ opacity: 0, width: "600px", maxWidth: "100%", animationDelay: "400ms" }}>
               I also teach others how to do the same
@@ -178,7 +176,7 @@ export default function Home() {
                   fontFamily: "var(--font-baloo-2)",
                 }}
               >
-                I'm For Hire!
+                I&apos;m For Hire!
               </h2>
               <p
                 style={{
@@ -188,7 +186,7 @@ export default function Home() {
                   marginBottom: '16px'
                 }}
               >
-                I've been building <strong><i>good</i> software</strong> and <strong>teaching others</strong> how to do the same for <strong>9+ years</strong>.
+                I&apos;ve been building <strong><i>good</i> software</strong> and <strong>teaching others</strong> how to do the same for <strong>9+ years</strong>.
               </p>
               <p
                 style={{
@@ -197,7 +195,7 @@ export default function Home() {
                   color: theme.colors.primary,
                 }}
               >
-                I've helped organizations with technology modernization, performance problems, accessibility, localization, and more.  <strong>Send me a note</strong> and let's talk how I can help
+                I&apos;ve helped organizations with technology modernization, performance problems, accessibility, localization, and more.  <strong>Send me a note</strong> and let&apos;s talk how I can help
               </p>
             </Flex>
             <Flex direction="column" gap={2}>
@@ -249,7 +247,7 @@ export default function Home() {
                       <Tag>Accessibility</Tag>
                     </Flex>
                     <Text size="2xl">
-                      I led frontend development on a comprehensive UI/UX revamp of ApplyBoard's <strong>Application Page</strong>.  This is the core page in the ApplyBoard platform, and is used by tens of thousands of international students each year to facilitate the process to apply abroad.
+                      I led frontend development on a comprehensive UI/UX revamp of ApplyBoard&apos;s <strong>Application Page</strong>.  This is the core page in the ApplyBoard platform, and is used by tens of thousands of international students each year to facilitate the process to apply abroad.
                     </Text>
                     <Text size="2xl">
                       We modernized the decade-old page, signficantly improving not only the user experience, but also accessibility, stability, performance, and maintainbility.
@@ -325,7 +323,7 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I led frontend development on ApplyBoard's <strong>AI-powered automatic application evaluation system</strong>.  
+                    I led frontend development on ApplyBoard&apos;s <strong>AI-powered automatic application evaluation system</strong>.  
                   </Text>
                   <Text size="2xl">
                     This included building a dynamic form rendering engine, a custom workflow builder, and AI feedback features.
@@ -366,10 +364,10 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I co-created ApplyBoard's design system, named <strong>Crystal UI</strong>.  It includes <i>70+ high-quality react components</i> that are accessible, responsive, themeable, and easy to use.  
+                    I co-created ApplyBoard&apos;s design system, named <strong>Crystal UI</strong>.  It includes <i>70+ high-quality react components</i> that are accessible, responsive, themeable, and easy to use.  
                   </Text>
                   <Text size="2xl">
-                    Crystal UI is one of ApplyBoard's most successful projects.  It has been heavily integrated into the company's products, and has made the platform significantly more consistent, accessible, and maintainable.
+                    Crystal UI is one of ApplyBoard&apos;s most successful projects.  It has been heavily integrated into the company&apos;s products, and has made the platform significantly more consistent, accessible, and maintainable.
                   </Text>
                   <KeyAchievements 
                     achievements={[
@@ -434,7 +432,7 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I helped the team behind the Financial Post modernize their public research tool called <strong>FP Advisor</strong>, Canada's leading corporate information database.
+                    I helped the team behind the Financial Post modernize their public research tool called <strong>FP Advisor</strong>, Canada&apos;s leading corporate information database.
                   </Text>
                   <Text size="2xl">
                     While a valuable resource, the aging website was not responsive and had accessibility concerns.  I established the technical foundation by implementing a robust frontend architecture including responsive layouts and accessible core components.
@@ -475,7 +473,7 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I led frontend development on the <strong>Postmedia Hub</strong>, Postmedia's marketing analytics platform, included free of charge to any Postmedia Marketing customer.
+                    I led frontend development on the <strong>Postmedia Hub</strong>, Postmedia&apos;s marketing analytics platform, included free of charge to any Postmedia Marketing customer.
                   </Text>
                   <Text size="2xl">
                     This included leading major projects to add new marketing integrations and other product features.  I also oversaw efforts to improve our accessibility, mobile friendliness, and localization.
@@ -515,7 +513,7 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I created Brose's <strong>Quality Process Tool (QPT)</strong>, a web application that allowed Brose London's quality lab to track and manage their quality tests for the company's automotive components.
+                    I created Brose&apos;s <strong>Quality Process Tool (QPT)</strong>, a web application that allowed Brose London&apos;s quality lab to track and manage their quality tests for the company&apos;s automotive components.
                   </Text>
                   <Text size="2xl">
                     As the only developer on the project, I was responsible for the entire product, including the requirement gathering, UX design, frontend, backend, database design, and infrastructure.
@@ -561,7 +559,7 @@ export default function Home() {
                     I maintain <a href="https://github.com/BenLorantfy/nestjs-zod">nestjs-zod</a>, a library with 500k+ downloads / month on npm that integrates zod with nestjs.  
                   </Text>
                   <Text size="2xl">
-                    I've also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/radix-ui/primitives/pull/3115">radix-ui/primitives</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.
+                    I&apos;ve also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/radix-ui/primitives/pull/3115">radix-ui/primitives</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.
                   </Text>
                 </Stack>
               }

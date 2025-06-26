@@ -18,6 +18,6 @@ export function pipe<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R>(a: A,
 export function pipe<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S>(a: A, fab: (arg: A) => B, fbc: (arg: B) => C, fcd: (arg: C) => D, fde: (arg: D) => E, fef: (arg: E) => F, ffg: (arg: F) => G, fgh: (arg: G) => H, fhi: (arg: H) => I, fij: (arg: I) => J, fjk: (arg: J) => K, fkl: (arg: K) => L, flm: (arg: L) => M, fmn: (arg: M) => N, fno: (arg: N) => O, fop: (arg: O) => P, fpq: (arg: P) => Q, fqr: (arg: Q) => R, frs: (arg: R) => S): S;
 export function pipe<A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T>(a: A, fab: (arg: A) => B, fbc: (arg: B) => C, fcd: (arg: C) => D, fde: (arg: D) => E, fef: (arg: E) => F, ffg: (arg: F) => G, fgh: (arg: G) => H, fhi: (arg: H) => I, fij: (arg: I) => J, fjk: (arg: J) => K, fkl: (arg: K) => L, flm: (arg: L) => M, fmn: (arg: M) => N, fno: (arg: N) => O, fop: (arg: O) => P, fpq: (arg: P) => Q, fqr: (arg: Q) => R, frs: (arg: R) => S, fst: (arg: S) => T): T;
 
-export function pipe(a: unknown, ...fns: Function[]): unknown {
+export function pipe(a: unknown, ...fns: ((arg: unknown) => unknown)[]): unknown {
   return fns.reduce((value, fn) => fn(value), a);
 }

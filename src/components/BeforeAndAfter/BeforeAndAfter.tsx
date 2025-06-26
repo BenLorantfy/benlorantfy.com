@@ -1,10 +1,10 @@
-import Image, { StaticImageData } from "next/image";
-import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
-import { Flex } from "../Flex";
-import { Box } from "../Box";
-import arrow from "../../assets/arrow.svg"
-import upArrow from "../../assets/up-arrow.svg"
+import { Flex } from "~/components/Flex";
+import { Box } from "~/components/Box/Box";
 import { theme } from "~/theme";
+import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
+import Image from "next/image";
+import arrow from "../../assets/arrow.svg";
+import upArrow from "../../assets/up-arrow.svg"
 
 export function BeforeAndAfter({ before, after }: { before: React.ReactNode, after: React.ReactNode }) {
     return (

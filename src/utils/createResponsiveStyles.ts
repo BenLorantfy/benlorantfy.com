@@ -25,7 +25,7 @@ export function createResponsiveStyles(baseStyles: CSSProperties, responsiveProp
 
     return pipe(
         baseStyles,
-        // @ts-expect-error
+        // @ts-expect-error - pipe function expects specific types but we're passing dynamic styles
         ...additionalStyles,
     )
 }
