@@ -568,10 +568,10 @@ export default function Home() {
             />
           </Card>
         </Stack>
-        <Heading level={2} decoration="underline">Blog</Heading>
+        {/* <Heading level={2} decoration="underline">Blog</Heading>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat pharetra lorem, eget rhoncus massa consectetur egestas. Proin vehicula semper ipsum, at lobortis quam efficitur sit amet. Etiam cursus malesuada nisi sagittis interdum. Cras fermentum turpis nibh, eu mollis nulla tincidunt rhoncus. Etiam sit amet suscipit ipsum, sit amet tempor justo. Sed tellus diam, lobortis sit amet orci in, maximus molestie magna. Vestibulum eget tristique ligula, porta imperdiet felis. Pellentesque eu dictum lorem, non aliquet sapien. Donec ultrices quam ex, eget tempus purus elementum eget. Nam ultricies sed odio eget aliquam.
-        </p>
+        </p> */}
       </div>
     </>
   );
