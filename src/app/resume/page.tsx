@@ -49,7 +49,7 @@ const Resume: NextPage = () => {
                   9+ years of professional software engineering experience
                 </li>
                 <li className="text-sm mb-2">
-                  ~5 years of technical leadership experience
+                  5+ years of technical leadership experience
                 </li>
                 <li className="text-sm mb-2">
                   12+ years of javascript/typescript experience
@@ -145,23 +145,24 @@ const Resume: NextPage = () => {
                 },
                 {
                   title: "Senior Software Engineer",
-                  endDate: "Dec 2020",
-                  startDate: "Dec 2021",
+                  endDate: "Dec 2021",
+                  startDate: "Dec 2020",
                   duration: "1 yr",
                 },
               ]}
               points={[
-                "Lead a team of 3-4 frontend developers on the Core team, responsible for our primary business activity of application processing",
+                "Leading a team of 3-4 frontend developers on the Core team, responsible for our primary business activity of application processing",
                 "Part-time member of the UI Engineering team, helping to shape the organization's frontend platform and standards",
               ]}
               keyAccomplishments={[
-                "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivty by 3-4x, and reducing WCAG violations by 90%",
+                "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
                 "Built a workflow designer from the ground up, automating application processing and reducing application processing time by 50% and growing",
                 "Co-created the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
                 "Founded our organization's accessibility community of practice, helped write our accessibility standards, rolled out and administered accessibility training across the organization to 40+ people",
-                "As a key member of a critical project to improve platform performance, decreased bundle size by 60% and build time by 66%",
+                "Created a web BFF (backend for frontend) that reliably handles 100k+ requests per day",
+                "Decreased bundle size by 60% and build time by 66%",
               ]}
-              chips={["react", "redux", "typescript"]}
+              chips={["react", "redux", "typescript", "nodejs", "nestjs"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
@@ -211,19 +212,19 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Led front-end development of highly depended on web applications",
+                "Led front-end development of highly depended-upon web applications",
                 "Worked closely with product and design teams to create responsive, accessible, well-tested, and performant user experiences",
                 "Maintained frontend infrastructure including webpack, babel, jest, eslint, and other tools",
                 "Also worked on back-end services and deploy pipelines using node.js, docker, AWS, ECS, CircleCI, and other technologies",
               ]}
               keyAccomplishments={[
-                "Helped create an internal ordering system that reliably handles hundreds of orders a day",
-                "Helped create an advertising analytics platform, providing insights for sales people and a few thousand Postmedia clients",
+                "Built an internal ordering system that reliably handles hundreds of orders a day",
+                "Built an advertising analytics platform, providing insights for sales people and a few thousand Postmedia clients",
                 "Created and maintained an internal component library for use across projects",
                 "Reduced bundle size from 25mb to 4mb",
                 "Initiated and oversaw long-term technical initiatives, including migrating a project to typescript, upgrading from react 15 to react 16, and others",
               ]}
-              chips={["react", "redux", "typescript"]}
+              chips={["react", "redux", "typescript", "nodejs", "mongodb"]}
             />
             <ExperienceEntry
               companyName="Brose Canada Inc."
@@ -236,7 +237,7 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Independently designed, built, deployed, and maintained QPT (quality process tool) that streamlined and optimized the QA process in the London plant's production line, which has since been expanded to multiple plants",
+                "Independently designed, built, deployed, and maintained QPT (quality process tool).  This tool streamlined and optimized the QA process in the London plant's production line, which has since been expanded to multiple plants",
               ]}
               keyAccomplishments={[
                 "Saved the plant an estimated $100k/year in increased efficiency",
