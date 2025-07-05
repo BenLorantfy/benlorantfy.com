@@ -31,7 +31,7 @@ const Resume: NextPage = () => {
             position: "relative",
           }}
         >
-          <article className="p-[0.4in] w-1/3 bg-[#f0f5fc]">
+          <article className="p-[0.4in] w-1/3 bg-[#f0f5fc] print:h-[300vh]">
             <h1
               id="main-header"
               className="text-[rgb(66,134,222)] text-4xl font-bold mb-8"
@@ -46,15 +46,14 @@ const Resume: NextPage = () => {
               </h2>
               <ul>
                 <li className="text-sm mb-2">
+                  Experienced Staff Software Engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
+                </li>
+                <li className="text-sm mb-2">
                   9+ years of professional software engineering experience
                 </li>
                 <li className="text-sm mb-2">
-                  5+ years of technical leadership experience
+                  4+ years of technical leadership experience
                 </li>
-                <li className="text-sm mb-2">
-                  12+ years of javascript/typescript experience
-                </li>
-                <li className="text-sm mb-2">7+ years of react experience</li>
               </ul>
             </section>
             <section>
@@ -80,54 +79,46 @@ const Resume: NextPage = () => {
             </section>
             <section>
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Awards</h2>
-              <p className="">Skills Canada Web Development Gold Medal</p>
-              <p className=" mt-4">Conestoga Co-Op Student of the Year Award</p>
+              <p className="text-sm">Skills Canada Web Development Gold Medal (2015)</p>
+              <p className="text-sm mt-4">Conestoga Co-Op Student of the Year Award (2016)</p>
             </section>
             <section>
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Open Source</h2>
-              <p className="">nestjs-zod</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/reduxjs/nestjs-zod"
-              >
-                https://github.com/reduxjs/nestjs-zod
-              </a>
-              <p className="mt-4">@knapsack-pro/vitest</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/KnapsackPro/knapsack-pro-js/tree/main/packages/vitest"
-              >
-                https://github.com/KnapsackPro/knapsack-pro-js/tree/main/packages/vitest
-              </a>
-              <p className="mt-4">cra-template-redux</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/reduxjs/cra-template-redux"
-              >
-                https://github.com/reduxjs/cra-template-redux
-              </a>
-              <p className="mt-4">cra-template-redux-typescript</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/reduxjs/cra-template-redux-typescript"
-              >
-                https://github.com/reduxjs/cra-template-redux-typescript
-              </a>
-              <p className="mt-4">redux-injectors</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/react-boilerplate/redux-injectors"
-              >
-                https://github.com/react-boilerplate/redux-injectors
-              </a>
-              <div className="mt-4 hidden print:inline" />
-              <p className="mt-4">DefinitelyTyped contributions</p>
-              <a
-                className="break-all text-xs text-[rgb(66,134,222)] underline"
-                href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy"
-              >
-                https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy
-              </a>
+              <OpenSourceEntry 
+                title="nestjs-zod"
+                links={[
+                  "https://github.com/BenLorantfy/nestjs-zod"
+                ]}
+              />
+              <OpenSourceEntry 
+                title="reduxjs"
+                links={[
+                  "https://github.com/reduxjs/cra-template-redux/pull/1",
+                  "https://github.com/reduxjs/redux-templates/pull/3"
+                ]}
+                mt={4}
+              />
+              <OpenSourceEntry 
+                title="react-boilerplate"
+                links={[
+                  "https://github.com/react-boilerplate/react-boilerplate/pull/2749"
+                ]}
+                mt={{ web: 4, print: 8 }}
+              />
+              <OpenSourceEntry
+                title="@knapsack-pro/vitest"
+                links={[
+                  "https://github.com/KnapsackPro/knapsack-pro-js/pull/104"
+                ]}
+                mt={4}
+              />
+              <OpenSourceEntry
+                title="DefinitelyTyped"
+                links={[
+                  "https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy"
+                ]}
+                mt={4}
+              />
             </section>
           </article>
           <main className="p-[0.4in] w-2/3" aria-labelledby="main-header">
@@ -151,24 +142,26 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Leading a team of 3-4 frontend developers on the Core team, responsible for our primary business activity of application processing",
-                "Part-time member of the UI Engineering team, helping to shape the organization's frontend platform and standards",
+                "Lead a team of 3-4 frontend / full-stack developers in Application Processing, our core business domain",
+                "Part-time member of the UI Engineering team, helping to shape the organization's frontend platform, tooling, and standards",
+                "Provide technical oversight, mentorship, and guidance",
+                "Collaborate cross-functionally and cross-team to unblock work and move the business forward",
               ]}
               keyAccomplishments={[
                 "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
-                "Built a workflow designer from the ground up, automating application processing and reducing application processing time by 50% and growing",
-                "Co-created the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
-                "Founded our organization's accessibility community of practice, helped write our accessibility standards, rolled out and administered accessibility training across the organization to 40+ people",
+                "Led a project to build a workflow designer from the ground up, automating application processing and reducing application processing time by 50%",
+                "Co-created and led maintenance of the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
+                "Founded the organization's accessibility community of practice, helped write our accessibility standards, rolled out and administered accessibility training across the organization to 40+ people",
+                "Decreased bundle size by 60% and build time by 66%, while working on an ad-hoc org-wide performance task force",
                 "Created a web BFF (backend for frontend) that reliably handles 100k+ requests per day",
-                "Decreased bundle size by 60% and build time by 66%",
               ]}
-              chips={["react", "redux", "typescript", "nodejs", "nestjs"]}
+              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
               positions={[
                 {
-                  title: "Part-time Professor",
+                  title: "Professor (Part-time)",
                   startDate: "Jan 2023",
                   endDate: "Dec 2023",
                   duration: "1 yr",
@@ -178,21 +171,29 @@ const Resume: NextPage = () => {
                 "Taught courses called \"User Experience Evaluation\" and \"Software Engineering Fundamentals\"",
               ]}
               chips={[]}
+              mt={8}
             />
             <ExperienceEntry
               companyName="Lorantfy Inc."
               positions={[
                 {
-                  title: "Software Consultant",
+                  title: "Consultant (Full-Time)",
                   startDate: "Jan 2020",
                   endDate: "Dec 2020",
                   duration: "1 yr",
                 },
+                {
+                  title: "Consultant (Part-Time)",
+                  startDate: "2015",
+                  endDate: "Present",
+                  duration: "10 yrs",
+                },
               ]}
               points={[
-                "Consulted with various clients, with a focus on improving accessibility compliance and mobile responsiveness",
+                "Consulted with various clients on interesting projects, including a11y audits, SEO audits, performance investigations, mobile responsiveness, and building full products from scratch",
               ]}
-              chips={["react", "redux", "typescript", "WCAG"]}
+              chips={["react", "redux", "typescript", "WCAG", "SEO", "PHP", "MySQL"]}
+              mt={8}
             />
             <ExperienceEntry
               companyName="Postmedia Network Inc."
@@ -205,7 +206,7 @@ const Resume: NextPage = () => {
                   duration: "1 yr 3 mos",
                 },
                 {
-                  title: "Frontend Developer",
+                  title: "Software Developer",
                   endDate: "Oct 2018",
                   startDate: "May 2017",
                   duration: "1 yr 6 mos",
@@ -214,17 +215,18 @@ const Resume: NextPage = () => {
               points={[
                 "Led front-end development of highly depended-upon web applications",
                 "Worked closely with product and design teams to create responsive, accessible, well-tested, and performant user experiences",
-                "Maintained frontend infrastructure including webpack, babel, jest, eslint, and other tools",
+                "Maintained frontend infrastructure, including webpack, babel, jest, eslint, and other tools",
                 "Also worked on back-end services and deploy pipelines using node.js, docker, AWS, ECS, CircleCI, and other technologies",
               ]}
               keyAccomplishments={[
                 "Built an internal ordering system that reliably handles hundreds of orders a day",
-                "Built an advertising analytics platform, providing insights for sales people and a few thousand Postmedia clients",
+                "Built an advertising analytics platform, providing insights for salespeople and a few thousand Postmedia clients",
                 "Created and maintained an internal component library for use across projects",
                 "Reduced bundle size from 25mb to 4mb",
                 "Initiated and oversaw long-term technical initiatives, including migrating a project to typescript, upgrading from react 15 to react 16, and others",
               ]}
               chips={["react", "redux", "typescript", "nodejs", "mongodb"]}
+              mt={8}
             />
             <ExperienceEntry
               companyName="Brose Canada Inc."
@@ -237,13 +239,14 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Independently designed, built, deployed, and maintained QPT (quality process tool).  This tool streamlined and optimized the QA process in the London plant's production line, which has since been expanded to multiple plants",
+                "Independently designed, built, deployed, and maintained QPT (quality process tool), including frontend, backend, database, and infrastructure.  This tool streamlined and optimized the QA process in the London plant's production line, and has since been expanded to multiple plants",
               ]}
               keyAccomplishments={[
                 "Saved the plant an estimated $100k/year in increased efficiency",
                 "Won \"Co-Op Student of the Year\" Award"
               ]}
               chips={["C#", ".Net", "MSSQL", "typescript"]}
+              mt={8}
             />
             <h3 className="text-[rgb(66,134,222)] text-xl mb-1 mt-8">Other</h3>
             <p>
@@ -254,6 +257,9 @@ const Resume: NextPage = () => {
             <Chip label="react" />
             <Chip label="angular" />
             <Chip label="cordova" />
+            <Chip label="nodejs" />
+            <Chip label="PHP" />
+            <Chip label="MySQL" />
             <h2 className="text-[rgb(66,134,222)] text-md font-bold mt-8 mb-2">
               Education
             </h2>
@@ -285,6 +291,35 @@ const Resume: NextPage = () => {
   );
 };
 
+function OpenSourceEntry({
+  title,
+  links,
+  mt,
+}: {
+  title: string;
+  links: string[];
+  mt?: 4 | { web: 4, print: 8 };
+}) {
+  return (
+    <div style={{ breakInside: "avoid-page" }}>
+      {mt && <div className={mt === 4 ? "h-4" : "h-4 print:h-8"} />} {/* use height instead of margin so browser does not break inside spacing */}
+      <p>{title}</p>
+      {links.map((link, idx) => (
+        <a
+          className={clsx({
+            "block break-all text-xs/5 text-[rgb(66,134,222)] underline": true,
+            "mt-2": idx !== 0
+          })}
+          href={link}
+          key={link}
+        >
+          {link}
+        </a>
+      ))}
+    </div>
+  )
+}
+
 function ExperienceEntry(props: {
   companyName: string;
   domainName?: string;
@@ -297,10 +332,12 @@ function ExperienceEntry(props: {
   chips: string[];
   points: string[];
   keyAccomplishments?: string[];
+  mt?: 8;
 }) {
   return (
-    <div className="mb-8">
-      <h3 className="text-[rgb(66,134,222)] text-xl mb-1" style={{ breakAfter: "avoid-page" }}>
+    <div style={{ breakInside: "avoid-page" }}>
+      {props.mt === 8 && <div className="h-8"></div>} {/* use height instead of margin so browser does not break inside spacing */}
+      <h3 className="text-[rgb(66,134,222)] text-xl mb-1">
         {props.companyName}
         {props.domainName ? ` (${props.domainName})` : ""}
       </h3>
@@ -312,7 +349,7 @@ function ExperienceEntry(props: {
               key={idx}
               className={clsx({ "text-lg": idx === 0, "mb-1": idx !== 0 })}
             >
-              {props.positions.length > 1 && <ProgressCircle />} {position.title}{" "}
+              {props.positions.length > 1 && <ProgressCircle size={idx === 0 ? "md" : "sm"} />} {position.title}{" "}
               <span className="text-sm text-slate-500">
                 ({position.startDate} - {position.endDate} · {position.duration}
                 )
@@ -320,9 +357,6 @@ function ExperienceEntry(props: {
             </div>
           </Fragment>
         ))}
-        {/* <div className='text-lg mb-1'><ProgressCircle /> Staff Software Developer <span className='text-sm text-slate-500'>(December 2021 - Present)</span></div>
-                <ProgressLine />
-                <div><ProgressCircle /> Senior Software Developer <span className='text-sm text-slate-500'>(December 2020 - December 2021)</span></div> */}
         {props.chips.length > 0 && (
           <div className="mt-1 mb-2">
             {props.chips.map((chip) => (
@@ -334,7 +368,7 @@ function ExperienceEntry(props: {
           {props.points.length === 1 ? (
             <p>{props.points[0]}</p>
           ) : (
-            <ul className="list-disc ml-3">
+            <ul className="list-disc ml-3 space-y-1">
               {props.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}
@@ -347,7 +381,7 @@ function ExperienceEntry(props: {
                   Key Accomplishments
                 </span>
               </h4>
-              <ul className="list-disc ml-3 mt-3">
+              <ul className="list-disc ml-3 mt-3 space-y-1">
                 {props.keyAccomplishments.map((keyAccomplishment) => (
                   <li key={keyAccomplishment}>{keyAccomplishment}</li>
                 ))}
@@ -362,13 +396,13 @@ function ExperienceEntry(props: {
 
 function ProgressLine() {
   return (
-    <div className="border-l-2 border-[rgb(66,134,222)] h-3 absolute -ml-[13px] -mt-[8px]"></div>
+    <div className="border-l-2 border-[rgb(66,134,222)] h-3 absolute -ml-[13px] -mt-[7px]"></div>
   );
 }
 
-function ProgressCircle() {
+function ProgressCircle(props: { size: "sm" | "md" }) {
   return (
-    <div className="rounded-full bg-[rgb(66,134,222)] w-2 h-2 inline-block absolute -ml-4 mt-[9px]"></div>
+    <div className={clsx("rounded-full bg-[rgb(66,134,222)] inline-block absolute mt-[9px]", props.size === "sm" ? "w-[6px] h-[6px] -ml-[15px]" : "w-[8px] h-[8px] -ml-[16px]")}></div>
   );
 }
 
