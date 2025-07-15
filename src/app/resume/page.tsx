@@ -46,7 +46,7 @@ const Resume: NextPage = () => {
               </h2>
               <ul>
                 <li className="text-sm mb-2">
-                  Experienced Staff Software Engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
+                  Skilled staff frontend software engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
                 </li>
                 <li className="text-sm mb-2">
                   9+ years of professional software engineering experience
@@ -73,7 +73,7 @@ const Resume: NextPage = () => {
                 </li>
                 <li className="flex items-center gap-1 text-xs">
                   <LinkedInIcon size="sm" />
-                  <a href="https://linkedin.com/in/benlorantfy" className="underline">linkedin.com/in/benlorantfy</a>
+                  <a href="https://linkedin.com/in/ben-lorantfy" className="underline">linkedin.com/in/ben-lorantfy</a>
                 </li>
               </ul>
             </section>
@@ -132,7 +132,7 @@ const Resume: NextPage = () => {
                   title: "Staff Software Engineer",
                   endDate: "Present",
                   startDate: "Dec 2021",
-                  duration: "3 yr, 7 mos",
+                  duration: "3 yr, 8 mos",
                 },
                 {
                   title: "Senior Software Engineer",
@@ -142,20 +142,18 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Lead a team of 3-4 frontend / full-stack developers in Application Processing, our core business domain",
-                "Part-time member of the UI Engineering team, helping to shape the organization's frontend platform, tooling, and standards",
+                "Staff frontend engineer for two teams: Application Processing, the organization's core business domain; and UI Engineering, which shapes the organization's frontend platform, tooling, and standards",
                 "Provide technical oversight, mentorship, and guidance",
                 "Collaborate cross-functionally and cross-team to unblock work and move the business forward",
               ]}
               keyAccomplishments={[
                 "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
-                "Led a project to build a workflow designer from the ground up, automating application processing and reducing application processing time by 50%",
+                "Led frontend projects to integrate AI systems in our product, including building an in-house workflow designer and a dynamic form engine, automating application processing and reducing processing time by 50%",
                 "Co-created and led maintenance of the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
-                "Founded the organization's accessibility community of practice, helped write our accessibility standards, rolled out and administered accessibility training across the organization to 40+ people",
-                "Decreased bundle size by 60% and build time by 66%, while working on an ad-hoc org-wide performance task force",
-                "Created a web BFF (backend for frontend) that reliably handles 100k+ requests per day",
+                "Founded the organization's accessibility community of practice, helped write our accessibility standards, and rolled out and administered accessibility training across the organization to 40+ people",
+                "Decreased bundle size by 60% and build time by 66%, while working on an ad hoc org-wide performance task force"
               ]}
-              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs"]}
+              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs", "reactflow", "zod"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
@@ -206,7 +204,7 @@ const Resume: NextPage = () => {
                   duration: "1 yr 3 mos",
                 },
                 {
-                  title: "Software Developer",
+                  title: "Frontend Developer",
                   endDate: "Oct 2018",
                   startDate: "May 2017",
                   duration: "1 yr 6 mos",
