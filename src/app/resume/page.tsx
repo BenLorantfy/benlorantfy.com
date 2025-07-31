@@ -46,13 +46,16 @@ const Resume: NextPage = () => {
               </h2>
               <ul>
                 <li className="text-sm mb-2">
-                  Skilled staff frontend software engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
+                  Skilled staff frontend engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
                 </li>
                 <li className="text-sm mb-2">
                   9+ years of professional software engineering experience
                 </li>
                 <li className="text-sm mb-2">
-                  4+ years of technical leadership experience
+                  5+ years of technical leadership experience
+                </li>
+                <li className="text-sm mb-2">
+                  12+ years having fun with JavaScript / TypeScript
                 </li>
               </ul>
             </section>
@@ -79,7 +82,9 @@ const Resume: NextPage = () => {
             </section>
             <section>
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Awards</h2>
-              <p className="text-sm">Skills Canada Web Development Gold Medal (2015)</p>
+              <p className="text-sm">
+                Skills Canada Web Development Gold Medal (2015)
+              </p>
               <p className="text-sm mt-4">Conestoga Co-Op Student of the Year Award (2016)</p>
             </section>
             <section>
@@ -143,17 +148,18 @@ const Resume: NextPage = () => {
               ]}
               points={[
                 "Staff frontend engineer for two teams: Application Processing, the organization's core business domain; and UI Engineering, which shapes the organization's frontend platform, tooling, and standards",
-                "Provide technical oversight, mentorship, and guidance",
-                "Collaborate cross-functionally and cross-team to unblock work and move the business forward",
+                "Provide technical mentorship, guidance, and oversight, while also being an active contributor",
+                "Collaborate cross-functionally and cross-team to unblock work and move the business forward"
               ]}
               keyAccomplishments={[
                 "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
                 "Led frontend projects to integrate AI systems in our product, including building an in-house workflow designer and a dynamic form engine, automating application processing and reducing processing time by 50%",
                 "Co-created and led maintenance of the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
                 "Founded the organization's accessibility community of practice, helped write our accessibility standards, and rolled out and administered accessibility training across the organization to 40+ people",
-                "Decreased bundle size by 60% and build time by 66%, while working on an ad hoc org-wide performance task force"
+                "Decreased bundle size by 60% and build time by 66%, while working on an ad hoc org-wide performance task force",
+                "Created a BFF (Backend for Frontend) in TypeScript/nestjs to support our core pages/features"
               ]}
-              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs", "reactflow", "zod"]}
+              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs", "reactflow", "xstate", "zod"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
