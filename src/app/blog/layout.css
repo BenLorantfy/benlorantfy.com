@@ -8,18 +8,23 @@
 }
 
 /* Headings */
-.markdown h1 {
-  @apply text-4xl font-bold text-gray-900 mb-6 mt-8;
-  @apply border-b-2 border-gray-200 pb-2;
-}
 
 .markdown h2 {
-  @apply text-3xl font-semibold text-gray-900 mb-4 mt-8;
-  @apply border-b border-gray-200 pb-2;
+  @apply text-4xl font-bold text-gray-900 mb-2 mt-8;
+  @apply text-center;
 }
 
 .markdown h3 {
-  @apply text-2xl font-semibold text-gray-900 mb-3 mt-6;
+  @apply text-2xl font-semibold text-gray-900 mb-6 mt-6;
+  @apply relative;
+}
+
+.markdown h3::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-12 h-1;
+  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+  @apply rounded-full;
+  @apply transform translate-y-2;
 }
 
 .markdown h4 {
@@ -72,9 +77,9 @@
 
 /* Blockquotes */
 .markdown blockquote {
-  @apply border-l-4 border-blue-500 bg-blue-50;
+  @apply bg-gray-100;
   @apply pl-4 py-2 mb-4;
-  @apply italic text-gray-700;
+  @apply italic text-gray-700 font-normal;
 }
 
 .markdown blockquote p {
@@ -83,22 +88,141 @@
 
 /* Code blocks */
 .markdown pre {
-  @apply bg-gray-900 text-gray-100;
-  @apply p-4 rounded-lg mb-4;
+  @apply bg-slate-900 text-slate-100;
+  @apply p-6 rounded-xl mb-6;
   @apply overflow-x-auto;
-  @apply border border-gray-700;
+  @apply shadow-lg;
+  @apply relative;
+  @apply text-sm;
+  line-height: 1.4 !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.markdown pre::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0 h-1;
+  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500;
+  @apply rounded-t-xl;
 }
 
 .markdown pre code {
   @apply bg-transparent p-0;
-  @apply text-gray-100;
+  @apply text-slate-100;
+  line-height: 1.4;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  white-space: pre;
+  display: block;
+}
+
+/* Remove any extra spacing from code block children */
+.markdown pre > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Handle any line elements that might be causing gaps */
+.markdown pre .line,
+.markdown pre .token-line {
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
 /* Inline code */
 .markdown code {
-  @apply bg-gray-100 text-gray-800;
-  @apply px-2 py-1 rounded;
-  @apply border border-gray-200;
+  @apply bg-slate-100 text-slate-800;
+  @apply px-2 py-1 rounded-md;
+  @apply border border-slate-200;
+  @apply text-sm;
+  @apply shadow-sm;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Code block language indicator */
+.markdown pre[data-language]::after {
+  content: attr(data-language);
+  @apply absolute top-2 right-3;
+  @apply text-xs text-slate-400;
+  @apply uppercase tracking-wide;
+  @apply bg-slate-800/50 px-2 py-1 rounded;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.markdown pre code {
+    border: none;
+}
+
+/* Syntax highlighting colors */
+.markdown .token.comment,
+.markdown .token.prolog,
+.markdown .token.doctype,
+.markdown .token.cdata {
+  @apply text-slate-400;
+}
+
+.markdown .token.punctuation {
+  @apply text-slate-300;
+}
+
+.markdown .token.namespace {
+  @apply opacity-70;
+}
+
+.markdown .token.property,
+.markdown .token.tag,
+.markdown .token.boolean,
+.markdown .token.number,
+.markdown .token.constant,
+.markdown .token.symbol,
+.markdown .token.deleted {
+  @apply text-cyan-400;
+}
+
+.markdown .token.selector,
+.markdown .token.attr-name,
+.markdown .token.string,
+.markdown .token.char,
+.markdown .token.builtin,
+.markdown .token.inserted {
+  @apply text-emerald-400;
+}
+
+.markdown .token.operator,
+.markdown .token.entity,
+.markdown .token.url,
+.markdown .language-css .token.string,
+.markdown .style .token.string {
+  @apply text-orange-400;
+}
+
+.markdown .token.atrule,
+.markdown .token.attr-value,
+.markdown .token.keyword {
+  @apply text-purple-400;
+}
+
+.markdown .token.function,
+.markdown .token.class-name {
+  @apply text-yellow-400;
+}
+
+.markdown .token.regex,
+.markdown .token.important,
+.markdown .token.variable {
+  @apply text-pink-400;
+}
+
+.markdown .token.important,
+.markdown .token.bold {
+  @apply font-bold;
+}
+
+.markdown .token.italic {
+  @apply italic;
+}
+
+.markdown .token.entity {
+  @apply cursor-help;
 }
 
 /* Tables */
@@ -176,7 +300,8 @@
   }
   
   .markdown pre {
-    @apply p-3 text-xs;
+    @apply p-4 text-xs;
+    line-height: 1.4;
   }
   
   .markdown table {

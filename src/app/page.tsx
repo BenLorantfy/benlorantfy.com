@@ -34,7 +34,8 @@ import brose from "../assets/brose.png"
 import nestjsZod from "../assets/nestjs-zod.svg"
 import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
 import { BeforeAndAfter } from "~/components/BeforeAndAfter";
-
+import dataTriangle from '~/assets/data-triangle.png'
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -566,13 +567,40 @@ export default function Home() {
             />
           </Card>
         </Stack>
-        {/* <Heading level={2} decoration="underline" mb={12} mt={12} align="center" size="5xl">Blog</Heading>
-        <Card>
-          <Heading level={3}>Blame Tooling, Not People</Heading>
-        </Card>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat pharetra lorem, eget rhoncus massa consectetur egestas. Proin vehicula semper ipsum, at lobortis quam efficitur sit amet. Etiam cursus malesuada nisi sagittis interdum. Cras fermentum turpis nibh, eu mollis nulla tincidunt rhoncus. Etiam sit amet suscipit ipsum, sit amet tempor justo. Sed tellus diam, lobortis sit amet orci in, maximus molestie magna. Vestibulum eget tristique ligula, porta imperdiet felis. Pellentesque eu dictum lorem, non aliquet sapien. Donec ultrices quam ex, eget tempus purus elementum eget. Nam ultricies sed odio eget aliquam.
-        </p> */}
+        <div style={{ paddingBottom: '60px' }}>
+          <Heading level={2} decoration="underline" mb={12} mt={12} align="center" size="5xl">Blog</Heading>
+          <div
+            style={{
+              width: '400px',
+            }}
+          >
+            <Card>
+              <Link href="/blog/the-data-triangle-and-nestjs-zod-v5" style={{ textDecoration: 'none' }}>
+                <Image 
+                  src={dataTriangle} 
+                  alt="The Data Triangle" 
+                  width={1228} 
+                  height={748} 
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "cover",
+                  }}
+                />
+                <Heading level={3} mt={2}>The Data Triangle</Heading>
+                <p 
+                  style={{
+                    fontSize: 18,
+                    marginTop: 12,
+                    color: theme.colors.primary,
+                  }}
+                >
+                  Great news! `nestjs-zod` version 5 is now available. You can install it today.
+                </p>
+              </Link>
+            </Card>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -2,40 +2,106 @@ import Image from 'next/image';
 import dataTriangle from '~/assets/data-triangle.png'
 
 ## The Data Triangle
-(Announcing nestjs-zod v5)
+<span className="text-center text-lg mb-4 block">
+  *Announcing nestjs-zod v5*
+</span>
 
-Before I get too far: `nestjs-zod` version 5 is out!  You can install it today:
+Great news! `nestjs-zod` version 5 is now available. You can install it today:
 
-```
+```bash
 npm install nestjs-zod@latest
 ```
 
-In this release there's some new features (including zod v4 support 🎉), bug fixes, and some mostly minor breaking changes.  You can check out the MIGRATION.md file for details
+This release includes exciting new features (including Zod v4 support 🎉), bug fixes, and some minor breaking changes. Check out the [MIGRATION.md file](https://github.com/BenLorantfy/nestjs-zod/blob/main/MIGRATION.md) or [release notes](https://github.com/BenLorantfy/nestjs-zod/releases/tag/v5.0.0) for the full details.
 
-But in this post I mostly wanted to talk about what makes me excited about `nestjs-zod`.  
+But today, I want to share what excites me most about `nestjs-zod` and use it as an example to introduce a concept I call "The Data Triangle."
 
-`nestjs-zod` helps you ensure your run-time, compile-time, and docs-time representations of your data schemas are always in sync.  
+### What is The Data Triangle?
 
-I couldn't find a name for this principle ("End to End Type Safety" is close, but not quite), so I made one up: "The Data Triangle"
+`nestjs-zod` solves a fundamental problem with API development: keeping the run-time, compile-time, and "docs-time" representations of api responses in-sync. I couldn't find an existing name for this principle, so I propose this name: **"The Data Triangle."** (Software engineers love shape-based names for software principles 😅)
 
-<Image
-    alt="The Data Triangle"
-    src={dataTriangle}
-    width={1228}
-    height={748}
-    width={600}
-/>
+<div className="flex justify-center my-8">
+  <Image
+      alt="The Data Triangle"
+      src={dataTriangle}
+      width={1228}
+      height={748}
+      width={600}
+  />
+</div>
 
-"The Data Triangle" allows you to make this powerful statement:
+The Data Triangle enables this powerful guarantee:
 
-> If the application compiles and there's no errors, then consumers are guaranteed to get data that matches your documented API contract
+> **If the application compiles, the api is guaranteed to respond with data that matched the api docs.**
 
-This is huge.
+This is a big deal
 
-In my experience, a significant portion of bugs I've run into are caused by APIs not returning data that matches their contract.  But if you have a compile-time guarantee that the returned data matches the documented API contract, it eliminates an entire class of bugs.
+In my experience, a significant portion of bugs stem from APIs returning data that doesn't match their documented contract. When you have compile-time guarantees that your returned data matches your API documentation, you eliminate an entire category of bugs.
 
-Let me give a quick example of adherence to "The Data Triangle" in `nestjs-zod`:
-```ts
+### When is The Data Triangle violated?
+
+The Data Triangle principle is violated when it's possible in an architecture for the run-time, compile-time, or docs-time types to become out of sync.
+
+Here are a couple examples of when this can happen:
+
+#### Not generating API documentation from your implementation
+
+Systems that don't generate API documentation from the implementation violate The Data Triangle
+
+If the API documentation is maintained separately from the implementation, then it's likely for the implementation to get out of sync with the documentation
+
+Note this isn't incompatible with "Contract-first design". One can still follow "Contract-first design" and design the API before the implementation starts.  However, once the implementation starts, the documentation exposed to consumers should be generated.
+
+#### Using a language without a compile step
+
+The Data Triangle needs a compile-step by definition (i.e. TypeScript).  The "compile-time" schema is one of the three points on the triangle.  
+
+It enables the main guarantee of this principle; the api docs are accurate if the compilation passes.
+
+JavaScript, Ruby (without Sorbet), PHP (without static type-checking), etc. do not have a compile step and can not tell you about api docs violations until the application is already running.
+
+I know in languages without static types, you can write automated tests to test your API contract.  But in this author's opinion, static type-checking is still the most robust way to find data-related bugs.
+
+#### Repeating your data schema in multiple representations
+
+The Data Triangle is violated in a system when the data schema declarations are repeated using different formats (e.g. OpenAPI, TypeScript types, validation library formats, etc.)
+
+This is because the repeated schema representations can drift apart from each-other.  And if it can drift, it will drift.
+
+The key is to write one representation of your data and treat it as the source of truth, and generate the other two formats.  
+
+For example, in `zod` you write the runtime representation and generate the compile-time version via `z.infer` and the docs-time version via `z.toJSONSchema`
+
+##### class-validator
+
+The `class-validator` library is commonly used in NestJS, but it unfortunately violates The Data Triangle principle because its compile-time, run-time, and docs-time types can easily become inconsistent.
+
+Consider this problematic example:
+
+```typescript
+export class Post {
+  @ApiProperty({
+   type: Boolean,
+  })
+  @IsString()
+  rating: number;
+}
+```
+
+This code has three different type definitions:
+- **Run-time**: `string` (validation expects a string)
+- **Compile-time**: `number` (TypeScript type)
+- **Docs-time**: `boolean` (OpenAPI schema)
+
+TypeScript won't catch this mismatch, runtime validation will fail unexpectedly, and the API docs will be misleading. 
+
+And when an inconsistency is possible, it will happen.
+
+### How to adhere to The Data Triangle?
+
+Here's a concrete example using `nestjs-zod`:
+
+```typescript
 import { z } from 'zod'
 import { createZodDto, ZodResponse } from 'nestjs-zod'
 
@@ -58,41 +124,25 @@ export class PostsController {
     }
 }
 ```
-The key here is `@ZodResponse`, which is a decorator provided by `nestjs-zod`
 
-`@ZodResponse` does 3 main things:
-1. If used in combination with `nestjs/swagger`, it generates an OpenAPI schema based off `PostDto` (docs-time)
-2. It serializes the response with `PostDto`, and throws an error if the returned data is invalid (run-time)
-3. It throws a typescript error if the method returns data that doesn't match `PostDto` (compile-time)
+The key here is the `@ZodResponse` decorator, which performs three critical functions simultaneously:
 
-Because you have one decorator doing all of these things, it makes it impossible for them to get out of sync
+1. **Run-time Validation**: It validates the response against `PostDto` and throws errors for invalid data
+2. **Compile-time Type Checking**: It ensures TypeScript catches any mismatches between your return type and `PostDto`
+3. **Docs Generation**: When used with `nestjs/swagger`, it automatically generates OpenAPI schemas from your `PostDto`
 
-Note that The Data Triangle is not only applicable in `nestjs`.  You can theoretically adopt "The Data Triangle" in any API that is using a framework/language that has a compile step.  I can guarantee you your consumers will thank you 🙂
+By using a single schema and a single decorator for all three representations of your data, you eliminate the possibility of them becoming out of sync.
 
-## What about `class-validator` ?
+Note that The Data Triangle principle isn't limited to NestJS. You can apply this approach in any framework or language that supports compile-time type checking. Your API consumers will thank you 🙂
 
-There are several drawbacks with `class-validator` compared to `zod`.  It uses a more verbose syntax, for example.  But it also doesn't adhere to The Data Triangle, because it's possible for the compile-time, run-time, and docs-time types to get out of sync
+### Taking The Data Triangle Even Further
 
-For example, I can write this code:
-```ts
-export class Post {
-  @ApiProperty({
-   type: Boolean,
-  })
-  @IsString()
-  rating: number;
-}
-```
-This will not throw a compile-time error if the API returns a number.  At run-time it will throw an error expecting a string, and in the api docs it will say it's a boolean.
+The Data Triangle principle can be extended even further to implement a concept called "End-to-end type safety"
 
-And if something is possible to get out of sync, it will get out of sync.
+With "End-to-end type safety", API consumers will get compile-time errors when they try to use your API incorrectly. Frameworks like `tRPC`, `react-router`, and `next.js` provide this capability.
 
-## Isn't this End-to-End Type Safety?
+With `nestjs-zod`, you can achieve complete end-to-end type safety by generating a typed client from your OpenAPI documentation. Tools like [`openapi-ts`](https://www.npmjs.com/package/openapi-typescript) can create fully typed API clients that give consumers compile-time guarantees when calling your API.
 
-This is not quite end-to-end type safety
+### Final Thoughts
 
-In End-to-End Type Safety, the _consumer_ will get a compile-time error if they try to call or use the API incorrectly
-
-Frameworks with End-to-End Type Safety include `tRPC`, `react-router` and `nest.js`
-
-You can extend this approach to achieve "End-to-End Type Safety" if you generate a service client using the openapi doc generated by `nestjs/swagger`, using something like [`openapi-ts`](https://www.npmjs.com/package/openapi-typescript)
+If you use NestJS, you can use `nestjs-zod` to follow The Data Triangle.  But even if you don't use NestJS or `nestjs-zod`, The Data Triangle (ensuring your run-time, compile-time, and docs-time types can not get out of sync) is a valuable architecture principle that improves software reliability.  
