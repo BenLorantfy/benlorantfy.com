@@ -14,7 +14,7 @@ export default function BlogLayout({
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="container">
               <Link href="/" className="inline-block h-[60px] leading-[60px] text-white text-xl drop-shadow-lg font-bold hover:text-blue-200 focus:text-blue-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-transparent rounded">
-                Ben Lorantfy's Blog
+                Ben Lorantfy&apos;s Blog
               </Link>
             </div>
           </div>
