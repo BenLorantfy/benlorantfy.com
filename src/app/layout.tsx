@@ -3,6 +3,7 @@ import { Albert_Sans, Baloo_2, Montserrat } from "next/font/google";
 import "./globals.css";
 
 import { styleSheet } from "~/css";
+import { Fathom } from "~/components/Fathom";
 
 const albertSans = Albert_Sans({
   variable: "--font-albert-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: styleSheet() }} />
       </head>
       <body className={`${albertSans.variable} ${baloo2.variable} ${montserrat.variable}`}>
+        <Fathom />
         <main>
           {children}
         </main>
