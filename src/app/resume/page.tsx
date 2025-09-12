@@ -46,16 +46,13 @@ const Resume: NextPage = () => {
               </h2>
               <ul>
                 <li className="text-sm mb-2">
-                  Skilled staff frontend engineer and leader, avid OSS contributor, a11y specialist, lean engineering fan
+                  Staff full-stack software engineer, leader, and teacher, avid OSS contributor, a11y specialist, lean engineering fan
                 </li>
                 <li className="text-sm mb-2">
                   9+ years of professional software engineering experience
                 </li>
                 <li className="text-sm mb-2">
                   5+ years of technical leadership experience
-                </li>
-                <li className="text-sm mb-2">
-                  12+ years having fun with JavaScript / TypeScript
                 </li>
               </ul>
             </section>
@@ -83,9 +80,9 @@ const Resume: NextPage = () => {
             <section>
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Awards</h2>
               <p className="text-sm">
-                Skills Canada Web Development Gold Medal (2015)
+                Skills Canada Web Development Gold Medal (<a href="https://web.archive.org/web/20160502131100/http://skillscompetencescanada.com/en/scnc-2015-results" className="underline">2015</a>)
               </p>
-              <p className="text-sm mt-4">Conestoga Co-Op Student of the Year Award (2016)</p>
+              <p className="text-sm mt-4">Conestoga Co-Op Student of the Year Award (<a href="https://blogs1.conestogac.on.ca/news/2016/03/conestoga_honours_top_employer.php" className="underline">2016</a>)</p>
             </section>
             <section>
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Open Source</h2>
@@ -94,6 +91,7 @@ const Resume: NextPage = () => {
                 links={[
                   "https://github.com/BenLorantfy/nestjs-zod"
                 ]}
+                pkgName="nestjs-zod"
               />
               <OpenSourceEntry 
                 title="reduxjs"
@@ -137,7 +135,7 @@ const Resume: NextPage = () => {
                   title: "Staff Software Engineer",
                   endDate: "Present",
                   startDate: "Dec 2021",
-                  duration: "3 yr, 8 mos",
+                  duration: "3 yr, 10 mos",
                 },
                 {
                   title: "Senior Software Engineer",
@@ -147,19 +145,19 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Staff frontend engineer for two teams: Application Processing, the organization's core business domain; and UI Engineering, which shapes the organization's frontend platform, tooling, and standards",
+                "Staff software engineer for two teams: Application Processing, the organization's core business domain; and UI Engineering, which shapes the organization's frontend platform, tooling, and standards",
                 "Provide technical mentorship, guidance, and oversight, while also being an active contributor",
                 "Collaborate cross-functionally and cross-team to unblock work and move the business forward"
               ]}
               keyAccomplishments={[
                 "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
-                "Led frontend projects to integrate AI systems in our product, including building an in-house workflow designer and a dynamic form engine, automating application processing and reducing processing time by 50%",
-                "Co-created and led maintenance of the organization's design system, increasing developer productivity by 2-3x and improving WCAG compliance by ~80%",
-                "Founded the organization's accessibility community of practice, helped write our accessibility standards, and rolled out and administered accessibility training across the organization to 40+ people",
+                "Co-created and maintained the organization's design system, increasing developer productivity by 2-3x",
+                "Founded the organization's accessibility community of practice (CoP), helped write our accessibility standards, and rolled out and administered accessibility training across the organization to 40+ people",
                 "Decreased bundle size by 60% and build time by 66%, while working on an ad hoc org-wide performance task force",
-                "Created a BFF (Backend for Frontend) in TypeScript/nestjs to support our core pages/features"
+                "Integrated AI systems and built automation features, automating application processing and reducing processing time by 50%",
+                "Architected and implemented a BFF (Backend for Frontend) in TypeScript/nestjs that handles 100k+ requests per day",
               ]}
-              chips={["react", "redux", "typescript", "nodejs", "nestjs", "nextjs", "reactflow", "xstate", "zod"]}
+              chips={["react", "typescript", "nodejs", "nestjs", "nextjs", "Rails", "MySQL", "AWS", "K8s"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
@@ -172,7 +170,7 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Taught courses called \"User Experience Evaluation\" and \"Software Engineering Fundamentals\"",
+                "Taught courses titled \"User Experience Evaluation\" and \"Software Engineering Fundamentals\"",
               ]}
               chips={[]}
               mt={8}
@@ -181,13 +179,13 @@ const Resume: NextPage = () => {
               companyName="Lorantfy Inc."
               positions={[
                 {
-                  title: "Consultant (Full-Time)",
+                  title: "Consultant (Full-time)",
                   startDate: "Jan 2020",
                   endDate: "Dec 2020",
                   duration: "1 yr",
                 },
                 {
-                  title: "Consultant (Part-Time)",
+                  title: "Consultant (Part-time)",
                   startDate: "2015",
                   endDate: "Present",
                   duration: "10 yrs",
@@ -210,14 +208,14 @@ const Resume: NextPage = () => {
                   duration: "1 yr 3 mos",
                 },
                 {
-                  title: "Frontend Developer",
+                  title: "Software Developer",
                   endDate: "Oct 2018",
                   startDate: "May 2017",
                   duration: "1 yr 6 mos",
                 },
               ]}
               points={[
-                "Led front-end development of highly depended-upon web applications",
+                "Led frontend development of highly relied upon web applications",
                 "Worked closely with product and design teams to create responsive, accessible, well-tested, and performant user experiences",
                 "Maintained frontend infrastructure, including webpack, babel, jest, eslint, and other tools",
                 "Also worked on back-end services and deploy pipelines using node.js, docker, AWS, ECS, CircleCI, and other technologies",
@@ -229,7 +227,7 @@ const Resume: NextPage = () => {
                 "Reduced bundle size from 25mb to 4mb",
                 "Initiated and oversaw long-term technical initiatives, including migrating a project to typescript, upgrading from react 15 to react 16, and others",
               ]}
-              chips={["react", "redux", "typescript", "nodejs", "mongodb"]}
+              chips={["react", "redux", "typescript", "nodejs", "mongodb", "AWS"]}
               mt={8}
             />
             <ExperienceEntry
@@ -270,6 +268,9 @@ const Resume: NextPage = () => {
             <h3 className="text-[rgb(66,134,222)] text-xl mb-1">
               Software Engineering Tech. (B. Tech)
             </h3>
+            <div className="text-sm text-slate-500">
+              (With Distinction)
+            </div>
             <div className={"text-lg mb-4"}>
               McMaster University, Hamilton, ON{" "}
               <span className="text-sm text-slate-500">(2019 - 2024)</span>
@@ -284,6 +285,9 @@ const Resume: NextPage = () => {
             <h3 className="text-[rgb(66,134,222)] text-xl mb-1">
               Software Engineering Tech. (Adv. Diploma)
             </h3>
+            <div className="text-sm text-slate-500">
+              (With Distinction)
+            </div>
             <div className={"text-lg"}>
               Conestoga College, Kitchener, ON{" "}
               <span className="text-sm text-slate-500">(2013 - 2017)</span>
@@ -299,10 +303,12 @@ function OpenSourceEntry({
   title,
   links,
   mt,
+  pkgName,
 }: {
   title: string;
   links: string[];
   mt?: 4 | { web: 4, print: 8 };
+  pkgName?: string;
 }) {
   return (
     <div style={{ breakInside: "avoid-page" }}>
@@ -320,6 +326,7 @@ function OpenSourceEntry({
           {link}
         </a>
       ))}
+      {pkgName && <img className="mt-2" src={`https://img.shields.io/npm/dm/${pkgName}`} alt="NPM Downloads" style={{ filter: "grayscale(100%) sepia(100%) hue-rotate(177deg) saturate(100%)" }} />}
     </div>
   )
 }
