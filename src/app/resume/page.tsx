@@ -46,7 +46,7 @@ const Resume: NextPage = () => {
               </h2>
               <ul>
                 <li className="text-sm mb-2">
-                  Staff full-stack software engineer, leader, and teacher, avid OSS contributor, a11y specialist, lean engineering fan
+                  Staff full-stack software engineer, leader, and teacher.  Avid open source contributor, UX advocate, lean engineering fan
                 </li>
                 <li className="text-sm mb-2">
                   9+ years of professional software engineering experience
@@ -88,10 +88,10 @@ const Resume: NextPage = () => {
               <h2 className="text-[rgb(66,134,222)] mt-8 mb-2">Open Source</h2>
               <OpenSourceEntry 
                 title="nestjs-zod"
+                subTitle="(~700k downloads / month)"
                 links={[
                   "https://github.com/BenLorantfy/nestjs-zod"
                 ]}
-                pkgName="nestjs-zod"
               />
               <OpenSourceEntry 
                 title="reduxjs"
@@ -150,14 +150,13 @@ const Resume: NextPage = () => {
                 "Collaborate cross-functionally and cross-team to unblock work and move the business forward"
               ]}
               keyAccomplishments={[
-                "Led a UI/UX revamp project for a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
+                "Led a UI/UX modernization of a 10-year old business-critical page, increasing conversion rate by 13%, developer productivity by 3-4x, and reducing WCAG violations by 90%",
                 "Co-created and maintained the organization's design system, increasing developer productivity by 2-3x",
-                "Founded the organization's accessibility community of practice (CoP), helped write our accessibility standards, and rolled out and administered accessibility training across the organization to 40+ people",
-                "Decreased bundle size by 60% and build time by 66%, while working on an ad hoc org-wide performance task force",
-                "Integrated AI systems and built automation features, automating application processing and reducing processing time by 50%",
-                "Architected and implemented a BFF (Backend for Frontend) in TypeScript/nestjs that handles 100k+ requests per day",
+                "Optimized performance in several areas, reducing bundle size by 60%, build time by 66%, and a key API's response time by 40%",
+                "Architected and implemented a BFF (Backend for Frontend) from scratch in TypeScript/NestJS",
+                "Co-led development of automation and AI features, including an in-house workflow builder, that reduced average application processing time by 50%",
               ]}
-              chips={["react", "typescript", "nodejs", "nestjs", "nextjs", "Rails", "MySQL", "AWS", "K8s"]}
+              chips={["react", "typescript", "nodejs", "nestjs", "Rails", "MySQL", "redis", "RabbitMQ"]}
             />
             <ExperienceEntry
               companyName="Conestoga College"
@@ -215,15 +214,13 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Led frontend development of highly relied upon web applications",
+                "Led front-end development of the organization's AdTech web applications, including our advertising analytics and performance platform, as well as an internal ordering system for marketing products",
                 "Worked closely with product and design teams to create responsive, accessible, well-tested, and performant user experiences",
                 "Maintained frontend infrastructure, including webpack, babel, jest, eslint, and other tools",
                 "Also worked on back-end services and deploy pipelines using node.js, docker, AWS, ECS, CircleCI, and other technologies",
               ]}
               keyAccomplishments={[
-                "Built an internal ordering system that reliably handles hundreds of orders a day",
-                "Built an advertising analytics platform, providing insights for salespeople and a few thousand Postmedia clients",
-                "Created and maintained an internal component library for use across projects",
+                "Created and maintained a design system for use across projects",
                 "Reduced bundle size from 25mb to 4mb",
                 "Initiated and oversaw long-term technical initiatives, including migrating a project to typescript, upgrading from react 15 to react 16, and others",
               ]}
@@ -241,11 +238,13 @@ const Resume: NextPage = () => {
                 },
               ]}
               points={[
-                "Independently designed, built, deployed, and maintained QPT (quality process tool), including frontend, backend, database, and infrastructure.  This tool streamlined and optimized the QA process in the London plant's production line, and has since been expanded to multiple plants",
+                "Independently designed and built Quality Process Tool (QPT), a web application that helped improve the efficiency of the plant's quality assurance processes",
+                "QPT allows QA technicians to enter and view automotive test data and results. It includes features such as real-time updates, graphical dashboards and reports, a commenting system, and an auditing log",
+                "Owned entire project from start to finish, including requirement gathering, UX design, technical design, frontend and backend development, server and database administration, testing, and project management"
               ]}
               keyAccomplishments={[
-                "Saved the plant an estimated $100k/year in increased efficiency",
-                "Won \"Co-Op Student of the Year\" Award"
+                "Saved the plant an estimated $100k/year in increased efficiency, leading leadership to look at expanding the software to other plants",
+                "Won \"Co-Op Student of the Year\" Award from Conestoga College for the project"
               ]}
               chips={["C#", ".Net", "MSSQL", "typescript"]}
               mt={8}
@@ -301,19 +300,20 @@ const Resume: NextPage = () => {
 
 function OpenSourceEntry({
   title,
+  subTitle,
   links,
   mt,
-  pkgName,
 }: {
   title: string;
+  subTitle?: string;
   links: string[];
   mt?: 4 | { web: 4, print: 8 };
-  pkgName?: string;
 }) {
   return (
     <div style={{ breakInside: "avoid-page" }}>
       {mt && <div className={mt === 4 ? "h-4" : "h-4 print:h-8"} />} {/* use height instead of margin so browser does not break inside spacing */}
       <p>{title}</p>
+      {subTitle && <p className="text-xs text-slate-500">{subTitle}</p>}
       {links.map((link, idx) => (
         <a
           className={clsx({
@@ -326,7 +326,6 @@ function OpenSourceEntry({
           {link}
         </a>
       ))}
-      {pkgName && <img className="mt-2" src={`https://img.shields.io/npm/dm/${pkgName}`} alt="NPM Downloads" style={{ filter: "grayscale(100%) sepia(100%) hue-rotate(177deg) saturate(100%)" }} />}
     </div>
   )
 }
