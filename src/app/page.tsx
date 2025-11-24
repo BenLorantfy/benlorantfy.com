@@ -567,11 +567,16 @@ export default function Home() {
             />
           </Card>
         </Stack>
-        <div style={{ paddingBottom: '60px' }}>
+        <div style={{ 
+          paddingBottom: '60px',
+          marginLeft: '-24px',
+          marginRight: '-24px',
+        }}>
           <Heading level={2} decoration="underline" mb={12} mt={12} align="center" size="5xl">Blog</Heading>
           <div
             style={{
-              width: '400px',
+              maxWidth: '400px',
+              width: '100%',
             }}
           >
             <Card>
