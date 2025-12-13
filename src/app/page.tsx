@@ -224,7 +224,7 @@ export default function Home() {
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat pharetra lorem, eget rhoncus massa consectetur egestas. Proin vehicula semper ipsum, at lobortis quam efficitur sit amet. Etiam cursus malesuada nisi sagittis interdum. Cras fermentum turpis nibh, eu mollis nulla tincidunt rhoncus. Etiam sit amet suscipit ipsum, sit amet tempor justo. Sed tellus diam, lobortis sit amet orci in, maximus molestie magna. Vestibulum eget tristique ligula, porta imperdiet felis. Pellentesque eu dictum lorem, non aliquet sapien. Donec ultrices quam ex, eget tempus purus elementum eget. Nam ultricies sed odio eget aliquam.
         </p> */}
-        <Heading level={2} decoration="underline" mb={12} align="center" size="5xl">Portfolio</Heading>
+        <Heading id="portfolio" level={2} decoration="underline" mb={12} align="center" size="5xl">Portfolio</Heading>
         <Stack gap={4}>
           <Card bleed>
             <Stack gap={3}>
@@ -557,7 +557,7 @@ export default function Home() {
               description={
                 <Stack>
                   <Text size="2xl">
-                    I maintain <a href="https://github.com/BenLorantfy/nestjs-zod">nestjs-zod</a>, a library with 500k+ downloads / month on npm that integrates zod with nestjs.  
+                    I maintain <a href="https://github.com/BenLorantfy/nestjs-zod">nestjs-zod</a>, a library with 1M+ downloads / month on npm that integrates zod with nestjs.  
                   </Text>
                   <Text size="2xl">
                     I&apos;ve also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/radix-ui/primitives/pull/3115">radix-ui/primitives</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.

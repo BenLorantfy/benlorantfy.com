@@ -2,6 +2,7 @@ import { SpacingToken, theme } from "~/theme";
 
 export default function Heading({ 
     children,
+    id,
     decoration,
     align,
     level,
@@ -10,6 +11,7 @@ export default function Heading({
     size = "2xl"
 }: { 
     children: React.ReactNode;
+    id?: string;
     decoration?: 'underline' | 'none';
     align?: 'center';
     level: 2 | 3 | 4 | 5 | 6;
@@ -26,6 +28,7 @@ export default function Heading({
             textAlign: align
         }}>
             <HeadingTag
+                id={id}
                 style={{
                     color: theme.colors.primary,
                     fontFamily: "var(--font-baloo-2)",
