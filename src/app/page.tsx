@@ -560,7 +560,7 @@ export default function Home() {
                     I maintain <a href="https://github.com/BenLorantfy/nestjs-zod">nestjs-zod</a>, a library with 1M+ downloads / month on npm that integrates zod with nestjs.  
                   </Text>
                   <Text size="2xl">
-                    I&apos;ve also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/radix-ui/primitives/pull/3115">radix-ui/primitives</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.
+                    I&apos;ve also contributed to other open source projects, including <a href="https://github.com/react-boilerplate/react-boilerplate/pull/2749">react-boilerplate</a>, <a href="https://github.com/reduxjs/cra-template-redux/pull/1">reduxjs/redux-templates</a>, <a href="https://github.com/KnapsackPro/knapsack-pro-js/pull/104">@knapsack-pro/vitest</a>, <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/pulls?q=is%3Apr+author%3ABenLorantfy+is%3Aclosed">DefinitelyTyped</a>, and more.
                   </Text>
                 </Stack>
               }
