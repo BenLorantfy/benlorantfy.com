@@ -35,6 +35,7 @@ import nestjsZod from "../assets/nestjs-zod.svg"
 import { createResponsiveStyles } from "~/utils/createResponsiveStyles";
 import { BeforeAndAfter } from "~/components/BeforeAndAfter";
 import dataTriangle from '~/assets/data-triangle.png'
+import zodCodecs from '~/assets/codecs.png'
 import Link from "next/link";
 
 export default function Home() {
@@ -573,38 +574,75 @@ export default function Home() {
           marginRight: '-24px',
         }}>
           <Heading level={2} decoration="underline" mb={12} mt={12} align="center" size="5xl">Blog</Heading>
-          <div
-            style={{
-              maxWidth: '400px',
-              width: '100%',
-            }}
+          <Flex
+            direction={{ xs: "column", md: "row" }}
+            gap={4}
           >
-            <Card>
-              <Link href="/blog/the-data-triangle-and-nestjs-zod-v5" style={{ textDecoration: 'none' }}>
-                <Image 
-                  src={dataTriangle} 
-                  alt="The Data Triangle" 
-                  width={1228} 
-                  height={748} 
-                  style={{
-                    width: "100%",
-                    height: "200px",
-                    objectFit: "cover",
-                  }}
-                />
-                <Heading level={3} mt={2}>The Data Triangle</Heading>
-                <p 
-                  style={{
-                    fontSize: 18,
-                    marginTop: 12,
-                    color: theme.colors.primary,
-                  }}
-                >
-                  Great news! `nestjs-zod` version 5 is now available. You can install it today.
-                </p>
-              </Link>
-            </Card>
-          </div>
+            <div
+              style={{
+                width: '100%'
+              }}
+            >
+              <Card>
+                <Link href="/blog/the-data-triangle-and-nestjs-zod-v5" style={{ textDecoration: 'none' }}>
+                  <Image 
+                    src={dataTriangle} 
+                    alt="The Data Triangle" 
+                    width={1228} 
+                    height={748} 
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <Heading level={3} mt={2}>The Data Triangle</Heading>
+                  <p 
+                    style={{
+                      fontSize: 18,
+                      marginTop: 12,
+                      color: theme.colors.primary,
+                    }}
+                  >
+                    Great news! `nestjs-zod` version 5 is now available. You can install it today.
+                  </p>
+                </Link>
+              </Card>
+            </div>
+            <div
+              style={{
+                width: '100%',
+              }}
+            >
+              <Card>
+                <Link href="/blog/zod-codecs-and-nestjs" style={{ textDecoration: 'none' }}>
+                  <Image 
+                    src={zodCodecs} 
+                    alt="Zod codecs and nestjs" 
+                    width={1228} 
+                    height={748} 
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <Heading level={3} mt={2}>Zod Codecs and nestjs</Heading>
+                  <p 
+                    style={{
+                      fontSize: 18,
+                      marginTop: 12,
+                      color: theme.colors.primary,
+                    }}
+                  >
+                    I'm excited to announce that `nestjs-zod` version 5.1 is now available!
+                  </p>
+                </Link>
+              </Card>
+            </div>
+          </Flex>
+
+
         </div>
       </div>
     </>

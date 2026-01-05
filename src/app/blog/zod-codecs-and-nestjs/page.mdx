@@ -1,0 +1,148 @@
+import Image from 'next/image';
+import zodCodecs from '~/assets/codecs.png'
+
+## Zod Codecs and nestjs
+<span className="text-center text-lg mb-4 block">
+  *Announcing nestjs-zod v5.1*
+</span>
+
+I'm excited to announce that `nestjs-zod` version 5.1 is now available! You can install it today:
+
+```bash
+npm install nestjs-zod@latest
+```
+
+This release includes several new features and bug fixes, but the headline feature is **codec support**. In this post, I'll explain what codecs are and how they can simplify your NestJS APIs.
+
+### What are Codecs?
+
+A [zod codec](https://zod.dev/codecs) is a schema that can define transformations in **both directions**—encoding and decoding. This is different from a regular Zod schema, which only transforms data in one direction.
+
+Here is the example from the zod documentation:
+
+```ts
+const stringToDate = z.codec(
+  z.iso.datetime(),  // input schema: ISO date string
+  z.date(),          // output schema: Date object
+  {
+    decode: (isoString) => new Date(isoString), // ISO string → Date
+    encode: (date) => date.toISOString(),       // Date → ISO string
+  }
+);
+```
+
+To take advantage of the bi-directional transformations, zod introduced two new functions: `decode` and `encode`.  Both `decode` and the existing `parse` function run the normal forward transformation.  `encode`, however, runs the backwards transformation.
+
+```ts
+stringToDate.decode("2024-01-15T10:30:00.000Z")
+// => Date
+ 
+stringToDate.encode(new Date("2024-01-15T10:30:00.000Z"))
+// => string
+```
+
+### How do I use them in nestjs?
+
+Think about how you typically want to work with dates in apis:
+
+1. **Input**: You receive a date as a JSON string like `"2026-01-05T12:00:00Z"`
+2. **Internal**: You want to work with a JavaScript `Date` object in your code
+3. **Output**: You need to serialize it back to a string for the API response
+
+In the past, you would typically need to define two schemas for this with two separate forward transformations.  One for the request body and one for the response body:
+```ts
+class CreateEventDto extends createZodDto(z.object({
+  name: z.string(),
+  date: z.iso.datetime().transform((date) => new Date(date))
+})) {}
+
+class EventDto extends createZodDto(z.object({
+  name: z.string(),
+  date: z.date().transform((date) => date.toISOString())
+})) {}
+
+@Controller('api/events')
+class EventController {
+  @Post()
+  @ZodResponse({ type: EventDto })
+  createEvent(@Body() event: CreateEventDto) {
+    return event;
+  }
+}
+```
+
+However, with codecs, you only need one schema:
+```ts
+class EventDto extends createZodDto(z.object({
+  name: z.string(),
+  date: stringToDate,
+}), {
+  codec: true
+}) {}
+
+@Controller('api/events')
+class EventController {
+  @Post()
+  @ZodResponse({ type: EventDto })
+  createEvent(@Body() event: EventDto) {
+    return event;
+  }
+}
+```
+
+The magic here is that:
+1. When a request comes in, the string dates are automatically parsed into `Date` objects
+2. Inside your controller, you work with proper `Date` instances
+3. When the response is sent, the dates are serialized back to ISO strings
+4. The OpenAPI documentation correctly shows the field as a `string` with `date-time` format
+
+<div className="flex justify-center my-8">
+  <Image
+      alt="Zod Codecs"
+      src={zodCodecs}
+      width={1228}
+      height={748}
+      width={600}
+  />
+</div>
+
+
+This approach using codecs reduces the amount of schemas you need and simplifies your data modelling.
+
+Note that `codec: true` is needed here.  This tells `ZodResponse` we want to use `encode` instead of `parse` when we serialize.
+
+Also note you _may_ still need different schemas for request bodies and response bodies, but it won't be because of the need for different transformations.   It would likely be because some fields are required in the response but not the request (e.g. `id`).
+
+### Other New Features in v5.1
+
+Beyond codecs, this release includes several other improvements:
+
+- **`strictSchemaDeclaration` option**: A new option for `createZodValidationPipe` that enforces stricter schema declarations.  This attribute enforces that every field that it encounters has a nestjs-zod schema.  This can help ensure full type-safety and it's recommended to enable this, especially on new projects.
+- **`createZodSerializerInterceptor`**: A new function for more control over response serialization.  For example, this allows passing the `reportInput` zod parameter to `parse` / `encode`.
+- **`title` metadata support**: You can now add title metadata to your schemas for better OpenAPI documentation.  It allows visually renaming schemas in SwaggerUI.
+
+### Bug Fixes
+
+This release also fixes several long-standing issues:
+
+- Fixed ESM entry point to resolve globalRegistry mismatch
+- Fixed optional nested query params
+- Object query params now use deepObject style by default
+- Fixed errors with nested named schemas
+- Use `enum` instead of `const` for OpenAPI 3.0 compatibility
+- Fixed serialization being skipped when returning primitives
+
+### Upgrading
+
+To upgrade to v5.1, simply run:
+
+```bash
+npm install nestjs-zod@latest
+```
+
+### Support the Project
+
+If you or your organization uses `nestjs-zod`, please consider [sponsoring me on GitHub](https://github.com/sponsors/BenLorantfy). Your support helps ensure this project continues to be professionally maintained. As a thank you, sponsors get a free subscription to my other project, [apisandbox.dev](https://apisandbox.dev)!
+
+Check out the full [release notes](https://github.com/BenLorantfy/nestjs-zod/releases/tag/v5.1.0) for more details.
+
