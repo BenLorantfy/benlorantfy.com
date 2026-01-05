@@ -1,6 +1,22 @@
 import Image from 'next/image';
 import dataTriangle from '~/assets/data-triangle.png'
 
+export const metadata = {
+  title: 'The Data Triangle - Announcing nestjs-zod v5',
+  description: 'Introducing "The Data Triangle" - a principle for keeping run-time, compile-time, and docs-time API representations in sync using nestjs-zod.',
+  openGraph: {
+    title: 'The Data Triangle - Announcing nestjs-zod v5',
+    description: 'Introducing "The Data Triangle" - a principle for keeping run-time, compile-time, and docs-time API representations in sync using nestjs-zod.',
+    images: [dataTriangle.src],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Data Triangle - Announcing nestjs-zod v5',
+    description: 'Introducing "The Data Triangle" - a principle for keeping run-time, compile-time, and docs-time API representations in sync using nestjs-zod.',
+    images: [dataTriangle.src],
+  },
+}
+
 ## The Data Triangle
 <span className="text-center text-lg mb-4 block">
   *Announcing nestjs-zod v5*
