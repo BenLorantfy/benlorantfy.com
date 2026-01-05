@@ -635,7 +635,7 @@ export default function Home() {
                       color: theme.colors.primary,
                     }}
                   >
-                    I'm excited to announce that `nestjs-zod` version 5.1 is now available!
+                    I&apos;m excited to announce that `nestjs-zod` version 5.1 is now available!
                   </p>
                 </Link>
               </Card>
